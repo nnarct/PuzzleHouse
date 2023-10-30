@@ -4,7 +4,8 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - text
+  - Background
+  - Foreground
   - Stair
   layers:
   - Default
@@ -13,9 +14,9 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
-  - 
+  - Background
+  - Floor
+  - Player
   - 
   - 
   - 
@@ -42,4 +43,10 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Background
+    uniqueID: 3645938457
+    locked: 0
+  - name: Top
+    uniqueID: 227641955
     locked: 0

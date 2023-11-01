@@ -8,24 +8,38 @@ using UnityEngine.UI;
 public class Interactor : MonoBehaviour
 {
 
-    [SerializeField]
-    public GameObject InteractText;
-    GameObject Puzzle;
+    // [SerializeField] public GameObject InteractText;
+    [SerializeField] GameObject Puzzle;
+    public bool isInRange;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
 
         if (collision.gameObject.name.Equals("Player"))
         {
-            InteractText.gameObject.SetActive(true);
+            //InteractText.gameObject.SetActive(true);
+            isInRange = true;
         }
+
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.gameObject.name.Equals("Player"))
         {
-            InteractText.gameObject.SetActive(false);
+            //InteractText.gameObject.SetActive(false);
+            isInRange = false;
+        }
+    }
+
+    private void Update()
+    {
+        if (isInRange) 
+        {
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                playPuzzle();
+            }
         }
     }
 

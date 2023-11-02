@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 8552d39322798ff4495ec4fdb6836134
+guid: e5626e34bfc33ea49a232dd498902ce8
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -43,17 +43,17 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
-  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteBorder: {x: 219, y: 63, z: 216, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
-  spriteTessellationDetail: -1
+  spriteTessellationDetail: 0
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
@@ -121,106 +121,26 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: choices_0
-      rect:
-        serializedVersion: 2
-        x: 20
-        y: 40
-        width: 140
-        height: 100
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c2786e53e315d8a46bffb1b2f2c89ff1
-      internalID: -1178381165
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: choices_1
-      rect:
-        serializedVersion: 2
-        x: 176
-        y: 40
-        width: 136
-        height: 100
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f308dba3b8d3b9549bbf840c8b3c673d
-      internalID: -541067051
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: choices_2
-      rect:
-        serializedVersion: 2
-        x: 324
-        y: 40
-        width: 140
-        height: 100
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1b3b9a36c7ba48a4083f9fe039771cbb
-      internalID: -1690588230
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: choices_3
-      rect:
-        serializedVersion: 2
-        x: 480
-        y: 40
-        width: 140
-        height: 100
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0bd6df4cdfb88cb4b9c99087ef5b9e36
-      internalID: 1214135284
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    outline: []
+    sprites: []
+    outline:
+    - - {x: -7, y: 50}
+      - {x: -19, y: 44}
+      - {x: -19, y: 20}
+      - {x: -12, y: 13}
+      - {x: 8, y: 13}
+      - {x: 20, y: 18}
+      - {x: 20, y: 41}
+      - {x: 11, y: 50}
     physicsShape: []
     bones: []
     spriteID: 5e97eb03825dee720800000000000000
-    internalID: 0
+    internalID: 1537655665
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      choices_0: -1178381165
-      choices_1: -541067051
-      choices_2: -1690588230
-      choices_3: 1214135284
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

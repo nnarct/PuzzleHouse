@@ -17,7 +17,8 @@ public class MovementPlayer : MonoBehaviour
    
     private void Update()
     {
+
         MoveX = Input.GetAxis("Horizontal");
-        rb.velocity = new Vector2(MoveX*speed, rb.velocity.y);
+        rb.velocity = new Vector2(MoveX * speed, rb.velocity.y);
     }
 }

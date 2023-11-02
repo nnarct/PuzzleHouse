@@ -11,6 +11,12 @@ public class Interactor : MonoBehaviour
     // [SerializeField] public GameObject InteractText;
     [SerializeField] GameObject Puzzle;
     public bool isInRange;
+    public bool isInPuzzle;
+
+    private void Start()
+    {
+        Puzzle.SetActive(false);
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -38,7 +44,7 @@ public class Interactor : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
-                playPuzzle();
+                 playPuzzle();
             }
         }
     }

@@ -13,9 +13,12 @@ public class Interactor : MonoBehaviour
     public bool isInRange;
     public bool isInPuzzle;
 
+    private MovementPlayer movementPlayer;
+
     private void Start()
     {
         Puzzle.SetActive(false);
+        movementPlayer = GameObject.Find("Player").GetComponent<MovementPlayer>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -44,7 +47,17 @@ public class Interactor : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
-                 playPuzzle();
+                playPuzzle();
+                movementPlayer.FreezeMovement();
+
+            }
+        }
+
+        if (isInPuzzle)
+        {
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                EndInteraction();
             }
         }
     }
@@ -52,5 +65,15 @@ public class Interactor : MonoBehaviour
     public void playPuzzle()
     {
         Puzzle.SetActive(true);
+        isInPuzzle = true;
+        Debug.Log("Player entered the puzzle.");
+    }
+
+    public void EndInteraction()
+    {
+        Puzzle.SetActive(false);
+        movementPlayer.UnfreezeMovement();
+        isInPuzzle = false;
+        Debug.Log("Player exited the puzzle.");
     }
 }

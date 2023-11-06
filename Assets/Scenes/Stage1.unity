@@ -929,8 +929,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1667203379}
-        m_TargetAssemblyTypeName: testMinigame, Assembly-CSharp
+      - m_Target: {fileID: 1667203383}
+        m_TargetAssemblyTypeName: ExitButton, Assembly-CSharp
         m_MethodName: ButtonOrderPanelClose
         m_Mode: 1
         m_Arguments:
@@ -4502,7 +4502,7 @@ GameObject:
   - component: {fileID: 1667203382}
   - component: {fileID: 1667203381}
   - component: {fileID: 1667203380}
-  - component: {fileID: 1667203379}
+  - component: {fileID: 1667203383}
   m_Layer: 3
   m_Name: puzzle
   m_TagString: Untagged
@@ -4510,19 +4510,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
---- !u!114 &1667203379
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1667203378}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 47f315af142619143b3f04b92c642e5b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  GamePanel: {fileID: 1667203378}
 --- !u!114 &1667203380
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4536,7 +4523,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.69411767}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -4581,6 +4568,19 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1667203383
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1667203378}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c367aed69508ca54fbbdc8358e50493c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GamePanel: {fileID: 1667203378}
 --- !u!1 &1673855225
 GameObject:
   m_ObjectHideFlags: 0

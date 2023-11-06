@@ -8,7 +8,7 @@ using UnityEngine.UI;
 public class Interactor : MonoBehaviour
 {
 
-    // [SerializeField] public GameObject InteractText;
+    [SerializeField] GameObject InteractText;
     [SerializeField] GameObject Puzzle;
     public bool isInRange;
     public bool isInPuzzle;
@@ -23,7 +23,7 @@ public class Interactor : MonoBehaviour
 
         if (collision.gameObject.name.Equals("Player"))
         {
-            //InteractText.gameObject.SetActive(true);
+            InteractText.gameObject.SetActive(true);
             isInRange = true;
         }
 
@@ -33,7 +33,7 @@ public class Interactor : MonoBehaviour
     {
         if (collision.gameObject.name.Equals("Player"))
         {
-            //InteractText.gameObject.SetActive(false);
+            InteractText.gameObject.SetActive(false);
             isInRange = false;
         }
     }

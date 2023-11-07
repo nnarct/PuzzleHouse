@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 37397b92eeaf21b4ba594d21a09b0970
+guid: 0ba42d7a00d90ac468adf62fb67a1f3d
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -34,7 +34,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -72,7 +72,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -123,13 +123,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: animals_0
+      name: Choice_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 104
-        height: 68
+        x: 100
+        y: 1088
+        width: 312
+        height: 112
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -137,20 +137,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2c3f29dcabe844f47afac11d1c54869c
-      internalID: 343252442
+      spriteID: 89a01e9eab3a938428393a165cfffa63
+      internalID: 487862909
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: animals_1
+      name: Choice_1
       rect:
         serializedVersion: 2
-        x: 112
-        y: 0
-        width: 108
-        height: 128
+        x: 104
+        y: 952
+        width: 304
+        height: 104
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -158,20 +158,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b1040a76e81e4cd4eabbed9231f6916e
-      internalID: -1026426364
+      spriteID: 1de7144e9808b054b85fc2162335168c
+      internalID: 1647194737
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: animals_2
+      name: Choice_2
       rect:
         serializedVersion: 2
-        x: 228
-        y: 0
-        width: 116
-        height: 52
+        x: 100
+        y: 780
+        width: 312
+        height: 112
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -179,20 +179,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 99cdba1427b6e32479e33fc50c538d2f
-      internalID: 2042869740
+      spriteID: ce37e399cbde8924b9adb7b3df23db64
+      internalID: 1367097186
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: animals_3
+      name: Choice_3
       rect:
         serializedVersion: 2
-        x: 352
-        y: 0
-        width: 148
-        height: 108
+        x: 104
+        y: 644
+        width: 304
+        height: 104
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -200,20 +200,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ca96b1cae2741714c924c9ba1b2dc105
-      internalID: 935307215
+      spriteID: 18d69d4cfb8a8d948a7d97221f198af1
+      internalID: 1597636811
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: animals_4
+      name: Choice_4
       rect:
         serializedVersion: 2
-        x: 508
-        y: 0
-        width: 80
-        height: 80
+        x: 100
+        y: 472
+        width: 312
+        height: 112
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -221,20 +221,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9bf2c4064ac33ba4b96e4ba1fb9f5a8a
-      internalID: 543989217
+      spriteID: 0389a7e463b262c41b7deb227c0506d9
+      internalID: 1994026868
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: animals_5
+      name: Choice_5
       rect:
         serializedVersion: 2
-        x: 596
-        y: 0
-        width: 104
-        height: 108
+        x: 104
+        y: 336
+        width: 304
+        height: 104
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -242,20 +242,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 00b21901ef65124459f0bd01e05edef6
-      internalID: 1680456281
+      spriteID: 159519c57eae4d440bbce729c9f6d283
+      internalID: 1282822150
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: animals_6
+      name: Choice_6
       rect:
         serializedVersion: 2
-        x: 708
-        y: 0
-        width: 172
-        height: 124
+        x: 100
+        y: 196
+        width: 312
+        height: 112
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -263,20 +263,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 90d1465efe2c10c40929ca1ddfe0db99
-      internalID: -827036633
+      spriteID: f6642a80a5b7933478a15e3b8a5e8db4
+      internalID: -2134869230
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: animals_7
+      name: Choice_7
       rect:
         serializedVersion: 2
-        x: 888
-        y: 0
-        width: 148
-        height: 192
+        x: 104
+        y: 60
+        width: 304
+        height: 104
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -284,92 +284,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2a5ebe4f118a24e40bddb8e02822e7a2
-      internalID: -764736111
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: animals_8
-      rect:
-        serializedVersion: 2
-        x: 1044
-        y: 0
-        width: 124
-        height: 120
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 838ec2a6264e8b44fb65cea283617c0c
-      internalID: 838789073
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: animals_9
-      rect:
-        serializedVersion: 2
-        x: 1176
-        y: 0
-        width: 116
-        height: 116
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8e77b2b404581734db4440e42a78a667
-      internalID: 1228132211
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: animals_10
-      rect:
-        serializedVersion: 2
-        x: 1300
-        y: 0
-        width: 112
-        height: 116
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d18a36cf381489842b919679e4325697
-      internalID: -1886670130
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: animals_11
-      rect:
-        serializedVersion: 2
-        x: 1420
-        y: 0
-        width: 92
-        height: 96
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 93a0f9862b4515d41857b18961f81285
-      internalID: -524261388
+      spriteID: eb4f170aae0ee9545817296516564e46
+      internalID: 937794916
       vertices: []
       indices: 
       edges: []
@@ -385,18 +301,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      animals_0: 343252442
-      animals_1: -1026426364
-      animals_10: -1886670130
-      animals_11: -524261388
-      animals_2: 2042869740
-      animals_3: 935307215
-      animals_4: 543989217
-      animals_5: 1680456281
-      animals_6: -827036633
-      animals_7: -764736111
-      animals_8: 838789073
-      animals_9: 1228132211
+      Choice_0: 487862909
+      Choice_1: 1647194737
+      Choice_2: 1367097186
+      Choice_3: 1597636811
+      Choice_4: 1994026868
+      Choice_5: 1282822150
+      Choice_6: -2134869230
+      Choice_7: 937794916
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

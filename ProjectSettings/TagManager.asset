@@ -8,6 +8,7 @@ TagManager:
   - Foreground
   - Stair
   - Interactable
+  - PopUp
   layers:
   - Default
   - TransparentFX
@@ -18,7 +19,7 @@ TagManager:
   - Background
   - Floor
   - Player
-  - 
+  - Text
   - 
   - 
   - 

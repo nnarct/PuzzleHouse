@@ -9,6 +9,9 @@ public class MovementPlayer : MonoBehaviour
     private Rigidbody2D rb;
     public float speed;
 
+    private bool isFrozen = false;
+    private bool canMove = true;
+
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -17,8 +20,22 @@ public class MovementPlayer : MonoBehaviour
    
     private void Update()
     {
+        if (!isFrozen && canMove)
+        {
+            MoveX = Input.GetAxis("Horizontal");
+            rb.velocity = new Vector2(MoveX * speed, rb.velocity.y);
+        }
+    }
 
-        MoveX = Input.GetAxis("Horizontal");
-        rb.velocity = new Vector2(MoveX * speed, rb.velocity.y);
+    public void FreezeMovement()
+    {
+        isFrozen = true;
+        canMove = false;
+    }
+
+    public void UnfreezeMovement()
+    {
+        isFrozen = false;
+        canMove= true;
     }
 }

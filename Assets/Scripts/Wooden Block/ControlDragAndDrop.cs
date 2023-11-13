@@ -53,13 +53,13 @@ public class ControlDragAndDrop : MonoBehaviour
     {
         isMoving = false;
 
-        if (Mathf.Abs(this.transform.localPosition.x - CorrectForm.transform.localPosition.x) <= 5 &&
-            Mathf.Abs(this.transform.localPosition.y - CorrectForm.transform.localPosition.y) <= 5)
+        if (Mathf.Abs(this.transform.localPosition.x - CorrectForm.transform.localPosition.x) <= 100 &&
+            Mathf.Abs(this.transform.localPosition.y - CorrectForm.transform.localPosition.y) <= 100)
         {
             this.transform.localPosition = new Vector3(CorrectForm.transform.localPosition.x, CorrectForm.transform.localPosition.y, CorrectForm.transform.localPosition.z);
             isFinish = true;
 
-            GameObject.Find("PointHandler").GetComponent<WinScript>().AddPoint();
+            GameObject.Find("CorrectPanel").GetComponent<WinScript>().AddPoint();
         }
         else
         {

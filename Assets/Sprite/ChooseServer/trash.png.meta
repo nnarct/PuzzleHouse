@@ -126,10 +126,10 @@ TextureImporter:
       name: trash_0
       rect:
         serializedVersion: 2
-        x: 8
-        y: 15
+        x: 5
+        y: 14
         width: 136
-        height: 162
+        height: 160
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -147,10 +147,10 @@ TextureImporter:
       name: trash_2
       rect:
         serializedVersion: 2
-        x: 357
-        y: 19
-        width: 131
-        height: 190
+        x: 360
+        y: 20
+        width: 128
+        height: 188
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -168,10 +168,10 @@ TextureImporter:
       name: trash_4
       rect:
         serializedVersion: 2
-        x: 174
+        x: 192
         y: 12
-        width: 140
-        height: 185
+        width: 104
+        height: 128
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -189,10 +189,10 @@ TextureImporter:
       name: trash_5
       rect:
         serializedVersion: 2
-        x: 539
+        x: 540
         y: 20
-        width: 131
-        height: 190
+        width: 128
+        height: 188
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -202,6 +202,27 @@ TextureImporter:
       bones: []
       spriteID: ea835fc6dfc7aa54abb5b6fc16e8c5e1
       internalID: -1062354192
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: trash_1
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 152
+        width: 136
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4cd74ad961f29124fa86c88bbc955865
+      internalID: 744598277
       vertices: []
       indices: 
       edges: []

@@ -8,6 +8,9 @@ public class MovementPlayer : MonoBehaviour
     public float MoveX;
     private Rigidbody2D rb;
     public float speed;
+    private SpriteRenderer sprite;
+
+    private Animator anim;
 
     private bool isFrozen = false;
     private bool canMove = true;
@@ -15,15 +18,38 @@ public class MovementPlayer : MonoBehaviour
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
+        sprite = GetComponent<SpriteRenderer>();
     }
 
-   
+
     private void Update()
     {
         if (!isFrozen && canMove)
         {
             MoveX = Input.GetAxis("Horizontal");
             rb.velocity = new Vector2(MoveX * speed, rb.velocity.y);
+        }
+
+        UpdateAnimationUpdate();
+
+    }
+
+    private void UpdateAnimationUpdate()
+    {
+        if (MoveX > 0f)
+        {
+            anim.SetBool("running", true);
+            sprite.flipX = false;
+        }
+        else if (MoveX < 0f)
+        {
+            anim.SetBool("running", true);
+            sprite.flipX = true;
+        }
+        else
+        {
+            anim.SetBool("running", false);
         }
     }
 

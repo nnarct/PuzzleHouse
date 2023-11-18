@@ -126,10 +126,10 @@ TextureImporter:
       name: choices_0
       rect:
         serializedVersion: 2
-        x: 20
-        y: 40
-        width: 140
-        height: 100
+        x: 0
+        y: 0
+        width: 248
+        height: 192
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -147,10 +147,10 @@ TextureImporter:
       name: choices_1
       rect:
         serializedVersion: 2
-        x: 176
-        y: 40
-        width: 136
-        height: 100
+        x: 395
+        y: 0
+        width: 248
+        height: 192
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -168,10 +168,10 @@ TextureImporter:
       name: choices_2
       rect:
         serializedVersion: 2
-        x: 324
-        y: 40
-        width: 140
-        height: 100
+        x: 790
+        y: 0
+        width: 248
+        height: 192
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -189,10 +189,10 @@ TextureImporter:
       name: choices_3
       rect:
         serializedVersion: 2
-        x: 480
-        y: 40
-        width: 140
-        height: 100
+        x: 1185
+        y: 0
+        width: 248
+        height: 192
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

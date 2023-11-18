@@ -1596,8 +1596,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 182411269}
   m_CullTransparentMesh: 1
-<<<<<<< HEAD
-=======
 --- !u!1 &189688498
 GameObject:
   m_ObjectHideFlags: 0
@@ -1633,7 +1631,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
->>>>>>> 0aeb482f495ce506b44359981d14c11e963d064d
 --- !u!1 &203952525
 GameObject:
   m_ObjectHideFlags: 0

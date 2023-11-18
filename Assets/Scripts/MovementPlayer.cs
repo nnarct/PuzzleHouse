@@ -27,7 +27,7 @@ public class MovementPlayer : MonoBehaviour
     {
         if (!isFrozen && canMove)
         {
-            MoveX = Input.GetAxis("Horizontal");
+            MoveX = Input.GetAxisRaw("Horizontal");
             rb.velocity = new Vector2(MoveX * speed, rb.velocity.y);
         }
 

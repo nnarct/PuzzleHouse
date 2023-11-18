@@ -8,13 +8,14 @@ public class PauseMenu : MonoBehaviour
     public GameObject pauseMenu;
     public bool isPaused;
 
-    // Start is called before the first frame update
+    private Interactor interactorScript;
+
     void Start()
     {
         pauseMenu.SetActive(false);
+        interactorScript = GameObject.FindWithTag("Interactable").GetComponent<Interactor>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
@@ -30,7 +31,6 @@ public class PauseMenu : MonoBehaviour
         }
         
     }
-
 
     public void GoToMainMenu()
     {
@@ -53,6 +53,11 @@ public class PauseMenu : MonoBehaviour
         isPaused = false;
     }
 
+
+    public void CallOrderPanelOpen()
+    {
+        PauseGame();
+    }
 
 
 }

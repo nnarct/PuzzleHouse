@@ -53,13 +53,14 @@ public class Interactor : MonoBehaviour
             }
         }
 
-        if (isInPuzzle)
+      /*if (isInPuzzle)
         {
             if (Input.GetKeyDown(KeyCode.Escape))
             {
                 EndInteraction();
             }
-        }
+        }*/
+
     }
 
     public void playPuzzle()

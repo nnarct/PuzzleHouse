@@ -21,6 +21,12 @@ public class SaveLoadManager : MonoBehaviour
     {
         SceneIndex = SceneManager.GetActiveScene().buildIndex + 1;
         SceneManager.LoadSceneAsync(SceneIndex);
+        PlayerPrefs.SetInt("Stage1-score", 0);
+        PlayerPrefs.SetInt("moon", 0);
+        PlayerPrefs.SetInt("wooden", 0);
+        PlayerPrefs.SetInt("genetic", 0);
+        PlayerPrefs.SetInt("time", 0);
+        PlayerPrefs.Save();
     }
     
     public void LoadGame()

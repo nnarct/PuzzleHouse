@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class QuizManager : MonoBehaviour
 {
@@ -11,15 +12,24 @@ public class QuizManager : MonoBehaviour
 
     public GameObject CorrectPanel;
     public Text QuestionTxt;
-
+    public string puzzleKey;
+    private int score;
+    public TMP_Text scoreText;
     private void Start()
     {
+        score = PlayerPrefs.GetInt("Stage1-score", 0);
         CorrectPanel.SetActive(false);
         generateQuestion();
     }
 
     public void correct()
     {
+        score = PlayerPrefs.GetInt("Stage1-score", 0);
+        score = score + 1;
+        PlayerPrefs.SetInt("Stage1-score", score);
+        scoreText.text = score.ToString() + "/5";
+        PlayerPrefs.SetInt(puzzleKey, 1); // 1 passed 0 not passed
+        PlayerPrefs.Save();
         CorrectPanel.SetActive(true);
     }
 

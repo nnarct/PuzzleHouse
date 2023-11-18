@@ -12,6 +12,7 @@ public class Interactor : MonoBehaviour
     [SerializeField] GameObject Puzzle;
     public bool isInRange;
     public bool isInPuzzle;
+    public string puzzleKey;
 
     private MovementPlayer movementPlayer;
 
@@ -23,12 +24,15 @@ public class Interactor : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-
-        if (collision.gameObject.name.Equals("Player"))
+        if (PlayerPrefs.GetInt(puzzleKey, 0) == 0)
         {
-            InteractText.gameObject.SetActive(true);
-            isInRange = true;
+             if (collision.gameObject.name.Equals("Player"))
+             {
+                 InteractText.gameObject.SetActive(true);
+                 isInRange = true;
+             }
         }
+       
 
     }
 

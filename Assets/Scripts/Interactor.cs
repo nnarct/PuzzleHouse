@@ -15,11 +15,12 @@ public class Interactor : MonoBehaviour
     public string puzzleKey;
 
     private MovementPlayer movementPlayer;
-
+    private Rigidbody2D rigidBodyPlayer;
     private void Start()
     {
         Puzzle.SetActive(false);
         movementPlayer = GameObject.Find("Player").GetComponent<MovementPlayer>();
+        rigidBodyPlayer = GameObject.Find("Player").GetComponent<Rigidbody2D>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -52,8 +53,8 @@ public class Interactor : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.E))
             {
                 playPuzzle();
+                rigidBodyPlayer.velocity = Vector2.zero;
                 movementPlayer.FreezeMovement();
-
             }
         }
 

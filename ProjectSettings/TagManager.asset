@@ -8,6 +8,9 @@ TagManager:
   - Foreground
   - Stair
   - Interactable
+  - Stair2
+  - Stair3
+  - Stair4
   layers:
   - Default
   - TransparentFX

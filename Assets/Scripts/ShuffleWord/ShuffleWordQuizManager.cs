@@ -22,6 +22,7 @@ public class ShuffleWordQuizManager : MonoBehaviour
     private int currentAnswerIndex = 0;
     private bool correctAnswer;
     private List<int> selectWordIndex;
+    public float delayTime = 1f;
 
     private void Awake()
     {
@@ -90,6 +91,8 @@ public class ShuffleWordQuizManager : MonoBehaviour
             }
             else if (!correctAnswer)
             {
+
+                Invoke("ResetLastWord", delayTime);
                 Debug.Log("Wrong Answer");
             }
         }

@@ -2,31 +2,31 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI;
+using TMPro;
 
 public class PassCode : MonoBehaviour
 {
     string Code;
-    string Number = null;
-    int NumberIndex = 0;
-    public Text UiText = null;
+    string Answer = null;
+    int AnswerIndex = 0;
+    public TMP_Text UiText = null;
 
-    public void CodeFunction(string Numbers)
+    public void CodeFunction(string Number)
     {
-        if(NumberIndex < 7)
+        if(AnswerIndex < 7)
         {
-            NumberIndex++;
-            Number = Number + Numbers;
-            UiText.text = Number;
+            AnswerIndex++;
+            Answer = Answer + Number;
+            UiText.text = Answer;
         }
     }
 
     public void Enter()
     {
         Code = PlayerPrefs.GetString("Passcode");
-        Debug.Log("Number"+ Number);
-        Debug.Log("Passcode"+Code);
-        if (Number == Code)
+        //Debug.Log("Number"+ Number);
+        //Debug.Log("Passcode"+Code);
+        if (Answer == Code)
         {
             Debug.Log("It's Work!!!");
             //SceneManager.LoadScene("stage2");
@@ -40,11 +40,11 @@ public class PassCode : MonoBehaviour
 
     public void Delete()
     {
-        if(NumberIndex!=0)
+        if(AnswerIndex!=0)
         {
-            NumberIndex--;
-            Number = Number.Substring(0, Number.Length - 1);
-            UiText.text = Number;
+            AnswerIndex--;
+            Answer = Answer.Substring(0, Answer.Length - 1);
+            UiText.text = Answer;
         }
        
     }

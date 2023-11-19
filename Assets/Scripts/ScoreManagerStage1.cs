@@ -10,7 +10,7 @@ public class ScoreManagerStage1 : MonoBehaviour
     public GameObject chestBox;
     private int score;
     private string[] puzzleKeys = { "wooden", "genetic", "time", "moon", "earth" };
-
+    public GameObject chestPuzzleButton;
     string Filename = "PlayerData.json";
     List<PlayerEntry> PlayerList = new List<PlayerEntry>();
     void Start()
@@ -23,7 +23,7 @@ public class ScoreManagerStage1 : MonoBehaviour
         PlayerPrefs.SetInt("wooden", PlayerList[PlayerID].stage1.wooden);
         PlayerPrefs.SetInt("genetic", PlayerList[PlayerID].stage1.genetic);
         PlayerPrefs.SetInt("time", PlayerList[PlayerID].stage1.time);
-
+        chestPuzzleButton.SetActive(false);
         score = 0;
         foreach (string key in puzzleKeys)
         {
@@ -47,10 +47,12 @@ public class ScoreManagerStage1 : MonoBehaviour
     {
         if (score == 5)
         {
+            chestPuzzleButton.SetActive(true);
             chestBox.SetActive(true);
         }
         else if (score < 5)
         {
+            chestPuzzleButton.SetActive(false);
             chestBox.SetActive(false);
         }
        

@@ -6,14 +6,14 @@ using UnityEngine.UI;
 
 public class PassCode : MonoBehaviour
 {
-    string Code = "6969";
+    string Code;
     string Number = null;
     int NumberIndex = 0;
     public Text UiText = null;
 
     public void CodeFunction(string Numbers)
     {
-        if(NumberIndex < 4)
+        if(NumberIndex < 7)
         {
             NumberIndex++;
             Number = Number + Numbers;
@@ -23,6 +23,9 @@ public class PassCode : MonoBehaviour
 
     public void Enter()
     {
+        Code = PlayerPrefs.GetString("Passcode");
+        Debug.Log("Number"+ Number);
+        Debug.Log("Passcode"+Code);
         if (Number == Code)
         {
             Debug.Log("It's Work!!!");
@@ -31,15 +34,19 @@ public class PassCode : MonoBehaviour
         else
         {
             Debug.Log("It's Wrong!!!");
-            Debug.Log("Try again");
+            //Debug.Log("Try again");
         }
     }
 
     public void Delete()
     {
-        NumberIndex = 0;
-        Number = null;
-        UiText.text = Number;
+        if(NumberIndex!=0)
+        {
+            NumberIndex--;
+            Number = Number.Substring(0, Number.Length - 1);
+            UiText.text = Number;
+        }
+       
     }
 
 }

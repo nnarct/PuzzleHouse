@@ -19,7 +19,7 @@ public class ScoreManagerStage1 : MonoBehaviour
         LoadFileToPlayerPrefs();
         chestPuzzleButton.SetActive(false);
         CheckChest(score);
-        ParchmentText.text = GenerateRandomNumericPassword(3, 6);
+        ParchmentText.text = GenerateRandomNumericPassword(3, 6) + "#";
     }
     // Update is called once per frame
     void Update()

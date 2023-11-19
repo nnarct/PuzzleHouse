@@ -25,7 +25,6 @@ public class InputHandler : MonoBehaviour
         PlayerPrefs.SetInt("PlayerID", PlayerID);
         Scene_index = SceneManager.GetActiveScene().buildIndex +1;
         PlayerList.Add(new PlayerEntry(NameInput.text, Scene_index));
-        NameInput.text = "";
         FileHandler.SaveToJSON<PlayerEntry>(PlayerList, Filename);
         SceneManager.LoadSceneAsync(Scene_index);
     }

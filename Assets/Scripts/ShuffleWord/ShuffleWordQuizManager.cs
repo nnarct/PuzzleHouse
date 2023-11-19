@@ -103,8 +103,8 @@ public class ShuffleWordQuizManager : MonoBehaviour
             else if (!correctAnswer)
             {
 
-                Invoke("ResetLastWord", delayTime);
-                Debug.Log("Wrong Answer");
+                Invoke("ResetQuestion", delayTime);
+                //Debug.Log("Wrong Answer");
             }
         }
     }

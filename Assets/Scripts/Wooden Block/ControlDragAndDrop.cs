@@ -56,7 +56,7 @@ public class ControlDragAndDrop : MonoBehaviour
         if (Mathf.Abs(this.transform.localPosition.x - CorrectForm.transform.localPosition.x) <= 100 &&
             Mathf.Abs(this.transform.localPosition.y - CorrectForm.transform.localPosition.y) <= 100)
         {
-            this.transform.localPosition = new Vector3(CorrectForm.transform.localPosition.x, CorrectForm.transform.localPosition.y, CorrectForm.transform.localPosition.z);
+            this.transform.position = new Vector3(CorrectForm.transform.position.x, CorrectForm.transform.position.y, CorrectForm.transform.position.z);
             isFinish = true;
 
             GameObject.Find("CorrectPanel").GetComponent<WinScript>().AddPoint();

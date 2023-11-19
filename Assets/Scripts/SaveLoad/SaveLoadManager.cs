@@ -29,12 +29,6 @@ public class SaveLoadManager : MonoBehaviour
     {
         PlayerID = int.Parse(EventSystem.current.currentSelectedGameObject.name);
         PlayerPrefs.SetInt("PlayerID", PlayerID);
-        
-        //PlayerPrefs.SetInt("Stage1-score", 0);
-        PlayerPrefs.SetInt("moon", PlayerList[PlayerID].stage1.moon);
-        PlayerPrefs.SetInt("wooden", PlayerList[PlayerID].stage1.wooden);
-        PlayerPrefs.SetInt("genetic", PlayerList[PlayerID].stage1.genetic);
-        PlayerPrefs.SetInt("time", PlayerList[PlayerID].stage1.time);
         SceneManager.LoadSceneAsync(PlayerList[PlayerID].Level);
     }
 

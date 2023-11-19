@@ -126,10 +126,10 @@ TextureImporter:
       name: buttons_0
       rect:
         serializedVersion: 2
-        x: 4
-        y: 72
-        width: 104
-        height: 32
+        x: 40
+        y: 144
+        width: 208
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -147,10 +147,10 @@ TextureImporter:
       name: buttons_1
       rect:
         serializedVersion: 2
-        x: 160
-        y: 72
-        width: 104
-        height: 32
+        x: 352
+        y: 144
+        width: 208
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -168,10 +168,10 @@ TextureImporter:
       name: buttons_2
       rect:
         serializedVersion: 2
-        x: 308
-        y: 72
-        width: 104
-        height: 32
+        x: 648
+        y: 144
+        width: 208
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -189,10 +189,10 @@ TextureImporter:
       name: buttons_3
       rect:
         serializedVersion: 2
-        x: 464
-        y: 72
-        width: 104
-        height: 32
+        x: 960
+        y: 144
+        width: 208
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -210,10 +210,10 @@ TextureImporter:
       name: buttons_4
       rect:
         serializedVersion: 2
-        x: 4
-        y: 20
-        width: 104
-        height: 32
+        x: 40
+        y: 40
+        width: 208
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -231,10 +231,10 @@ TextureImporter:
       name: buttons_5
       rect:
         serializedVersion: 2
-        x: 160
-        y: 20
-        width: 104
-        height: 32
+        x: 352
+        y: 40
+        width: 208
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -252,10 +252,10 @@ TextureImporter:
       name: buttons_6
       rect:
         serializedVersion: 2
-        x: 308
-        y: 20
-        width: 104
-        height: 32
+        x: 648
+        y: 40
+        width: 208
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -273,10 +273,10 @@ TextureImporter:
       name: buttons_7
       rect:
         serializedVersion: 2
-        x: 464
-        y: 20
-        width: 104
-        height: 32
+        x: 960
+        y: 40
+        width: 208
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

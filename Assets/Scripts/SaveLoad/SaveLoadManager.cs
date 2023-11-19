@@ -21,6 +21,8 @@ public class SaveLoadManager : MonoBehaviour
     {
         SceneIndex = SceneManager.GetActiveScene().buildIndex + 1;
         SceneManager.LoadSceneAsync(SceneIndex);
+        
+        PlayerPrefs.Save();
     }
     
     public void LoadGame()
@@ -35,7 +37,7 @@ public class SaveLoadManager : MonoBehaviour
         PlayerID = PlayerPrefs.GetInt("PlayerID");
         SceneIndex = SceneManager.GetActiveScene().buildIndex;
         PlayerList[PlayerID].Level = SceneIndex;
-        FileHandler.SaveToJSON<PlayerEntry>(PlayerList, Filename);;
+        FileHandler.SaveToJSON<PlayerEntry>(PlayerList, Filename);
         SceneManager.LoadSceneAsync(0);
     }
 

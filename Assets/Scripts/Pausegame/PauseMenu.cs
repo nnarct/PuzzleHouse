@@ -5,13 +5,15 @@ using UnityEngine.SceneManagement;
 
 /*public class PauseMenu : MonoBehaviour
 {
+    public GameObject player;
     public GameObject pauseMenu;
     public bool isPaused;
-
     private Interactor interactorScript;
+    private SpriteRenderer playerSpriteRenderer;
 
     void Start()
     {
+        playerSpriteRenderer = player.GetComponent<SpriteRenderer>();
         pauseMenu.SetActive(false);
         interactorScript = GameObject.FindWithTag("Interactable").GetComponent<Interactor>();
     }
@@ -42,23 +44,18 @@ using UnityEngine.SceneManagement;
     public void PauseGame()
     {
         pauseMenu.SetActive(true);
+        playerSpriteRenderer.color = new Color(0.3608f, 0.3608f, 0.3608f);
         Time.timeScale = 0f;
         isPaused = true;
     }
 
     public void ResumeGame()
     {
+        playerSpriteRenderer.color = new Color(1f, 1f, 1f);
         pauseMenu.SetActive(false);
         Time.timeScale = 1f;
         isPaused = false;
     }
-
-
-    public void CallOrderPanelOpen()
-    {
-        PauseGame();
-    }
-
 
 }
 */

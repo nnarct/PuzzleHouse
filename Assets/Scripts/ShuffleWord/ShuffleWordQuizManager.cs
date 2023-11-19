@@ -1,13 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using UnityEngine;
 using UnityEngine.UIElements;
 
 public class ShuffleWordQuizManager : MonoBehaviour
 {
     public static ShuffleWordQuizManager instance;
-
+    public string puzzleKey;
     [SerializeField]
     private QuestionData question;
 
@@ -88,6 +89,16 @@ public class ShuffleWordQuizManager : MonoBehaviour
             {
                 CorrectPanel.SetActive(true);
                 Debug.Log("Correct Answer");
+                int score = PlayerPrefs.GetInt("Stage1-score", 0);
+                if (PlayerPrefs.GetInt(puzzleKey, 0) == 0)
+                {
+                    // If the player hasn't won the puzzle , increment score
+                    score++;
+                }
+                PlayerPrefs.SetInt("Stage1-score", score);
+                PlayerPrefs.SetInt(puzzleKey, 1);
+                PlayerPrefs.Save();
+                UpdateStage1Field(puzzleKey, 1);
             }
             else if (!correctAnswer)
             {
@@ -130,6 +141,34 @@ public class ShuffleWordQuizManager : MonoBehaviour
             answerWordArray[currentAnswerIndex].SetChar('_');
         }
     }
+
+    void UpdateStage1Field(string fieldName, int value)
+    {
+        List<PlayerEntry> PlayerList = new List<PlayerEntry>();
+
+        PlayerList = FileHandler.ReadListFromJSON<PlayerEntry>("PlayerData.json");
+
+        int PlayerID = PlayerPrefs.GetInt("PlayerID");
+
+        Stage1 stage1 = PlayerList[PlayerID].stage1;
+
+        // Use reflection to get the field by name
+        FieldInfo fieldInfo = typeof(Stage1).GetField(fieldName);
+
+        //UnityEngine.Debug.Log("typeof(Stage1) stage1" + typeof(Stage1));
+        // Check if the field exists
+        if (fieldInfo != null)
+        {
+            // Set the value of the field
+            fieldInfo.SetValue(stage1, value);
+            FileHandler.SaveToJSON<PlayerEntry>(PlayerList, "PlayerData.json");
+        }
+        else
+        {
+            UnityEngine.Debug.LogError($"Field not found or not writable: {fieldName}");
+        }
+    }
+
 
 }
 

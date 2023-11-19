@@ -39,7 +39,7 @@ public class QuizManager : MonoBehaviour
 
         int PlayerID = PlayerPrefs.GetInt("PlayerID");
         //PlayerList[PlayerID].stage1[puzzleKey] = 2;
-        UpdateStage1Property(PlayerList[PlayerID].stage1, puzzleKey, 1);
+        UpdateStage1Field(PlayerList[PlayerID].stage1, puzzleKey, 1);
         //PlayerList[PlayerID].stage1.time = 4;
         // PlayerList[PlayerID] = new PlayerList[PlayerID].stage1[puzzleKey] = 2;
         // PlayerList[PlayerID].stage1.GetType().GetProperty(puzzleKey, BindingFlags.Instance | BindingFlags.Public).SetValue(puzzleKey, 5);

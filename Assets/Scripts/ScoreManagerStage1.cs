@@ -18,6 +18,7 @@ public class ScoreManagerStage1 : MonoBehaviour
         //score = PlayerPrefs.GetInt("Stage1-score", 0);
         PlayerList = FileHandler.ReadListFromJSON<PlayerEntry>(Filename);
         int PlayerID = PlayerPrefs.GetInt("PlayerID");
+        PlayerPrefs.SetInt("earth", PlayerList[PlayerID].stage1.earth);
         PlayerPrefs.SetInt("moon", PlayerList[PlayerID].stage1.moon);
         PlayerPrefs.SetInt("wooden", PlayerList[PlayerID].stage1.wooden);
         PlayerPrefs.SetInt("genetic", PlayerList[PlayerID].stage1.genetic);

@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using TMPro;
 using System.Reflection;
 using System.Diagnostics;
+using System;
 
 public class QuizManager : MonoBehaviour
 {
@@ -17,12 +18,11 @@ public class QuizManager : MonoBehaviour
     public string puzzleKey;
     private int score;
     public TMP_Text scoreText;
-    string Filename = "PlayerData.json";
 
-    List<PlayerEntry> PlayerList = new List<PlayerEntry>();
+  
     private void Start()
     {
-        PlayerList = FileHandler.ReadListFromJSON<PlayerEntry>(Filename);
+        
         score = PlayerPrefs.GetInt("Stage1-score", 0);
         CorrectPanel.SetActive(false);
         generateQuestion();
@@ -31,19 +31,19 @@ public class QuizManager : MonoBehaviour
     public void correct()
     {
         score = PlayerPrefs.GetInt("Stage1-score", 0);
-        score = score + 1;
+        // Check if the player had won this puzzle already or not
+        if (PlayerPrefs.GetInt(puzzleKey, 0) == 0)
+        {
+            // If the player hasn't won the puzzle , increment score
+            score++;
+        }
         PlayerPrefs.SetInt("Stage1-score", score);
         scoreText.text = score.ToString() + "/5";
-        //PlayerPrefs.SetInt(puzzleKey, 1); // 1 passed 0 not passed
+        PlayerPrefs.SetInt(puzzleKey, 1); // 1 passed 0 not passed
         PlayerPrefs.Save();
 
-        int PlayerID = PlayerPrefs.GetInt("PlayerID");
-        //PlayerList[PlayerID].stage1[puzzleKey] = 2;
-        UpdateStage1Field(PlayerList[PlayerID].stage1, puzzleKey, 1);
-        //PlayerList[PlayerID].stage1.time = 4;
-        // PlayerList[PlayerID] = new PlayerList[PlayerID].stage1[puzzleKey] = 2;
-        // PlayerList[PlayerID].stage1.GetType().GetProperty(puzzleKey, BindingFlags.Instance | BindingFlags.Public).SetValue(puzzleKey, 5);
-        FileHandler.SaveToJSON<PlayerEntry>(PlayerList, Filename);
+        UpdateStage1Field(puzzleKey, 1);
+        
         CorrectPanel.SetActive(true);
     }
 
@@ -69,22 +69,30 @@ public class QuizManager : MonoBehaviour
 
     void generateQuestion()
     {
-        currentQuestion = Random.Range(0, QnA.Count);
+        currentQuestion = UnityEngine.Random.Range(0, QnA.Count);
         QuestionTxt.text = QnA[currentQuestion].Question;
         SetAnswers();
     }
 
-    private void UpdateStage1Field(Stage1 stage1, string fieldName, int value)
+    void UpdateStage1Field(string fieldName, int value)
     {
+        List<PlayerEntry> PlayerList = new List<PlayerEntry>();
+
+        PlayerList = FileHandler.ReadListFromJSON<PlayerEntry>("PlayerData.json");
+
+        int PlayerID = PlayerPrefs.GetInt("PlayerID");
+
+        Stage1 stage1 = PlayerList[PlayerID].stage1;
+
         // Use reflection to get the field by name
         FieldInfo fieldInfo = typeof(Stage1).GetField(fieldName);
-        UnityEngine.Debug.Log("typeof(Stage1) stage1" + typeof(Stage1));
+
         // Check if the field exists
         if (fieldInfo != null)
         {
-            UnityEngine.Debug.Log(fieldInfo);
             // Set the value of the field
             fieldInfo.SetValue(stage1, value);
+            FileHandler.SaveToJSON<PlayerEntry>(PlayerList, "PlayerData.json");
         }
         else
         {

@@ -17,15 +17,20 @@ public class InputHandler : MonoBehaviour
     private void Start()
     {
         PlayerList = FileHandler.ReadListFromJSON<PlayerEntry>(Filename);
-        
     }
 
     public void AddNameToList()
     {
-        PlayerPrefs.SetInt("PlayerID", PlayerList.Count);
+        int PlayerID = PlayerList.Count;
+        PlayerPrefs.SetInt("PlayerID", PlayerID);
         Scene_index = SceneManager.GetActiveScene().buildIndex +1;
         PlayerList.Add(new PlayerEntry(NameInput.text, Scene_index));
-        //Debug.Log(PlayerList.Count);
+
+        PlayerPrefs.SetInt("moon", 0);
+        PlayerPrefs.SetInt("wooden", 0);
+        PlayerPrefs.SetInt("genetic", 0);
+        PlayerPrefs.SetInt("time", 0);
+        PlayerPrefs.SetInt("earth", 0);
         NameInput.text = "";
         FileHandler.SaveToJSON<PlayerEntry>(PlayerList, Filename);
         SceneManager.LoadSceneAsync(Scene_index);

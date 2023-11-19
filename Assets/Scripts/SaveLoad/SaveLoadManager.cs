@@ -21,11 +21,7 @@ public class SaveLoadManager : MonoBehaviour
     {
         SceneIndex = SceneManager.GetActiveScene().buildIndex + 1;
         SceneManager.LoadSceneAsync(SceneIndex);
-        PlayerPrefs.SetInt("Stage1-score", 0);
-        PlayerPrefs.SetInt("moon", 0);
-        PlayerPrefs.SetInt("wooden", 0);
-        PlayerPrefs.SetInt("genetic", 0);
-        PlayerPrefs.SetInt("time", 0);
+        
         PlayerPrefs.Save();
     }
     
@@ -33,6 +29,12 @@ public class SaveLoadManager : MonoBehaviour
     {
         PlayerID = int.Parse(EventSystem.current.currentSelectedGameObject.name);
         PlayerPrefs.SetInt("PlayerID", PlayerID);
+        
+        //PlayerPrefs.SetInt("Stage1-score", 0);
+        PlayerPrefs.SetInt("moon", PlayerList[PlayerID].stage1.moon);
+        PlayerPrefs.SetInt("wooden", PlayerList[PlayerID].stage1.wooden);
+        PlayerPrefs.SetInt("genetic", PlayerList[PlayerID].stage1.genetic);
+        PlayerPrefs.SetInt("time", PlayerList[PlayerID].stage1.time);
         SceneManager.LoadSceneAsync(PlayerList[PlayerID].Level);
     }
 
@@ -41,7 +43,7 @@ public class SaveLoadManager : MonoBehaviour
         PlayerID = PlayerPrefs.GetInt("PlayerID");
         SceneIndex = SceneManager.GetActiveScene().buildIndex;
         PlayerList[PlayerID].Level = SceneIndex;
-        FileHandler.SaveToJSON<PlayerEntry>(PlayerList, Filename);;
+        FileHandler.SaveToJSON<PlayerEntry>(PlayerList, Filename);
         SceneManager.LoadSceneAsync(0);
     }
 

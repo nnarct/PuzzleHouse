@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using System.Reflection;
 
 public class QuizManager : MonoBehaviour
 {
@@ -15,8 +16,12 @@ public class QuizManager : MonoBehaviour
     public string puzzleKey;
     private int score;
     public TMP_Text scoreText;
+    string Filename = "PlayerData.json";
+
+    List<PlayerEntry> PlayerList = new List<PlayerEntry>();
     private void Start()
     {
+        PlayerList = FileHandler.ReadListFromJSON<PlayerEntry>(Filename);
         score = PlayerPrefs.GetInt("Stage1-score", 0);
         CorrectPanel.SetActive(false);
         generateQuestion();
@@ -30,6 +35,11 @@ public class QuizManager : MonoBehaviour
         scoreText.text = score.ToString() + "/5";
         PlayerPrefs.SetInt(puzzleKey, 1); // 1 passed 0 not passed
         PlayerPrefs.Save();
+
+        int PlayerID = PlayerPrefs.GetInt("PlayerID");
+        //PlayerList[PlayerID].stage1[puzzleKey] = 2;
+        //PlayerList[PlayerID].stage1.GetType().GetProperty(puzzleKey, BindingFlags.Instance | BindingFlags.Public).SetValue(puzzleKey, 5);
+        //FileHandler.SaveToJSON<PlayerEntry>(PlayerList, Filename);*/
         CorrectPanel.SetActive(true);
     }
 

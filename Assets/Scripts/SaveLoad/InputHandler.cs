@@ -21,12 +21,15 @@ public class InputHandler : MonoBehaviour
 
     public void AddNameToList()
     {
-        int PlayerID = PlayerList.Count;
-        PlayerPrefs.SetInt("PlayerID", PlayerID);
-        Scene_index = SceneManager.GetActiveScene().buildIndex +1;
-        PlayerList.Add(new PlayerEntry(NameInput.text, Scene_index));
-        FileHandler.SaveToJSON<PlayerEntry>(PlayerList, Filename);
-        SceneManager.LoadSceneAsync(Scene_index);
+        if(ValidateInput(NameInput.text))
+        {
+            int PlayerID = PlayerList.Count;
+            PlayerPrefs.SetInt("PlayerID", PlayerID);
+            Scene_index = SceneManager.GetActiveScene().buildIndex +1;
+            PlayerList.Add(new PlayerEntry(NameInput.text, Scene_index));
+            FileHandler.SaveToJSON<PlayerEntry>(PlayerList, Filename);
+            SceneManager.LoadSceneAsync(Scene_index);
+        }
     }
 
     public void BackScene()
@@ -35,6 +38,13 @@ public class InputHandler : MonoBehaviour
         SceneManager.LoadSceneAsync(Scene_index - 1);
     }
 
-
+    Boolean ValidateInput(string text)
+    {
+        if(text == null || text.Length == 0)
+        {
+            return false;
+        }
+        return true;
+    }
    
 }

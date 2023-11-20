@@ -4,34 +4,62 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using System.Reflection;
-using System.Diagnostics;
-using System;
 
 public class QuizManager : MonoBehaviour
 {
     public List<QuestionAndAnswers> QnA;
-    public GameObject[] options;
-    public int currentQuestion;
-
     public GameObject CorrectPanel;
+    public GameObject[] options;
     public Text QuestionTxt;
+    public int currentQuestion;
     public string puzzleKey;
-    private int score;
     public TMP_Text scoreText;
 
-  
+    [SerializeField] GameObject GamePanel;
+    private Interactor interactorScript;
+    private int score;
+
     private void Start()
     {
         
         score = PlayerPrefs.GetInt("Stage1-score", 0);
         CorrectPanel.SetActive(false);
         generateQuestion();
+        interactorScript = GameObject.FindWithTag("Interactable").GetComponent<Interactor>();
     }
 
     public void correct()
     {
-        score = PlayerPrefs.GetInt("Stage1-score", 0);
+        GamePanel.SetActive(false);
+        CorrectPanel.SetActive(true);
+        Button correctButton = GameObject.Find("CorrctKeyButton").GetComponent<Button>();
+        correctButton.onClick.AddListener(OnCorrectButtonClick);
+      //  GamePanel.SetActive(false);
+      //  CorrectPanel.SetActive(true);
+       // score = PlayerPrefs.GetInt("Stage1-score", 0);
         // Check if the player had won this puzzle already or not
+      //  if (PlayerPrefs.GetInt(puzzleKey, 0) == 0)
+      //  {
+            // If the player hasn't won the puzzle , increment score
+      //      score++;
+      //  }
+      //  PlayerPrefs.SetInt("Stage1-score", score);
+      //  scoreText.text = score.ToString() + "/5";
+      ///  PlayerPrefs.SetInt(puzzleKey, 1); // 1 passed 0 not passed
+      //  PlayerPrefs.Save();
+
+       // UpdateStage1Field(puzzleKey, 1);
+        
+       
+    }
+
+    void OnCorrectButtonClick()
+    {
+        Debug.Log("Key is clicked!");
+        CorrectPanel.SetActive(false);
+        interactorScript.EndInteraction();
+        Debug.Log("Correct Panel is closed!");
+        // Increment the score only when the correct key is clicked
         if (PlayerPrefs.GetInt(puzzleKey, 0) == 0)
         {
             // If the player hasn't won the puzzle , increment score
@@ -39,14 +67,16 @@ public class QuizManager : MonoBehaviour
         }
         PlayerPrefs.SetInt("Stage1-score", score);
         scoreText.text = score.ToString() + "/5";
-        PlayerPrefs.SetInt(puzzleKey, 1); // 1 passed 0 not passed
+
+        // Mark the puzzle as passed
+        PlayerPrefs.SetInt(puzzleKey, 1);
         PlayerPrefs.Save();
 
-        UpdateStage1Field(puzzleKey, 1);
+        // Close the CorrectPanel
         
-        CorrectPanel.SetActive(true);
+        UpdateStage1Field(puzzleKey, 1);
     }
-
+   
     public void wrong()
     {
         QnA.RemoveAt(currentQuestion);

@@ -18,6 +18,8 @@ public class ShuffleWordQuizManager : MonoBehaviour
     private WordData[] optionWordArray;
     [SerializeField]
     private GameObject CorrectPanel;
+    [SerializeField]
+    private GameObject WrongPanel;
 
     private Interactor interactorScript;
     private char[] charArray = new char[5];
@@ -96,7 +98,8 @@ public class ShuffleWordQuizManager : MonoBehaviour
             }
             else if (!correctAnswer)
             {
-
+                WrongPanel.SetActive(true);
+                Invoke("DeactiveWrongPanel", delayTime);
                 Invoke("ResetQuestion", delayTime);
                 //Debug.Log("Wrong Answer");
             }
@@ -110,6 +113,11 @@ public class ShuffleWordQuizManager : MonoBehaviour
         CorrectPanel.SetActive(true);
         Button correctButton = GameObject.Find("CorrectKeyButton").GetComponent<Button>();
         correctButton.onClick.AddListener(OnCorrectButtonClick);
+    }
+
+    public void DeactiveWrongPanel()
+    {
+        WrongPanel.SetActive(false);
     }
 
     void OnCorrectButtonClick()

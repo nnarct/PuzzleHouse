@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7666848140357506904}
   - component: {fileID: 6526946884532661759}
   - component: {fileID: 1574709737551424928}
+  - component: {fileID: 7612255778713456203}
   m_Layer: 5
   m_Name: PlayerButton
   m_TagString: Untagged
@@ -146,7 +147,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 546be9d0c11e00a438d27f7036ac9b2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Filename: PlayerData.json
+--- !u!114 &7612255778713456203
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3979665187563723996}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b6686b63c933f7448e3bffbc36e206f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7114534250349779308
 GameObject:
   m_ObjectHideFlags: 0
@@ -179,10 +191,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 7147909080909454547}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 16}
+  m_SizeDelta: {x: 576, y: 142}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8658258202150387750
 CanvasRenderer:
@@ -212,7 +224,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Nan
+  m_text: adsfasdfdfd
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b269190c6a0a7934f84f876096805fd2, type: 2}
   m_sharedMaterial: {fileID: -7846200430254626449, guid: b269190c6a0a7934f84f876096805fd2, type: 2}

@@ -3,15 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using UnityEngine;
-using UnityEngine.UIElements;
-
+using UnityEngine.UI;
+using TMPro;
 public class ShuffleWordQuizManager : MonoBehaviour
 {
     public static ShuffleWordQuizManager instance;
     public string puzzleKey;
     [SerializeField]
     private QuestionData question;
-
+    [SerializeField] GameObject GamePanel;
     [SerializeField]
     private WordData[] answerWordArray;
     [SerializeField]
@@ -19,11 +19,14 @@ public class ShuffleWordQuizManager : MonoBehaviour
     [SerializeField]
     private GameObject CorrectPanel;
 
+    private Interactor interactorScript;
     private char[] charArray = new char[5];
     private int currentAnswerIndex = 0;
     private bool correctAnswer;
     private List<int> selectWordIndex;
     public float delayTime = 1f;
+
+    public TMP_Text scoreText;
 
     private void Awake()
     {
@@ -37,6 +40,7 @@ public class ShuffleWordQuizManager : MonoBehaviour
     private void Start()
     {
         SetQuestion();
+        interactorScript = GameObject.FindWithTag("Interactable").GetComponent<Interactor>();
     }
     private void SetQuestion()
     {
@@ -87,18 +91,8 @@ public class ShuffleWordQuizManager : MonoBehaviour
 
             if (correctAnswer) 
             {
-                CorrectPanel.SetActive(true);
-                Debug.Log("Correct Answer");
-                int score = PlayerPrefs.GetInt("Stage1-score", 0);
-                if (PlayerPrefs.GetInt(puzzleKey, 0) == 0)
-                {
-                    // If the player hasn't won the puzzle , increment score
-                    score++;
-                }
-                PlayerPrefs.SetInt("Stage1-score", score);
-                PlayerPrefs.SetInt(puzzleKey, 1);
-                PlayerPrefs.Save();
-                UpdateStage1Field(puzzleKey, 1);
+                UnityEngine.Debug.Log("Correct Answer");
+                Correct();
             }
             else if (!correctAnswer)
             {
@@ -107,6 +101,33 @@ public class ShuffleWordQuizManager : MonoBehaviour
                 //Debug.Log("Wrong Answer");
             }
         }
+    }
+
+
+    public void Correct()
+    {
+        GamePanel.SetActive(false);
+        CorrectPanel.SetActive(true);
+        Button correctButton = GameObject.Find("CorrectKeyButton").GetComponent<Button>();
+        correctButton.onClick.AddListener(OnCorrectButtonClick);
+    }
+
+    void OnCorrectButtonClick()
+    {
+        Debug.Log("Key is clicked!");
+        CorrectPanel.SetActive(false);
+        interactorScript.EndInteraction();
+        Debug.Log("Correct Panel is closed!");
+        int score = PlayerPrefs.GetInt("Stage1-score", 0);
+        if (PlayerPrefs.GetInt(puzzleKey, 0) == 0)
+        {
+            score++;
+        }
+        PlayerPrefs.SetInt("Stage1-score", score);
+        scoreText.text = score.ToString() + "/5";
+        PlayerPrefs.SetInt(puzzleKey, 1);
+        PlayerPrefs.Save();
+        UpdateStage1Field(puzzleKey, 1);
     }
 
     public void ResetQuestion()

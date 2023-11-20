@@ -59,7 +59,7 @@ public class ControlDragAndDrop : MonoBehaviour
             this.transform.localPosition = new Vector3(CorrectForm.transform.localPosition.x, CorrectForm.transform.localPosition.y, CorrectForm.transform.localPosition.z);
             isFinish = true;
 
-            GameObject.Find("CorrectPanel").GetComponent<WinScript>().AddPoint();
+            GameObject.Find("WoodenPuzzle").GetComponent<WinScript>().AddPoint();
         }
         else
         {

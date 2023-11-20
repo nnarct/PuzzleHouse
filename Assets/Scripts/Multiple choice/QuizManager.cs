@@ -32,7 +32,7 @@ public class QuizManager : MonoBehaviour
     {
         GamePanel.SetActive(false);
         CorrectPanel.SetActive(true);
-        Button correctButton = GameObject.Find("CorrctKeyButton").GetComponent<Button>();
+        Button correctButton = GameObject.Find("CorrectKeyButton").GetComponent<Button>();
         correctButton.onClick.AddListener(OnCorrectButtonClick);
       //  GamePanel.SetActive(false);
       //  CorrectPanel.SetActive(true);
@@ -55,25 +55,18 @@ public class QuizManager : MonoBehaviour
 
     void OnCorrectButtonClick()
     {
-        Debug.Log("Key is clicked!");
         CorrectPanel.SetActive(false);
         interactorScript.EndInteraction();
-        Debug.Log("Correct Panel is closed!");
-        // Increment the score only when the correct key is clicked
         if (PlayerPrefs.GetInt(puzzleKey, 0) == 0)
         {
-            // If the player hasn't won the puzzle , increment score
             score++;
         }
         PlayerPrefs.SetInt("Stage1-score", score);
+        Debug.Log("score = " + score.ToString());
         scoreText.text = score.ToString() + "/5";
 
-        // Mark the puzzle as passed
         PlayerPrefs.SetInt(puzzleKey, 1);
         PlayerPrefs.Save();
-
-        // Close the CorrectPanel
-        
         UpdateStage1Field(puzzleKey, 1);
     }
    

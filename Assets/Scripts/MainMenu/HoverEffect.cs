@@ -4,7 +4,7 @@ using UnityEngine.EventSystems;
 using static System.Net.Mime.MediaTypeNames;
 using TMPro;
 
-public class HoverEffect : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
+public class HoverEffect : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler
 {
     private RectTransform textRectTransform;
     private Vector2 originalTextPosition;
@@ -27,5 +27,9 @@ public class HoverEffect : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
         // Reset the positions when the mouse exits the button
         textRectTransform.anchoredPosition = originalTextPosition;
     }
-
+    public void OnPointerClick(PointerEventData evenData)
+    {
+        // Reset the positions when the mouse click the button
+        textRectTransform.anchoredPosition = originalTextPosition;
+    }
 }

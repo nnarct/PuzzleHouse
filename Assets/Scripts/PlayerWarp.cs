@@ -9,20 +9,20 @@ public class PlayerWarp : MonoBehaviour
     [SerializeField] GameObject InteractText3;
     [SerializeField] GameObject InteractText4;
 
-    private GameObject CurrentWarp;
+    public bool IsInRange;
 
-    public bool isInRange;
+    private GameObject _currentWarp;
 
 
     void Update()
     {
-        if (isInRange)
+        if (IsInRange)
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
-                if (CurrentWarp != null)
+                if (_currentWarp != null)
                 {
-                    transform.position = CurrentWarp.GetComponent<StairFloor1>().GetDestination().position;
+                    transform.position = _currentWarp.GetComponent<StairFloor1>().GetDestination().position;
                 }
             }
         }
@@ -33,27 +33,27 @@ public class PlayerWarp : MonoBehaviour
     {
         if (collision.CompareTag("Stair"))
         {
-            CurrentWarp = collision.gameObject;
+            _currentWarp = collision.gameObject;
             InteractText.gameObject.SetActive(true);
-            isInRange = true;
+            IsInRange = true;
         }
         if (collision.CompareTag("Stair2"))
         {
-            CurrentWarp = collision.gameObject;
+            _currentWarp = collision.gameObject;
             InteractText2.gameObject.SetActive(true);
-            isInRange = true;
+            IsInRange = true;
         }
         if (collision.CompareTag("Stair3"))
         {
-            CurrentWarp = collision.gameObject;
+            _currentWarp = collision.gameObject;
             InteractText3.gameObject.SetActive(true);
-            isInRange = true;
+            IsInRange = true;
         }
         if (collision.CompareTag("Stair4"))
         {
-            CurrentWarp = collision.gameObject;
+            _currentWarp = collision.gameObject;
             InteractText4.gameObject.SetActive(true);
-            isInRange = true;
+            IsInRange = true;
         }
     }
 
@@ -63,40 +63,40 @@ public class PlayerWarp : MonoBehaviour
         {
 
             InteractText.gameObject.SetActive(false);
-            if (collision.gameObject == CurrentWarp)
+            if (collision.gameObject == _currentWarp)
             {
-                isInRange = false;
-                CurrentWarp = null;
+                IsInRange = false;
+                _currentWarp = null;
             }
         }
         if (collision.CompareTag("Stair2"))
         {
 
             InteractText2.gameObject.SetActive(false);
-            if (collision.gameObject == CurrentWarp)
+            if (collision.gameObject == _currentWarp)
             {
-                isInRange = false;
-                CurrentWarp = null;
+                IsInRange = false;
+                _currentWarp = null;
             }
         }
         if (collision.CompareTag("Stair3"))
         {
 
             InteractText3.gameObject.SetActive(false);
-            if (collision.gameObject == CurrentWarp)
+            if (collision.gameObject == _currentWarp)
             {
-                isInRange = false;
-                CurrentWarp = null;
+                IsInRange = false;
+                _currentWarp = null;
             }
         }
         if (collision.CompareTag("Stair4"))
         {
 
             InteractText4.gameObject.SetActive(false);
-            if (collision.gameObject == CurrentWarp)
+            if (collision.gameObject == _currentWarp)
             {
-                isInRange = false;
-                CurrentWarp = null;
+                IsInRange = false;
+                _currentWarp = null;
             }
         }
     }

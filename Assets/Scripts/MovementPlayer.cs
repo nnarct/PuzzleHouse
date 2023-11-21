@@ -6,29 +6,30 @@ using UnityEngine.InputSystem;
 public class MovementPlayer : MonoBehaviour
 {
     public float MoveX;
-    private Rigidbody2D rb;
-    public float speed;
-    private SpriteRenderer sprite;
 
-    private Animator anim;
+    private Rigidbody2D _rb;
+    public float Speed;
+    private SpriteRenderer _sprite;
 
-    private bool isFrozen = false;
-    private bool canMove = true;
+    private Animator _anim;
+
+    private bool _isFrozen = false;
+    private bool _canMove = true;
 
     private void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
-        anim = GetComponent<Animator>();
-        sprite = GetComponent<SpriteRenderer>();
+        _rb = GetComponent<Rigidbody2D>();
+        _anim = GetComponent<Animator>();
+        _sprite = GetComponent<SpriteRenderer>();
     }
 
 
     private void Update()
     {
-        if (!isFrozen && canMove)
+        if (!_isFrozen && _canMove)
         {
             MoveX = Input.GetAxisRaw("Horizontal");
-            rb.velocity = new Vector2(MoveX * speed, rb.velocity.y);
+            _rb.velocity = new Vector2(MoveX * Speed, _rb.velocity.y);
         }
 
         UpdateAnimationUpdate();
@@ -39,29 +40,29 @@ public class MovementPlayer : MonoBehaviour
     {
         if (MoveX > 0f)
         {
-            anim.SetBool("running", true);
-            sprite.flipX = false;
+            _anim.SetBool("running", true);
+            _sprite.flipX = false;
         }
         else if (MoveX < 0f)
         {
-            anim.SetBool("running", true);
-            sprite.flipX = true;
+            _anim.SetBool("running", true);
+            _sprite.flipX = true;
         }
         else
         {
-            anim.SetBool("running", false);
+            _anim.SetBool("running", false);
         }
     }
 
     public void FreezeMovement()
     {
-        isFrozen = true;
-        canMove = false;
+        _isFrozen = true;
+        _canMove = false;
     }
 
     public void UnfreezeMovement()
     {
-        isFrozen = false;
-        canMove= true;
+        _isFrozen = false;
+        _canMove= true;
     }
 }

@@ -5,17 +5,17 @@ using UnityEngine;
 public class ExitButton : MonoBehaviour
 {
     [SerializeField] GameObject GamePanel;
-    private Interactor interactorScript;
+    private Interactor _interactorScript;
 
     private void Start()
     { 
-        interactorScript = GameObject.FindWithTag("Interactable").GetComponent<Interactor>();
+        _interactorScript = GameObject.FindWithTag("Interactable").GetComponent<Interactor>();
     }
 
     public void ButtonOrderPanelClose()
     {
         GamePanel.SetActive(false);
-        interactorScript.EndInteraction();
+        _interactorScript.EndInteraction();
         Debug.Log("Exit button pressed. Calling EndInteraction.");
     }
 }

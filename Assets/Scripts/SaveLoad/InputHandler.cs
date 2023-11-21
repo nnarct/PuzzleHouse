@@ -14,7 +14,7 @@ public class InputHandler : MonoBehaviour
 
     int Scene_index;
 
-    private void Start()
+    private void _start()
     {
         PlayerList = FileHandler.ReadListFromJSON<PlayerEntry>(Filename);
     }

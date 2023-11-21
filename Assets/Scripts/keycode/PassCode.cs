@@ -71,17 +71,4 @@ public class PassCode : MonoBehaviour
         WrongPanel.SetActive(false);
     }
 
-    public void DeleteAll()
-    {
-            AnswerIndex = 0;
-            Answer = null;
-            UiText.text = Answer;
-
-    }
-
-    public void DeactiveWrongPanel()
-    {
-        WrongPanel.SetActive(false);
-    }
-
 }

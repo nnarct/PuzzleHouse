@@ -6,15 +6,14 @@ using UnityEngine.InputSystem;
 public class MovementPlayer : MonoBehaviour
 {
     public float MoveX;
+    public float Speed = 456;
 
     private Rigidbody2D _rb;
-    public float Speed;
     private SpriteRenderer _sprite;
-
     private Animator _anim;
 
     private bool _isFrozen = false;
-    private bool _canMove = true;
+    private bool _isMoveable = true;
 
     private void Start()
     {
@@ -23,10 +22,9 @@ public class MovementPlayer : MonoBehaviour
         _sprite = GetComponent<SpriteRenderer>();
     }
 
-
     private void Update()
     {
-        if (!_isFrozen && _canMove)
+        if (!_isFrozen && _isMoveable)
         {
             MoveX = Input.GetAxisRaw("Horizontal");
             _rb.velocity = new Vector2(MoveX * Speed, _rb.velocity.y);
@@ -57,12 +55,12 @@ public class MovementPlayer : MonoBehaviour
     public void FreezeMovement()
     {
         _isFrozen = true;
-        _canMove = false;
+        _isMoveable = false;
     }
 
     public void UnfreezeMovement()
     {
         _isFrozen = false;
-        _canMove= true;
+        _isMoveable = true;
     }
 }

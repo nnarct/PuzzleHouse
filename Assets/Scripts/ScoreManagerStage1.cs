@@ -6,41 +6,41 @@ using System;
 
 public class ScoreManagerStage1 : MonoBehaviour
 {
-    public TMP_Text scoreText;
+    public TMP_Text ScoreText;
     public TMP_Text ParchmentText;
-    public GameObject chestBox;
-    public GameObject chestPuzzleButton;
+    public GameObject ChestBox;
+    public GameObject ChestPuzzleButton;
 
-    private int score;
-    private string[] puzzleKeys = { "wooden", "genetic", "time", "moon", "earth" };
+    private int _score;
+    private string[] _puzzleKeys = { "Wooden", "Genetic", "Time", "Moon", "Earth" };
 
     void Start()
     {
         LoadFileToPlayerPrefs();
-        chestPuzzleButton.SetActive(false);
-        CheckChest(score);
+        ChestPuzzleButton.SetActive(false);
+        CheckChest(_score);
         ParchmentText.text = GenerateRandomNumericPassword(3, 6) + "#";
     }
     // Update is called once per frame
     void Update()
     {
-        score = PlayerPrefs.GetInt("Stage1-score", 0);
-        scoreText.text = score.ToString() + "/5";
-        CheckChest(score);
-        UpdateScoreText(score);
+        _score = PlayerPrefs.GetInt("Stage1-score", 0);
+        ScoreText.text = _score.ToString() + "/5";
+        CheckChest(_score);
+        UpdateScoreText(_score);
     }
 
     private void CheckChest(int score)
     {
         if (score == 5)
         {
-            chestPuzzleButton.SetActive(true);
-            chestBox.SetActive(true);
+            ChestPuzzleButton.SetActive(true);
+            ChestBox.SetActive(true);
         }
         else if (score < 5)
         {
-            chestPuzzleButton.SetActive(false);
-            chestBox.SetActive(false);
+            ChestPuzzleButton.SetActive(false);
+            ChestBox.SetActive(false);
         }
     }
 
@@ -49,22 +49,22 @@ public class ScoreManagerStage1 : MonoBehaviour
         List<PlayerEntry> PlayerList = new List<PlayerEntry>();
         PlayerList = FileHandler.ReadListFromJSON<PlayerEntry>("PlayerData.json");
         int PlayerID = PlayerPrefs.GetInt("PlayerID");
-        PlayerPrefs.SetInt("earth", PlayerList[PlayerID].stage1.earth);
-        PlayerPrefs.SetInt("moon", PlayerList[PlayerID].stage1.moon);
-        PlayerPrefs.SetInt("wooden", PlayerList[PlayerID].stage1.wooden);
-        PlayerPrefs.SetInt("genetic", PlayerList[PlayerID].stage1.genetic);
-        PlayerPrefs.SetInt("time", PlayerList[PlayerID].stage1.time);
-        foreach (string key in puzzleKeys)
+        PlayerPrefs.SetInt("Earth", PlayerList[PlayerID].Stage1.Earth);
+        PlayerPrefs.SetInt("Moon", PlayerList[PlayerID].Stage1.Moon);
+        PlayerPrefs.SetInt("Wooden", PlayerList[PlayerID].Stage1.Wooden);
+        PlayerPrefs.SetInt("Genetic", PlayerList[PlayerID].Stage1.Genetic);
+        PlayerPrefs.SetInt("Time", PlayerList[PlayerID].Stage1.Time);
+        foreach (string key in _puzzleKeys)
         {
-            score = score + PlayerPrefs.GetInt(key, 0);
+            _score = _score + PlayerPrefs.GetInt(key, 0);
         }
-        PlayerPrefs.SetInt("Stage1-score", score);
+        PlayerPrefs.SetInt("Stage1-score", _score);
         PlayerPrefs.Save();
     }
 
     void UpdateScoreText(int score)
     {
-        scoreText.text = score.ToString() + "/5";
+        ScoreText.text = _score.ToString() + "/5";
     }
 
     string GenerateRandomNumericPassword(int minLength, int maxLength)

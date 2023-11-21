@@ -9,7 +9,7 @@ public class SoundManager : MonoBehaviour
 
     [SerializeField] Image soundOnIcon;
     [SerializeField] Image soundOffIcon;
-    private bool isMuted = false;
+    private bool _isMuted = false;
 
     // Start is called before the first frame update
     void Start()
@@ -17,39 +17,39 @@ public class SoundManager : MonoBehaviour
         if (!PlayerPrefs.HasKey("isMuted"))
         {
             PlayerPrefs.SetInt("isMuted", 0);
-            Load();
+            _getSoundStatus();
         }
 
         else
         {
-            Load();
+            _getSoundStatus();
         }
 
-        UpdateButtonIcon();
-        AudioListener.pause = isMuted;
+        _updateButtonIcon();
+        AudioListener.pause = _isMuted;
     }
 
     public void OnButtonPress()
     {
-        if (isMuted == false)
+        if (_isMuted == false)
         {
-            isMuted = true;
+            _isMuted = true;
             AudioListener.pause = true;
         }
 
         else
         {
-            isMuted = false;
+            _isMuted = false;
             AudioListener.pause = false;
         }
 
-        Save();
-        UpdateButtonIcon();
+        _saveSoundStatus();
+        _updateButtonIcon();
     }
 
-    private void UpdateButtonIcon()
+    private void _updateButtonIcon()
     {
-        if (isMuted == false)
+        if (_isMuted == false)
         {
             soundOnIcon.enabled = true;
             soundOffIcon.enabled = false;
@@ -64,16 +64,16 @@ public class SoundManager : MonoBehaviour
 
     // if isMuted == 1  set isMuted = true
     // if isMuted == 0  set isMuted = false
-    private void Load()
+    private void _getSoundStatus()
     {
-        isMuted = PlayerPrefs.GetInt("isMuted") == 1;
+        _isMuted = PlayerPrefs.GetInt("isMuted") == 1;
     }
 
     // if isMuted == true  save 1
     // if isMuted == false save 0
-    private void Save()
+    private void _saveSoundStatus()
     {
-        PlayerPrefs.SetInt("isMuted", isMuted ? 1 : 0);
+        PlayerPrefs.SetInt("isMuted", _isMuted ? 1 : 0);
     }
     
 }

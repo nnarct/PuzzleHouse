@@ -9,26 +9,26 @@ public class QuizManager : MonoBehaviour
 {
     public List<QuestionAndAnswers> QnA;
     public GameObject CorrectPanel;
-    public GameObject[] options;
+    public GameObject[] Options;
     public Text QuestionTxt;
-    public int currentQuestion;
-    public string puzzleKey;
-    public TMP_Text scoreText;
+    public int CurrentQuestion;
+    public string PuzzleKey;
+    public TMP_Text ScoreText;
 
     [SerializeField] GameObject GamePanel;
-    private Interactor interactorScript;
-    private int score;
+    private Interactor _interactorScript;
+    private int _isScore;
 
     private void Start()
     {
         
-        score = PlayerPrefs.GetInt("Stage1-score", 0);
+        _isScore = PlayerPrefs.GetInt("Stage1-score", 0);
         CorrectPanel.SetActive(false);
         generateQuestion();
-        interactorScript = GameObject.FindWithTag("Interactable").GetComponent<Interactor>();
+        _interactorScript = GameObject.FindWithTag("Interactable").GetComponent<Interactor>();
     }
 
-    public void correct()
+    public void Correct()
     {
         GamePanel.SetActive(false);
         CorrectPanel.SetActive(true);
@@ -56,44 +56,44 @@ public class QuizManager : MonoBehaviour
     void OnCorrectButtonClick()
     {
         CorrectPanel.SetActive(false);
-        interactorScript.EndInteraction();
-        if (PlayerPrefs.GetInt(puzzleKey, 0) == 0)
+        _interactorScript.EndInteraction();
+        if (PlayerPrefs.GetInt(PuzzleKey, 0) == 0)
         {
-            score++;
+            _isScore++;
         }
-        PlayerPrefs.SetInt("Stage1-score", score);
-        Debug.Log("score = " + score.ToString());
-        scoreText.text = score.ToString() + "/5";
+        PlayerPrefs.SetInt("Stage1-score", _isScore);
+        Debug.Log("score = " + _isScore.ToString());
+        ScoreText.text = _isScore.ToString() + "/5";
 
-        PlayerPrefs.SetInt(puzzleKey, 1);
+        PlayerPrefs.SetInt(PuzzleKey, 1);
         PlayerPrefs.Save();
-        UpdateStage1Field(puzzleKey, 1);
+        UpdateStage1Field(PuzzleKey, 1);
     }
    
-    public void wrong()
+    public void Wrong()
     {
-        QnA.RemoveAt(currentQuestion);
+        QnA.RemoveAt(CurrentQuestion);
         generateQuestion();
     }
 
     void SetAnswers()
     {
-        for (int i = 0; i < options.Length; i++)
+        for (int i = 0; i < Options.Length; i++)
         {
-            options[i].GetComponent<AnswerScript>().isCorrect = false;
-            options[i].transform.GetChild(0).GetComponent<Text>().text = QnA[currentQuestion].Answers[i];
+            Options[i].GetComponent<AnswerScript>().IsCorrect = false;
+            Options[i].transform.GetChild(0).GetComponent<Text>().text = QnA[CurrentQuestion].Answers[i];
 
-            if (QnA[currentQuestion].CorrentAnswer == i + 1)
+            if (QnA[CurrentQuestion].CorrentAnswer == i + 1)
             {
-                options[i].GetComponent<AnswerScript>().isCorrect = true;
+                Options[i].GetComponent<AnswerScript>().IsCorrect = true;
             }
         }
     }
 
     void generateQuestion()
     {
-        currentQuestion = UnityEngine.Random.Range(0, QnA.Count);
-        QuestionTxt.text = QnA[currentQuestion].Question;
+        CurrentQuestion = UnityEngine.Random.Range(0, QnA.Count);
+        QuestionTxt.text = QnA[CurrentQuestion].Question;
         SetAnswers();
     }
 
@@ -105,7 +105,7 @@ public class QuizManager : MonoBehaviour
 
         int PlayerID = PlayerPrefs.GetInt("PlayerID");
 
-        Stage1 stage1 = PlayerList[PlayerID].stage1;
+        Stage1 Stage1 = PlayerList[PlayerID].Stage1;
 
         // Use reflection to get the field by name
         FieldInfo fieldInfo = typeof(Stage1).GetField(fieldName);
@@ -114,7 +114,7 @@ public class QuizManager : MonoBehaviour
         if (fieldInfo != null)
         {
             // Set the value of the field
-            fieldInfo.SetValue(stage1, value);
+            fieldInfo.SetValue(Stage1, value);
             FileHandler.SaveToJSON<PlayerEntry>(PlayerList, "PlayerData.json");
         }
         else

@@ -7,21 +7,22 @@ using static System.Net.Mime.MediaTypeNames;
 using TMPro;
 
 public class WinScript : MonoBehaviour
-{
-    private int PointToWin;
-    private int CurrentPoint;
+{  
     public GameObject Block;
     [SerializeField] GameObject GamePanel;
     public GameObject CorrectPanel;
-    public string puzzleKey = "wooden";
-    private Interactor interactorScript;
-    private int score;
+    public string PuzzleKey = "Wooden";
+   
+    private int _pointToWin;
+    private int _currentPoint;
+    private Interactor _interactorScript;
+    private int _score;
 
     void Start()
     {
-        score = PlayerPrefs.GetInt("Stage1-score", 0);
-        interactorScript = GameObject.FindWithTag("Interactable").GetComponent<Interactor>();
-        PointToWin = Block.transform.childCount;
+        _score = PlayerPrefs.GetInt("Stage1-score", 0);
+        _interactorScript = GameObject.FindWithTag("Interactable").GetComponent<Interactor>();
+        _pointToWin = Block.transform.childCount;
     }
 
 //void Update()
@@ -39,13 +40,13 @@ public class WinScript : MonoBehaviour
 
     public void AddPoint()
     {
-        CurrentPoint++;
+        _currentPoint++;
         CheckWin();
     }
 
     private void CheckWin()
     {
-        if (CurrentPoint >= PointToWin)
+        if (_currentPoint >= _pointToWin)
         {
             //Win
             transform.GetChild(0).gameObject.SetActive(true);
@@ -65,17 +66,17 @@ public class WinScript : MonoBehaviour
     void OnCorrectButtonClick()
     {
         CorrectPanel.SetActive(false);
-        if (PlayerPrefs.GetInt(puzzleKey, 0) == 0)
+        if (PlayerPrefs.GetInt(PuzzleKey, 0) == 0)
         {
-            score++;
+            _score++;
         }
         TMP_Text scoreText = GameObject.Find("score text").GetComponent<TMP_Text>();
-        scoreText.text = score.ToString() + "/5";
-        PlayerPrefs.SetInt("Stage1-score", score);
-        PlayerPrefs.SetInt(puzzleKey, 1);
+        scoreText.text = _score.ToString() + "/5";
+        PlayerPrefs.SetInt("Stage1-score", _score);
+        PlayerPrefs.SetInt(PuzzleKey, 1);
         PlayerPrefs.Save();
-        interactorScript.EndInteraction();
-        UpdateStage1Field(puzzleKey, 1);
+        _interactorScript.EndInteraction();
+        UpdateStage1Field(PuzzleKey, 1);
     }
 
     void UpdateStage1Field(string fieldName, int value)
@@ -86,13 +87,13 @@ public class WinScript : MonoBehaviour
 
         int PlayerID = PlayerPrefs.GetInt("PlayerID");
 
-        Stage1 stage1 = PlayerList[PlayerID].stage1;
+        Stage1 Stage1 = PlayerList[PlayerID].Stage1;
 
         FieldInfo fieldInfo = typeof(Stage1).GetField(fieldName);
 
         if (fieldInfo != null)
         {
-            fieldInfo.SetValue(stage1, value);
+            fieldInfo.SetValue(Stage1, value);
             FileHandler.SaveToJSON<PlayerEntry>(PlayerList, "PlayerData.json");
         }
         else

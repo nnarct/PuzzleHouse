@@ -7,29 +7,29 @@ using UnityEngine.UI;
 
 public class PauseMenu : MonoBehaviour
 {
-    public GameObject player;
-    public GameObject pauseMenu;
+    public GameObject Player;
+    public GameObject PausePanel;
     public Button PauseButton;
     
-    private bool isPaused = false;
+    private bool _isPaused = false;
 
-    private Interactor interactorScript;
-    private SpriteRenderer playerSpriteRenderer;
-    private string[] puzzleKeys = { "genetic", "wooden", "earth", "moon", "time" };
+    private Interactor _interactorScript;
+    private SpriteRenderer _playerSpriteRenderer;
+    private string[] _puzzleKeys = { "genetic", "wooden", "earth", "moon", "time" };
 
     void Start()
     {
         PauseButton = GameObject.Find("PauseButton").GetComponent<Button>();
         PauseButton.onClick.AddListener(PauseGame);
-        playerSpriteRenderer = player.GetComponent<SpriteRenderer>();
-        interactorScript = GameObject.FindWithTag("Interactable").GetComponent<Interactor>();
+        _playerSpriteRenderer = Player.GetComponent<SpriteRenderer>();
+        _interactorScript = GameObject.FindWithTag("Interactable").GetComponent<Interactor>();
     }
 
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if (isPaused)
+            if (_isPaused)
             {
                 ResumeGame();
             }
@@ -45,22 +45,22 @@ public class PauseMenu : MonoBehaviour
     {
         Time.timeScale = 1f;
         SceneManager.LoadScene("mainmenu");
-        isPaused = false;
+        _isPaused = false;
     }
 
     public void PauseGame()
     {
-        pauseMenu.SetActive(true);
+        PausePanel.SetActive(true);
        // playerSpriteRenderer.color = new Color(0.3608f, 0.3608f, 0.3608f);
         Time.timeScale = 0f;
-        isPaused = true;
+        _isPaused = true;
     }
 
     public void RestartGame(int stage)
     {
         if(stage == 1)
         {
-            foreach (string key in puzzleKeys)
+            foreach (string key in _puzzleKeys)
             {
                 UpdateStage1Field(key, 0);
                 PlayerPrefs.SetInt(key, 0);
@@ -68,7 +68,7 @@ public class PauseMenu : MonoBehaviour
                 PlayerPrefs.Save();
             }
             Time.timeScale = 1f;
-            isPaused = false;
+            _isPaused = false;
             SceneManager.LoadScene("Stage1");
         }
     }
@@ -76,9 +76,9 @@ public class PauseMenu : MonoBehaviour
     public void ResumeGame()
     {
        // playerSpriteRenderer.color = new Color(1f, 1f, 1f);
-        pauseMenu.SetActive(false);
+        PausePanel.SetActive(false);
         Time.timeScale = 1f;
-        isPaused = false;
+        _isPaused = false;
     }
 
     
@@ -90,7 +90,7 @@ public class PauseMenu : MonoBehaviour
 
         int PlayerID = PlayerPrefs.GetInt("PlayerID");
 
-        Stage1 stage1 = PlayerList[PlayerID].stage1;
+        Stage1 Stage1 = PlayerList[PlayerID].Stage1;
 
         // Use reflection to get the field by name
         FieldInfo fieldInfo = typeof(Stage1).GetField(fieldName);
@@ -99,7 +99,7 @@ public class PauseMenu : MonoBehaviour
         if (fieldInfo != null)
         {
             // Set the value of the field
-            fieldInfo.SetValue(stage1, value);
+            fieldInfo.SetValue(Stage1, value);
             FileHandler.SaveToJSON<PlayerEntry>(PlayerList, "PlayerData.json");
         }
         else

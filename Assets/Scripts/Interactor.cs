@@ -71,6 +71,8 @@ public class Interactor : MonoBehaviour
     public void playPuzzle()
     {
         Puzzle.SetActive(true);
+        InteractText.gameObject.SetActive(false);
+
         isInPuzzle = true;
         Debug.Log("Player entered the puzzle.");
     }

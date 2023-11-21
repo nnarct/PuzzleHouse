@@ -16,6 +16,7 @@ public class QuizManager : MonoBehaviour
     public TMP_Text ScoreText;
 
     [SerializeField] GameObject GamePanel;
+    [SerializeField] GameObject WrongPanel;
     private Interactor _interactorScript;
     private int _isScore;
 
@@ -72,8 +73,11 @@ public class QuizManager : MonoBehaviour
    
     public void Wrong()
     {
+        WrongPanel.SetActive(true);
+        Invoke("DeactiveWrongPanel", 1f);
         QnA.RemoveAt(CurrentQuestion);
         generateQuestion();
+
     }
 
     void SetAnswers()
@@ -123,4 +127,8 @@ public class QuizManager : MonoBehaviour
         }
     }
 
+    public void DeactiveWrongPanel()
+    {
+        WrongPanel.SetActive(false);
+    }
 }

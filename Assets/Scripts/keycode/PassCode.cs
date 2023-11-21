@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
+using Unity.VisualScripting;
 
 public class PassCode : MonoBehaviour
 {
@@ -10,6 +11,9 @@ public class PassCode : MonoBehaviour
     string Answer = null;
     int AnswerIndex = 0;
     public TMP_Text UiText = null;
+
+    [SerializeField]
+    public GameObject WrongPanel;
 
     public void CodeFunction(string Number)
     {
@@ -34,6 +38,9 @@ public class PassCode : MonoBehaviour
         else
         {
             Debug.Log("It's Wrong!!!");
+            WrongPanel.SetActive(true);
+            Invoke("DeactiveWrongPanel", 1f);
+            Invoke("DeleteAll", 1f);
             //Debug.Log("Try again");
         }
     }
@@ -47,6 +54,19 @@ public class PassCode : MonoBehaviour
             UiText.text = Answer;
         }
        
+    }
+
+    public void DeleteAll()
+    {
+            AnswerIndex = 0;
+            Answer = null;
+            UiText.text = Answer;
+
+    }
+
+    public void DeactiveWrongPanel()
+    {
+        WrongPanel.SetActive(false);
     }
 
 }

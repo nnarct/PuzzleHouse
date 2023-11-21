@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -121,7 +121,259 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Humphrey_0
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 1141
+        width: 108
+        height: 260
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 137be98a925db6e4b9256ba59754e616
+      internalID: -27481814
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Humphrey_1
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 1145
+        width: 112
+        height: 260
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 843deb4482b61024984bc5582c98278b
+      internalID: 1663395127
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Humphrey_2
+      rect:
+        serializedVersion: 2
+        x: 424
+        y: 1141
+        width: 108
+        height: 260
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c90620ce1916eb4190ad481dee5856a
+      internalID: 1589290571
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Humphrey_3
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 777
+        width: 108
+        height: 260
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b71388470291994db12c1d82dec1459
+      internalID: 440707061
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Humphrey_4
+      rect:
+        serializedVersion: 2
+        x: 244
+        y: 777
+        width: 104
+        height: 264
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a024f64dcc06eaa4baf33a2df2c300a7
+      internalID: 2007074326
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Humphrey_5
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 777
+        width: 128
+        height: 260
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe412f40537d66848869c294204eacac
+      internalID: 498871580
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Humphrey_6
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 409
+        width: 128
+        height: 260
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0fbc54b8cf959224aa41f879a40ff0b8
+      internalID: 2015739700
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Humphrey_7
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 409
+        width: 104
+        height: 264
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b8be3c9d376dcc4dbe762cec50af9fd
+      internalID: 433349424
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Humphrey_8
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 409
+        width: 116
+        height: 260
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f4a7b1219209fe4792f30301e15ea05
+      internalID: -657694957
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Humphrey_9
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 37
+        width: 112
+        height: 252
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 10cf888c306ae8844886cb458ff3525a
+      internalID: 1078650098
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Humphrey_10
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 41
+        width: 116
+        height: 252
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54ac74c12f74d6d458211b7ea3b80be8
+      internalID: -337597424
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Humphrey_11
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 37
+        width: 112
+        height: 252
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 40469454f37e24741b5d2b06d6ae6003
+      internalID: 2020586443
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -132,7 +384,19 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Humphrey_0: -27481814
+      Humphrey_1: 1663395127
+      Humphrey_10: -337597424
+      Humphrey_11: 2020586443
+      Humphrey_2: 1589290571
+      Humphrey_3: 440707061
+      Humphrey_4: 2007074326
+      Humphrey_5: 498871580
+      Humphrey_6: 2015739700
+      Humphrey_7: 433349424
+      Humphrey_8: -657694957
+      Humphrey_9: 1078650098
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

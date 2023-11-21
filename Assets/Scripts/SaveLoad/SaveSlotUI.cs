@@ -23,10 +23,10 @@ public class SaveSlotUI : MonoBehaviour
     void Start()
     {
         PlayerList = FileHandler.ReadListFromJSON<PlayerEntry>(Filename);
-        UpdateUI();
+        _updateUI();
     }
 
-    private void UpdateUI()
+    private void _updateUI()
     {
         for (int i = 0; i < PlayerList.Count; i++)
         {

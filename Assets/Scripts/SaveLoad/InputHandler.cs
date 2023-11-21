@@ -1,9 +1,9 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using TMPro;
-using System;
 
 public class InputHandler : MonoBehaviour
 {
@@ -14,7 +14,7 @@ public class InputHandler : MonoBehaviour
 
     int Scene_index;
 
-    private void Start()
+    private void _start()
     {
         PlayerList = FileHandler.ReadListFromJSON<PlayerEntry>(Filename);
     }

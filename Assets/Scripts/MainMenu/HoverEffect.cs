@@ -6,26 +6,26 @@ using TMPro;
 
 public class HoverEffect : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler
 {
-    private RectTransform textRectTransform;
-    private Vector2 originalTextPosition;
+    private RectTransform _textRectTransform;
+    private Vector2 _originalTextPosition;
 
     void Start()
     {
-        textRectTransform = GetComponent<Button>().GetComponentInChildren<TMP_Text>().GetComponent<RectTransform>();
+        _textRectTransform = GetComponent<Button>().GetComponentInChildren<TMP_Text>().GetComponent<RectTransform>();
         // Save the original positions
-        originalTextPosition = textRectTransform.anchoredPosition;
+        _originalTextPosition = _textRectTransform.anchoredPosition;
     }
 
     public void OnPointerEnter(PointerEventData eventData)
     {
         // Adjust the positions when the button is hovered
-        textRectTransform.anchoredPosition = originalTextPosition + new Vector2(0, -16f);
+        _textRectTransform.anchoredPosition = _originalTextPosition + new Vector2(0, -16f);
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
         // Reset the positions when the mouse exits the button
-        textRectTransform.anchoredPosition = originalTextPosition;
+        _textRectTransform.anchoredPosition = _originalTextPosition;
     }
     public void OnPointerClick(PointerEventData evenData)
     {

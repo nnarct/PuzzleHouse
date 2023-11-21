@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class BackgroudMusic : MonoBehaviour
 {
-    private static BackgroudMusic backgroudMusic;
+    private static BackgroudMusic _backgroudMusic;
 
     private void Awake()
     {
-        if (backgroudMusic == null)
+        if (_backgroudMusic == null)
         {
-            backgroudMusic = this;
-            DontDestroyOnLoad(backgroudMusic);
+            _backgroudMusic = this;
+            DontDestroyOnLoad(_backgroudMusic);
         }
 
         else

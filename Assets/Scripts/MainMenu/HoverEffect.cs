@@ -1,7 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
-using static System.Net.Mime.MediaTypeNames;
 using TMPro;
 
 public class HoverEffect : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler
@@ -11,7 +10,12 @@ public class HoverEffect : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
 
     void Start()
     {
-        _textRectTransform = GetComponent<Button>().GetComponentInChildren<TMP_Text>().GetComponent<RectTransform>();
+        // Get the Button component attached to this GameObject
+        Button button = GetComponent<Button>();
+        // Get the TMP_Text component in the Button's children
+        TMP_Text buttonText = button.GetComponentInChildren<TMP_Text>();
+        // Get the RectTransform of the text
+        _textRectTransform = buttonText.GetComponent<RectTransform>();
         // Save the original positions
         _originalTextPosition = _textRectTransform.anchoredPosition;
     }
@@ -27,9 +31,10 @@ public class HoverEffect : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
         // Reset the positions when the mouse exits the button
         _textRectTransform.anchoredPosition = _originalTextPosition;
     }
+
     public void OnPointerClick(PointerEventData evenData)
     {
         // Reset the positions when the mouse click the button
-        textRectTransform.anchoredPosition = originalTextPosition;
+        _textRectTransform.anchoredPosition = _originalTextPosition;
     }
 }

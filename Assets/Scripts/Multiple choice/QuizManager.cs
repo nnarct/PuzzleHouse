@@ -13,6 +13,7 @@ public class QuizManager : MonoBehaviour
     public GameObject[] options;
     public int currentQuestion;
 
+    [SerializeField]
     public GameObject CorrectPanel;
     public Text QuestionTxt;
     public string puzzleKey;

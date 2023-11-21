@@ -5538,6 +5538,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 912ac908c81cfbd4882348005c51240e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  pauseMenu: {fileID: 0}
+  isPaused: 0
 --- !u!1 &556730776
 GameObject:
   m_ObjectHideFlags: 0

@@ -6,7 +6,7 @@ using UnityEngine.InputSystem;
 public class MovementPlayer : MonoBehaviour
 {
     public float MoveX;
-    public float Speed = 456;
+    public float Speed = 456f;
 
     private Rigidbody2D _rb;
     private SpriteRenderer _sprite;

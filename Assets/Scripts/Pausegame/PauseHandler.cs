@@ -15,7 +15,7 @@ public class PauseHandler : MonoBehaviour
 
     private Interactor _interactorScript;
     private SpriteRenderer _playerSpriteRenderer;
-    private string[] _puzzleKeys = { "genetic", "wooden", "earth", "moon", "time" };
+    private string[] _puzzleKeys = { "Genetic", "Wooden", "Earth", "Moon", "Time" };
 
     void Start()
     {
@@ -56,10 +56,11 @@ public class PauseHandler : MonoBehaviour
         _isPaused = true;
     }
 
-    public void RestartGame(int stage)
+    public void RestartStage(int stage)
     {
         if(stage == 1)
         {
+            Debug.Log("restart stage1");
             foreach (string key in _puzzleKeys)
             {
                 UpdateStage1Field(key, 0);
@@ -75,7 +76,6 @@ public class PauseHandler : MonoBehaviour
 
     public void ResumeGame()
     {
-       // playerSpriteRenderer.color = new Color(1f, 1f, 1f);
         PausePanel.SetActive(false);
         Time.timeScale = 1f;
         _isPaused = false;

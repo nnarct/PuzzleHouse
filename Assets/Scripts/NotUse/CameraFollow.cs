@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class CameraFollow : MonoBehaviour
 {
-    public Transform player;
-    public Vector3 offset;
+    public Transform Player;
+    public Vector3 Offset;
 
     void Update()
     {
         transform.position = new Vector3(
-            player.position.x + offset.x,
-            player.position.y + offset.y,
-            offset.z
+            Player.position.x + Offset.x,
+            Player.position.y + Offset.y,
+            Offset.z
         );
     }
 }

@@ -10,26 +10,27 @@ public class Interactor : MonoBehaviour
 
     [SerializeField] GameObject InteractText;
     [SerializeField] GameObject Puzzle;
-    public bool isInRange;
-    public bool isInPuzzle;
-    public string puzzleKey;
+    public bool IsInRange;
+    public bool IsInPuzzle;
+    public string PuzzleKey;
 
-    private MovementPlayer movementPlayer;
-
+    private MovementPlayer _movementPlayer;
+    private Rigidbody2D _rigidBodyPlayer;
     private void Start()
     {
         Puzzle.SetActive(false);
-        movementPlayer = GameObject.Find("Player").GetComponent<MovementPlayer>();
+        _movementPlayer = GameObject.Find("Player").GetComponent<MovementPlayer>();
+        _rigidBodyPlayer = GameObject.Find("Player").GetComponent<Rigidbody2D>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (PlayerPrefs.GetInt(puzzleKey, 0) == 0)
+        if (PlayerPrefs.GetInt(PuzzleKey, 0) == 0)
         {
              if (collision.gameObject.name.Equals("Player"))
              {
                  InteractText.gameObject.SetActive(true);
-                 isInRange = true;
+                 IsInRange = true;
              }
         }
        
@@ -41,44 +42,51 @@ public class Interactor : MonoBehaviour
         if (collision.gameObject.name.Equals("Player"))
         {
             InteractText.gameObject.SetActive(false);
-            isInRange = false;
+            IsInRange = false;
         }
     }
 
     private void Update()
     {
-        if (isInRange) 
+        if (IsInRange) 
         {
-            if (Input.GetKeyDown(KeyCode.E))
+            if (Input.GetKeyDown(KeyCode.E) && InteractText.gameObject.activeSelf)
             {
                 playPuzzle();
-                movementPlayer.FreezeMovement();
-
+               _rigidBodyPlayer.velocity = Vector2.zero;
+               _movementPlayer.FreezeMovement();
             }
         }
 
-      /*if (isInPuzzle)
+      if (IsInPuzzle)
         {
             if (Input.GetKeyDown(KeyCode.Escape))
             {
                 EndInteraction();
             }
-        }*/
+        }
 
     }
 
     public void playPuzzle()
     {
         Puzzle.SetActive(true);
-        isInPuzzle = true;
-        Debug.Log("Player entered the puzzle.");
+        InteractText.gameObject.SetActive(false);
+
+        IsInPuzzle = true;
+       // Debug.Log("Player entered the puzzle.");
     }
 
     public void EndInteraction()
     {
         Puzzle.SetActive(false);
-        movementPlayer.UnfreezeMovement();
-        isInPuzzle = false;
-        Debug.Log("Player exited the puzzle.");
+        _movementPlayer.UnfreezeMovement();
+        if (PlayerPrefs.GetInt(PuzzleKey, 0) == 0)
+        {
+            InteractText.gameObject.SetActive(true);
+
+        }
+        IsInPuzzle = false;
+       // Debug.Log("Player exited the puzzle.");
     }
 }

@@ -5,17 +5,19 @@ using UnityEngine;
 public class PlayerWarp : MonoBehaviour
 {
 
-    private GameObject CurrentWarp;
+    private GameObject _currentWarp;
+
 
     void Update()
     {
             if (Input.GetKeyDown(KeyCode.E))
             {
-                if (CurrentWarp != null)
+                if (_currentWarp != null)
                 {
-                    transform.position = CurrentWarp.GetComponent<StairFloor1>().GetDestination().position;
+                    transform.position = _currentWarp.GetComponent<StairFloor1>().GetDestination().position;
                 }
             }
+        }
     }
 
 
@@ -23,7 +25,7 @@ public class PlayerWarp : MonoBehaviour
     {
         if (collision.CompareTag("Stair"))
         {
-            CurrentWarp = collision.gameObject;
+            _currentWarp = collision.gameObject;
         }
     }
 
@@ -31,9 +33,9 @@ public class PlayerWarp : MonoBehaviour
     {
         if (collision.CompareTag("Stair"))
         {
-            if (collision.gameObject == CurrentWarp)
+            if (collision.gameObject == _currentWarp)
             {
-                CurrentWarp = null;
+                _currentWarp = null;
             }
         }
     }

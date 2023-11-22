@@ -6,12 +6,12 @@ using UnityEngine.SceneManagement;
 
 public class outputname : MonoBehaviour
 {
-    private Text obj_text;
+    private Text _obj_text;
 
      void Start()
     {
-        obj_text = GameObject.FindGameObjectWithTag("text").GetComponent<Text>();
-        obj_text.text = PlayerPrefs.GetString("user_name");
+        _obj_text = GameObject.FindGameObjectWithTag("text").GetComponent<Text>();
+        _obj_text.text = PlayerPrefs.GetString("user_name");
 
     }
 

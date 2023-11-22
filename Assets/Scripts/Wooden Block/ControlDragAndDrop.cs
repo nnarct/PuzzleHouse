@@ -5,30 +5,30 @@ using UnityEngine;
 public class ControlDragAndDrop : MonoBehaviour
 {
     public GameObject CorrectForm;
-    private bool isMoving;
-    private bool isFinish;
+    private bool _isMoving;
+    private bool _isFinish;
 
-    private float StartPosX;
-    private float StartPosY;
+    private float _startPosX;
+    private float _startPosY;
 
-    private Vector3 ResetPosition;
+    private Vector3 _resetPosition;
 
     void Start()
     {
-        ResetPosition = this.transform.localPosition;
+        _resetPosition = this.transform.localPosition;
     }
 
     void Update()
     {
-        if (isFinish == false)
+        if (_isFinish == false)
         {
-            if (isMoving)
+            if (_isMoving)
             {
                 Vector3 MousePos;
                 MousePos = Input.mousePosition;
                 MousePos = Camera.main.ScreenToWorldPoint(MousePos);
 
-                this.gameObject.transform.localPosition = new Vector3(MousePos.x - StartPosX, MousePos.y - StartPosY, this.transform.localPosition.z);
+                this.gameObject.transform.localPosition = new Vector3(MousePos.x - _startPosX, MousePos.y - _startPosY, this.transform.localPosition.z);
             }
         }
         
@@ -42,28 +42,28 @@ public class ControlDragAndDrop : MonoBehaviour
             MousePos = Input.mousePosition;
             MousePos = Camera.main.ScreenToWorldPoint(MousePos);
 
-            StartPosX = MousePos.x - this.transform.localPosition.x;
-            StartPosY = MousePos.y - this.transform.localPosition.y;
+            _startPosX = MousePos.x - this.transform.localPosition.x;
+            _startPosY = MousePos.y - this.transform.localPosition.y;
 
-            isMoving = true;
+            _isMoving = true;
         }
     }
 
     private void OnMouseUp()
     {
-        isMoving = false;
+        _isMoving = false;
 
         if (Mathf.Abs(this.transform.localPosition.x - CorrectForm.transform.localPosition.x) <= 100 &&
             Mathf.Abs(this.transform.localPosition.y - CorrectForm.transform.localPosition.y) <= 100)
         {
             this.transform.localPosition = new Vector3(CorrectForm.transform.localPosition.x, CorrectForm.transform.localPosition.y, CorrectForm.transform.localPosition.z);
-            isFinish = true;
+            _isFinish = true;
 
-            GameObject.Find("CorrectPanel").GetComponent<WinScript>().AddPoint();
+            GameObject.Find("WoodenPuzzle").GetComponent<WinScript>().AddPoint();
         }
         else
         {
-            this.transform.localPosition = new Vector3(ResetPosition.x,ResetPosition.y,ResetPosition.z);
+            this.transform.localPosition = new Vector3(_resetPosition.x,_resetPosition.y,_resetPosition.z);
         }
     }
 }

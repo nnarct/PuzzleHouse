@@ -6,19 +6,19 @@ using UnityEngine.UI;
 
 public class inputname : MonoBehaviour
 {
-    public Text obj_text;
-    public InputField display;
+    public Text Obj_text;
+    public InputField Display;
 
     void Start()
     {
-        obj_text.text = PlayerPrefs.GetString("user_name");
+        Obj_text.text = PlayerPrefs.GetString("user_name");
     }
 
 
-    public void next()
+    public void Next()
     {
-        obj_text.text = display.text;
-        PlayerPrefs.SetString("user_name", obj_text.text);
+        Obj_text.text = Display.text;
+        PlayerPrefs.SetString("user_name", Obj_text.text);
         PlayerPrefs.Save();
 
         SceneManager.LoadSceneAsync(2);

@@ -50,7 +50,7 @@ public class Interactor : MonoBehaviour
     {
         if (IsInRange) 
         {
-            if (Input.GetKeyDown(KeyCode.E))
+            if (Input.GetKeyDown(KeyCode.E) && InteractText.gameObject.activeSelf)
             {
                 playPuzzle();
                _rigidBodyPlayer.velocity = Vector2.zero;
@@ -58,13 +58,13 @@ public class Interactor : MonoBehaviour
             }
         }
 
-      /*if (isInPuzzle)
+      if (IsInPuzzle)
         {
             if (Input.GetKeyDown(KeyCode.Escape))
             {
                 EndInteraction();
             }
-        }*/
+        }
 
     }
 
@@ -74,14 +74,19 @@ public class Interactor : MonoBehaviour
         InteractText.gameObject.SetActive(false);
 
         IsInPuzzle = true;
-        Debug.Log("Player entered the puzzle.");
+       // Debug.Log("Player entered the puzzle.");
     }
 
     public void EndInteraction()
     {
         Puzzle.SetActive(false);
         _movementPlayer.UnfreezeMovement();
+        if (PlayerPrefs.GetInt(PuzzleKey, 0) == 0)
+        {
+            InteractText.gameObject.SetActive(true);
+
+        }
         IsInPuzzle = false;
-        Debug.Log("Player exited the puzzle.");
+       // Debug.Log("Player exited the puzzle.");
     }
 }

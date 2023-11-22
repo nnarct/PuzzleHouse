@@ -5080,7 +5080,7 @@ GameObject:
   - component: {fileID: 517675439}
   m_Layer: 5
   m_Name: E-forWarp3down
-  m_TagString: Untagged
+  m_TagString: Stair4
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8977,11 +8977,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b14e685a9765b7b4eb3cfaed87fed7e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  InteractText: {fileID: 446630597}
-  InteractText2: {fileID: 1648380145}
-  InteractText3: {fileID: 1569222113}
-  InteractText4: {fileID: 517675437}
-  isInRange: 0
 --- !u!95 &831711962
 Animator:
   serializedVersion: 5
@@ -9465,9 +9460,10 @@ GameObject:
   - component: {fileID: 918981735}
   - component: {fileID: 918981734}
   - component: {fileID: 918981733}
+  - component: {fileID: 918981736}
   m_Layer: 0
   m_Name: Floor2StairUp
-  m_TagString: Stair3
+  m_TagString: Stair
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9601,6 +9597,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &918981736
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 918981731}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb0b6d336cb1e5e4fb69770e89e47163, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  InteractText: {fileID: 1569222113}
+  isInRange: 0
 --- !u!1 &939754040
 GameObject:
   m_ObjectHideFlags: 0
@@ -10751,9 +10761,10 @@ GameObject:
   - component: {fileID: 1029793669}
   - component: {fileID: 1029793668}
   - component: {fileID: 1029793667}
+  - component: {fileID: 1029793671}
   m_Layer: 0
   m_Name: Floor3StairDown
-  m_TagString: Stair4
+  m_TagString: Stair
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10887,6 +10898,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1999993425}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1029793671
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1029793666}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb0b6d336cb1e5e4fb69770e89e47163, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  InteractText: {fileID: 517675437}
+  isInRange: 0
 --- !u!1 &1031225725
 GameObject:
   m_ObjectHideFlags: 0
@@ -11381,6 +11406,8 @@ GameObject:
   - component: {fileID: 1082307746}
   - component: {fileID: 1082307747}
   - component: {fileID: 1082307748}
+  - component: {fileID: 1082307750}
+  - component: {fileID: 1082307749}
   m_Layer: 0
   m_Name: Floor1StairUp
   m_TagString: Stair
@@ -11529,6 +11556,47 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1082307743}
   m_CullTransparentMesh: 1
+--- !u!114 &1082307749
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1082307743}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb0b6d336cb1e5e4fb69770e89e47163, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  InteractText: {fileID: 446630597}
+  isInRange: 0
+--- !u!50 &1082307750
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1082307743}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &1083293410
 GameObject:
   m_ObjectHideFlags: 0
@@ -16298,7 +16366,7 @@ GameObject:
   - component: {fileID: 1569222115}
   m_Layer: 5
   m_Name: E-forWarp2Up
-  m_TagString: Untagged
+  m_TagString: Stair3
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -17010,7 +17078,7 @@ GameObject:
   - component: {fileID: 1648380147}
   m_Layer: 5
   m_Name: E-forWarp2Down
-  m_TagString: Untagged
+  m_TagString: Stair2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -17508,9 +17576,10 @@ GameObject:
   - component: {fileID: 1701302592}
   - component: {fileID: 1701302594}
   - component: {fileID: 1701302595}
+  - component: {fileID: 1701302596}
   m_Layer: 0
   m_Name: Floor2StairDown
-  m_TagString: Stair2
+  m_TagString: Stair
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -17645,6 +17714,20 @@ PolygonCollider2D:
       - {x: -0.7080576, y: -0.9862705}
       - {x: 0.69581854, y: -1.0107474}
   m_UseDelaunayMesh: 0
+--- !u!114 &1701302596
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1701302591}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb0b6d336cb1e5e4fb69770e89e47163, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  InteractText: {fileID: 1648380145}
+  isInRange: 0
 --- !u!1 &1703428639
 GameObject:
   m_ObjectHideFlags: 0

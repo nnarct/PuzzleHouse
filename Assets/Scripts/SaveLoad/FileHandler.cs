@@ -1,27 +1,28 @@
 using System;
 using System.Collections.Generic;
+using UnityEngine;
 using System.IO;
 using System.Linq;
-using UnityEngine;
+
 public static class FileHandler
 {
 
     public static void SaveToJSON<T>(List<T> toSave, string filename)
     {
-        Debug.Log(GetPath(filename));
+        Debug.Log(_getPath(filename));
         string content = JsonHelper.ToJson<T>(toSave.ToArray());
-        WriteFile(GetPath(filename), content);
+        _writeFile(_getPath(filename), content);
     }
 
     public static void SaveToJSON<T>(T toSave, string filename)
     {
         string content = JsonUtility.ToJson(toSave);
-        WriteFile(GetPath(filename), content);
+        _writeFile(_getPath(filename), content);
     }
 
     public static List<T> ReadListFromJSON<T>(string filename)
     {
-        string content = ReadFile(GetPath(filename));
+        string content = _readFile(_getPath(filename));
 
         if (string.IsNullOrEmpty(content) || content == "{}")
         {
@@ -36,7 +37,7 @@ public static class FileHandler
 
     public static T ReadFromJSON<T>(string filename)
     {
-        string content = ReadFile(GetPath(filename));
+        string content = _readFile(_getPath(filename));
 
         if (string.IsNullOrEmpty(content) || content == "{}")
         {
@@ -49,12 +50,12 @@ public static class FileHandler
 
     }
 
-    private static string GetPath(string filename)
+    private static string _getPath(string filename)
     {
         return Application.persistentDataPath + "/" + filename;
     }
 
-    private static void WriteFile(string path, string content)
+    private static void _writeFile(string path, string content)
     {
         FileStream fileStream = new FileStream(path, FileMode.Create);
 
@@ -64,7 +65,7 @@ public static class FileHandler
         }
     }
 
-    private static string ReadFile(string path)
+    private static string _readFile(string path)
     {
         if (File.Exists(path))
         {

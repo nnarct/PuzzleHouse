@@ -5,21 +5,21 @@ using UnityEngine.UI;
 
 public class AnswerScript : MonoBehaviour
 {
-    public bool isCorrect = false;
+    public bool IsCorrect = false;
     public QuizManager quizManager;
 
 
     public void Answer()
     {
-        if (isCorrect)
+        if (IsCorrect)
         {
             Debug.Log("Correct Answer");
-            quizManager.correct();
+            quizManager.Correct();
         }
         else
         {
             Debug.Log("Wrong Answer");
-            quizManager.wrong();
+            quizManager.Wrong();
         }
 
     }

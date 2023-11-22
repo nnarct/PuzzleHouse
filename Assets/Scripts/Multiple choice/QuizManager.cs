@@ -4,73 +4,100 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using System.Reflection;
-using System.Diagnostics;
-using System;
 
 public class QuizManager : MonoBehaviour
 {
     public List<QuestionAndAnswers> QnA;
-    public GameObject[] options;
-    public int currentQuestion;
-
     public GameObject CorrectPanel;
+    public GameObject[] Options;
     public Text QuestionTxt;
-    public string puzzleKey;
-    private int score;
-    public TMP_Text scoreText;
+    public int CurrentQuestion;
+    public string PuzzleKey;
+    public TMP_Text ScoreText;
 
-  
+    [SerializeField] GameObject GamePanel;
+    [SerializeField] GameObject WrongPanel;
+    private Interactor _interactorScript;
+    private int _isScore;
+
     private void Start()
     {
         
-        score = PlayerPrefs.GetInt("Stage1-score", 0);
+        _isScore = PlayerPrefs.GetInt("Stage1-score", 0);
         CorrectPanel.SetActive(false);
         generateQuestion();
+        _interactorScript = GameObject.FindWithTag("Interactable").GetComponent<Interactor>();
     }
 
-    public void correct()
+    public void Correct()
     {
-        score = PlayerPrefs.GetInt("Stage1-score", 0);
-        // Check if the player had won this puzzle already or not
-        if (PlayerPrefs.GetInt(puzzleKey, 0) == 0)
-        {
-            // If the player hasn't won the puzzle , increment score
-            score++;
-        }
-        PlayerPrefs.SetInt("Stage1-score", score);
-        scoreText.text = score.ToString() + "/5";
-        PlayerPrefs.SetInt(puzzleKey, 1); // 1 passed 0 not passed
-        PlayerPrefs.Save();
-
-        UpdateStage1Field(puzzleKey, 1);
-        
+        GamePanel.SetActive(false);
         CorrectPanel.SetActive(true);
+        Button correctButton = GameObject.Find("CorrectKeyButton").GetComponent<Button>();
+        correctButton.onClick.AddListener(OnCorrectButtonClick);
+      //  GamePanel.SetActive(false);
+      //  CorrectPanel.SetActive(true);
+       // score = PlayerPrefs.GetInt("Stage1-score", 0);
+        // Check if the player had won this puzzle already or not
+      //  if (PlayerPrefs.GetInt(puzzleKey, 0) == 0)
+      //  {
+            // If the player hasn't won the puzzle , increment score
+      //      score++;
+      //  }
+      //  PlayerPrefs.SetInt("Stage1-score", score);
+      //  scoreText.text = score.ToString() + "/5";
+      ///  PlayerPrefs.SetInt(puzzleKey, 1); // 1 passed 0 not passed
+      //  PlayerPrefs.Save();
+
+       // UpdateStage1Field(puzzleKey, 1);
+        
+       
     }
 
-    public void wrong()
+    void OnCorrectButtonClick()
     {
-        QnA.RemoveAt(currentQuestion);
+        CorrectPanel.SetActive(false);
+        _interactorScript.EndInteraction();
+        if (PlayerPrefs.GetInt(PuzzleKey, 0) == 0)
+        {
+            _isScore++;
+        }
+        PlayerPrefs.SetInt("Stage1-score", _isScore);
+        Debug.Log("score = " + _isScore.ToString());
+        ScoreText.text = _isScore.ToString() + "/5";
+
+        PlayerPrefs.SetInt(PuzzleKey, 1);
+        PlayerPrefs.Save();
+        UpdateStage1Field(PuzzleKey, 1);
+    }
+   
+    public void Wrong()
+    {
+        WrongPanel.SetActive(true);
+        Invoke("DeactiveWrongPanel", 1f);
+        QnA.RemoveAt(CurrentQuestion);
         generateQuestion();
+
     }
 
     void SetAnswers()
     {
-        for (int i = 0; i < options.Length; i++)
+        for (int i = 0; i < Options.Length; i++)
         {
-            options[i].GetComponent<AnswerScript>().isCorrect = false;
-            options[i].transform.GetChild(0).GetComponent<Text>().text = QnA[currentQuestion].Answers[i];
+            Options[i].GetComponent<AnswerScript>().IsCorrect = false;
+            Options[i].transform.GetChild(0).GetComponent<Text>().text = QnA[CurrentQuestion].Answers[i];
 
-            if (QnA[currentQuestion].CorrentAnswer == i + 1)
+            if (QnA[CurrentQuestion].CorrentAnswer == i + 1)
             {
-                options[i].GetComponent<AnswerScript>().isCorrect = true;
+                Options[i].GetComponent<AnswerScript>().IsCorrect = true;
             }
         }
     }
 
     void generateQuestion()
     {
-        currentQuestion = UnityEngine.Random.Range(0, QnA.Count);
-        QuestionTxt.text = QnA[currentQuestion].Question;
+        CurrentQuestion = UnityEngine.Random.Range(0, QnA.Count);
+        QuestionTxt.text = QnA[CurrentQuestion].Question;
         SetAnswers();
     }
 
@@ -82,7 +109,7 @@ public class QuizManager : MonoBehaviour
 
         int PlayerID = PlayerPrefs.GetInt("PlayerID");
 
-        Stage1 stage1 = PlayerList[PlayerID].stage1;
+        Stage1 Stage1 = PlayerList[PlayerID].Stage1;
 
         // Use reflection to get the field by name
         FieldInfo fieldInfo = typeof(Stage1).GetField(fieldName);
@@ -91,7 +118,7 @@ public class QuizManager : MonoBehaviour
         if (fieldInfo != null)
         {
             // Set the value of the field
-            fieldInfo.SetValue(stage1, value);
+            fieldInfo.SetValue(Stage1, value);
             FileHandler.SaveToJSON<PlayerEntry>(PlayerList, "PlayerData.json");
         }
         else
@@ -100,4 +127,8 @@ public class QuizManager : MonoBehaviour
         }
     }
 
+    public void DeactiveWrongPanel()
+    {
+        WrongPanel.SetActive(false);
+    }
 }

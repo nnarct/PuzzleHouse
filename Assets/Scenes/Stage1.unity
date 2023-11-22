@@ -9360,7 +9360,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MoveX: 0
-  Speed: 0
+  Speed: 456
 --- !u!114 &831711961
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12921,7 +12921,12 @@ MonoBehaviour:
     - 
     CorrentAnswer: 5
   CorrectPanel: {fileID: 60149329}
-  Options: []
+  Options:
+  - {fileID: 1877456492}
+  - {fileID: 1273894239}
+  - {fileID: 983043887}
+  - {fileID: 648936800}
+  - {fileID: 633840374}
   QuestionTxt: {fileID: 562085382}
   CurrentQuestion: 0
   PuzzleKey: Genetic
@@ -15631,7 +15636,11 @@ MonoBehaviour:
     - 
     CorrentAnswer: 4
   CorrectPanel: {fileID: 60149329}
-  Options: []
+  Options:
+  - {fileID: 132118981}
+  - {fileID: 768229585}
+  - {fileID: 1504596719}
+  - {fileID: 699431716}
   QuestionTxt: {fileID: 1390978367}
   CurrentQuestion: 0
   PuzzleKey: Time
@@ -18495,7 +18504,11 @@ MonoBehaviour:
     - moon
     CorrentAnswer: 4
   CorrectPanel: {fileID: 60149329}
-  Options: []
+  Options:
+  - {fileID: 985964711}
+  - {fileID: 1943401074}
+  - {fileID: 1013399281}
+  - {fileID: 1083293410}
   QuestionTxt: {fileID: 167916130}
   CurrentQuestion: 0
   PuzzleKey: Moon

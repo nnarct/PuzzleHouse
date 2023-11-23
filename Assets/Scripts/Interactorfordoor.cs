@@ -10,7 +10,7 @@ public class Interactorfordoor : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.name.Equals("Player"))
+        if (collision.gameObject.tag.Equals("Player"))
         {
             InteractText.gameObject.SetActive(true);
             isInRange = true;
@@ -20,7 +20,7 @@ public class Interactorfordoor : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject.name.Equals("Player"))
+        if (collision.gameObject.tag.Equals("Player"))
         {
             InteractText.gameObject.SetActive(false);
             isInRange = false;

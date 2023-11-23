@@ -138,8 +138,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed5a6b39c05f5de43a04acd350e856e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  charText: {fileID: 1146192357341997119}
-  charValue: 0
+  CharValue: 480
+  _charText: {fileID: 1146192357341997119}
 --- !u!114 &8982181061072583582
 MonoBehaviour:
   m_ObjectHideFlags: 0

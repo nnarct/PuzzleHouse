@@ -10,9 +10,10 @@ public class ShuffleWordQuizManager : MonoBehaviour
     public static ShuffleWordQuizManager Instance;
     public string PuzzleKey;
     [SerializeField]
-     public float DelayTime = 1f;
+    public float DelayTime = 1f;
     public TMP_Text ScoreText;
 
+    [SerializeField]
     private QuestionData _question;
     [SerializeField] GameObject GamePanel;
     [SerializeField]

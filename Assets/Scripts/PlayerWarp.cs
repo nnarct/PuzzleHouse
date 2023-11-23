@@ -17,15 +17,15 @@ public class PlayerWarp : MonoBehaviour
                     transform.position = _currentWarp.GetComponent<StairFloor1>().GetDestination().position;
                 }
             }
-        }
     }
+
 
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Stair"))
         {
-            _currentWarp = collision.gameObject;
+           _currentWarp = collision.gameObject;
         }
     }
 
@@ -33,10 +33,10 @@ public class PlayerWarp : MonoBehaviour
     {
         if (collision.CompareTag("Stair"))
         {
-            if (collision.gameObject == _currentWarp)
-            {
+           if (collision.gameObject == _currentWarp)
+           {
                 _currentWarp = null;
-            }
+           }
         }
     }
 }

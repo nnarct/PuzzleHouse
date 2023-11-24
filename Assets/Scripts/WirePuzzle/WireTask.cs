@@ -25,6 +25,7 @@ public class WireTask : MonoBehaviour
 
     private void Start()
     {
+        ClosePanel();
         CorrectPanel.SetActive(false);
         _availableColors = new List<Color>(_wireColors);
         _availableLeftWireIndex = new List<int>();

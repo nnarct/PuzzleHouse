@@ -14,6 +14,8 @@ public class Interactor : MonoBehaviour
     public bool IsInPuzzle;
     public string PuzzleKey;
 
+    [SerializeField] private AudioSource _source;
+
     private MovementPlayer _movementPlayer;
     private Rigidbody2D _rigidBodyPlayer;
     private void Start()
@@ -63,6 +65,7 @@ public class Interactor : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Escape))
             {
                 EndInteraction();
+                _source.Stop();
             }
         }
 
@@ -70,6 +73,7 @@ public class Interactor : MonoBehaviour
 
     public void playPuzzle()
     {
+        _source.Play();
         Puzzle.SetActive(true);
         InteractText.gameObject.SetActive(false);
 
@@ -79,6 +83,9 @@ public class Interactor : MonoBehaviour
 
     public void EndInteraction()
     {
+        _source.Play();
+        Debug.Log("sound on.");
+
         Puzzle.SetActive(false);
         _movementPlayer.UnfreezeMovement();
         if (PlayerPrefs.GetInt(PuzzleKey, 0) == 0)
@@ -87,6 +94,6 @@ public class Interactor : MonoBehaviour
 
         }
         IsInPuzzle = false;
-       // Debug.Log("Player exited the puzzle.");
+        // Debug.Log("Player exited the puzzle.");
     }
 }

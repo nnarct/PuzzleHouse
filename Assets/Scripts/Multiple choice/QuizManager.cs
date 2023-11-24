@@ -10,10 +10,12 @@ public class QuizManager : MonoBehaviour
     public List<QuestionAndAnswers> QnA;
     public GameObject CorrectPanel;
     public GameObject[] Options;
-    public Text QuestionTxt;
+    public TMP_Text QuestionTxt;
     public int CurrentQuestion;
     public string PuzzleKey;
     public TMP_Text ScoreText;
+
+    [SerializeField] private AudioSource _source;
 
     [SerializeField] GameObject GamePanel;
     [SerializeField] GameObject WrongPanel;
@@ -73,6 +75,7 @@ public class QuizManager : MonoBehaviour
    
     public void Wrong()
     {
+        _source.Play();
         WrongPanel.SetActive(true);
         Invoke("DeactiveWrongPanel", 1f);
         QnA.RemoveAt(CurrentQuestion);
@@ -85,7 +88,7 @@ public class QuizManager : MonoBehaviour
         for (int i = 0; i < Options.Length; i++)
         {
             Options[i].GetComponent<AnswerScript>().IsCorrect = false;
-            Options[i].transform.GetChild(0).GetComponent<Text>().text = QnA[CurrentQuestion].Answers[i];
+            Options[i].transform.GetChild(0).GetComponent<TMP_Text>().text = QnA[CurrentQuestion].Answers[i];
 
             if (QnA[CurrentQuestion].CorrentAnswer == i + 1)
             {

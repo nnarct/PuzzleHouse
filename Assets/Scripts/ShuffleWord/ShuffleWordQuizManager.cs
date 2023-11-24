@@ -13,6 +13,8 @@ public class ShuffleWordQuizManager : MonoBehaviour
     public float DelayTime = 1f;
     public TMP_Text ScoreText;
 
+    [SerializeField] private AudioSource _source;
+
     [SerializeField]
     private QuestionData _question;
     [SerializeField] GameObject GamePanel;
@@ -99,6 +101,7 @@ public class ShuffleWordQuizManager : MonoBehaviour
             }
             else if (!_correctAnswer)
             {
+                _source.Play();
                 _wrongPanel.SetActive(true);
                 Invoke("DeactiveWrongPanel", DelayTime);
                 Invoke("ResetQuestion", DelayTime);

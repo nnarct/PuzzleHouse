@@ -13,6 +13,9 @@ public class ControlDragAndDrop : MonoBehaviour
 
     private Vector3 _resetPosition;
 
+    [SerializeField] private AudioSource _source;
+    [SerializeField] private AudioClip _pickUpClip;
+
     void Start()
     {
         _resetPosition = this.transform.localPosition;
@@ -38,6 +41,8 @@ public class ControlDragAndDrop : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
+            _source.PlayOneShot(_pickUpClip);
+
             Vector3 MousePos;
             MousePos = Input.mousePosition;
             MousePos = Camera.main.ScreenToWorldPoint(MousePos);
@@ -46,6 +51,7 @@ public class ControlDragAndDrop : MonoBehaviour
             _startPosY = MousePos.y - this.transform.localPosition.y;
 
             _isMoving = true;
+    
         }
     }
 

@@ -12,6 +12,9 @@ public class PassCode : MonoBehaviour
     [SerializeField]
     public GameObject WrongPanel;
 
+    [SerializeField] private AudioSource _source;
+    [SerializeField] private AudioSource _source2;
+
     private string _code;
     private string _answer = null;
     private int _answerIndex = 0;
@@ -35,11 +38,13 @@ public class PassCode : MonoBehaviour
         if (_answer == _code)
         {
             Debug.Log("It's Work!!!");
+            _source.Play();
             //SceneManager.LoadScene("stage2");
         }
         else
         {
             Debug.Log("It's Wrong!!!");
+            _source2.Play();
             WrongPanel.SetActive(true);
             Invoke("DeactiveWrongPanel", 1f);
             Invoke("DeleteAll", 1f);

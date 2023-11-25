@@ -2,24 +2,24 @@ using UnityEngine;
 
 public class SkinLoader : MonoBehaviour
 {
-    public GameObject alanPrefab; // Assign prefabs in the Inspector for different characters
-    public GameObject jennyPrefab;
-    public GameObject humphreyPrefab;
+    public GameObject AlanPrefab; // Assign prefabs in the Inspector for different characters
+    public GameObject JennyPrefab;
+    public GameObject HumphreyPrefab;
 
     private void Awake()
     {
-        string choosenCharacter = PlayerPrefs.GetString("character");
+        string choosenCharacter = PlayerPrefs.GetString("Character", "Alan");
 
         switch (choosenCharacter)
         {
             case "Alan":
-                Instantiate(alanPrefab, transform);
+                Instantiate(AlanPrefab, transform);
                 break;
             case "Jenny":
-                Instantiate(jennyPrefab, transform);
+                Instantiate(JennyPrefab, transform);
                 break;
             case "Humphrey":
-                Instantiate(humphreyPrefab, transform);
+                Instantiate(HumphreyPrefab, transform);
                 break;
             default:
                 Debug.LogWarning("No character selected or character prefab not assigned.");

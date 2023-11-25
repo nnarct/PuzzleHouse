@@ -24800,9 +24800,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76274c557a991e448a62d65b8c97cd3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  alanPrefab: {fileID: 330309630355468200, guid: 308a1df1e89c5bf4694abba0367990ee, type: 3}
-  jennyPrefab: {fileID: 330309630355468200, guid: 2fe16f3da41736b41be827fae0d7af5d, type: 3}
-  humphreyPrefab: {fileID: 330309630355468200, guid: 4bb7b84a5d0409140b292cd72ef22cc9, type: 3}
+  AlanPrefab: {fileID: 330309630355468200, guid: 308a1df1e89c5bf4694abba0367990ee, type: 3}
+  JennyPrefab: {fileID: 330309630355468200, guid: 2fe16f3da41736b41be827fae0d7af5d, type: 3}
+  HumphreyPrefab: {fileID: 330309630355468200, guid: 4bb7b84a5d0409140b292cd72ef22cc9, type: 3}
 --- !u!1 &1991892741
 GameObject:
   m_ObjectHideFlags: 0

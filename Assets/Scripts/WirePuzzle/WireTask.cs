@@ -22,6 +22,7 @@ public class WireTask : MonoBehaviour
     private List<int> _availableRightWireIndex;
 
     public bool _isTaskComplete = false;
+    private bool _isCoroutineStarted = false;
 
     private void Start()
     {
@@ -54,7 +55,16 @@ public class WireTask : MonoBehaviour
             _availableRightWireIndex.RemoveAt(pickedRightWireIndex);
         }
 
-        StartCoroutine(CheckTaskCompletion());
+    }
+
+    private void Update()
+    {
+        // Check if the GamePanel is inactive and the coroutine hasn't been started
+        if (!_isCoroutineStarted)
+        {
+            StartCoroutine(CheckTaskCompletion());
+            _isCoroutineStarted = true;
+        }
     }
 
     private IEnumerator CheckTaskCompletion()
@@ -78,7 +88,7 @@ public class WireTask : MonoBehaviour
                 Debug.Log("Task Incomplete");
             }
 
-            yield return new WaitForSeconds(0.5f);
+            yield return new WaitForSeconds(1f);
         }
     }
 

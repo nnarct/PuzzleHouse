@@ -8,6 +8,7 @@ TagManager:
   - Foreground
   - Stair
   - Interactable
+  - JigsawPiece
   layers:
   - Default
   - TransparentFX

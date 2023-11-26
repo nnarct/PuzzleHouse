@@ -16,6 +16,9 @@ public class QuizManager : MonoBehaviour
     public GameObject PuzzlePanel;
     public TMP_Text QuestionTxt;
     public string PuzzleKey;
+    public GameObject WrongPanel;
+
+    [SerializeField] private AudioSource _source;
 
     private void Start()
     {
@@ -32,9 +35,14 @@ public class QuizManager : MonoBehaviour
 
     public void Wrong()
     {
+        _source.Play();
+        WrongPanel.SetActive(true);
+        CancelInvoke("DeactiveWrongPanel");
+        Invoke("DeactiveWrongPanel", 2f);
         QnA.RemoveAt(CurrentQuestion);
         GenerateQuestion();
     }
+
     void SetAnswers()
     {
         for(int i = 0; i < Options.Length; i++)
@@ -52,5 +60,10 @@ public class QuizManager : MonoBehaviour
         CurrentQuestion = Random.Range(0, QnA.Count);
         QuestionTxt.text = QnA[CurrentQuestion].Question;
         SetAnswers();
+    }
+
+    public void DeactiveWrongPanel()
+    {
+        WrongPanel.SetActive(false);
     }
 }

@@ -6,6 +6,7 @@ public class JigsawPiece : MonoBehaviour
 {
     public Vector2 correctAnchoredPosition;
     public float snapThreshold = 20f; // Adjust as needed
+    private Vector2 initialAnchoredPosition;
 
     private RectTransform rectTransform;
     private bool isCorrect = false;
@@ -13,6 +14,7 @@ public class JigsawPiece : MonoBehaviour
     void Start()
     {
         rectTransform = GetComponent<RectTransform>();
+        initialAnchoredPosition = rectTransform.anchoredPosition;
     }
 
     void Update()
@@ -52,5 +54,11 @@ public class JigsawPiece : MonoBehaviour
     public bool IsPieceCorrect()
     {
         return isCorrect;
+    }
+
+    public void ResetPosition()
+    {
+        rectTransform.anchoredPosition = initialAnchoredPosition;
+        isCorrect = false; // Reset correctness status
     }
 }

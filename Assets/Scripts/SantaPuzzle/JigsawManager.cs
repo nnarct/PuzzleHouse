@@ -11,35 +11,49 @@ public class JigsawManager : MonoBehaviour
     
     public List<JigsawPiece> jigsawPieces; // Drag & drop all 8 pieces in the Inspector
 
+    private List<Vector2> initialPositions;
+
     private void Start()
     {
         CorrectPanel.SetActive(false);
+        StartCoroutine(CheckPiecesAfterDelay());
     }
 
-    void Update()
+    IEnumerator CheckPiecesAfterDelay()
     {
-        bool isAllCorrect = false;
+        bool allCorrect = false;
 
-        foreach (JigsawPiece piece in jigsawPieces)
+        while (!allCorrect)
         {
-            if (!piece.IsPieceCorrect())
+            allCorrect = true;
+
+            foreach (JigsawPiece piece in jigsawPieces)
             {
-                isAllCorrect = false;
-                break; // Break the loop if any piece is incorrect
+                if (!piece.IsPieceCorrect())
+                {
+                    allCorrect = false;
+                    //Debug.Log("Piece is incorrect.");
+                }
             }
+
+            yield return new WaitForSeconds(1f); // Add a delay before the next check
         }
 
-        if (isAllCorrect)
-        {
-            // All pieces are in correct positions
-            CorrectPanel.SetActive(true);
-            Invoke("ClosePanel", 1f);
-            //Debug.Log("All pieces are correct!");
-        }
+        // All pieces are in correct positions
+        CorrectPanel.SetActive(true);
+        Invoke("ClosePanel", 1f);
     }
 
     public void ClosePanel()
     {
         GamePanel.SetActive(false);
+    }
+
+    public void ResetPieces()
+    {
+        for (int i = 0; i < jigsawPieces.Count; i++)
+        {
+            jigsawPieces[i].ResetPosition();
+        }
     }
 }

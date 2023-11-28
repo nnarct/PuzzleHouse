@@ -5,9 +5,9 @@ using UnityEngine.InputSystem;
 
 public class MovementPlayer : MonoBehaviour
 {
-    public float MoveX;
-    public float Speed = 456f;
-    [SerializeField] private AudioSource _audio;
+    private float MoveX;
+    private float Speed = 500;
+    //[SerializeField] private AudioSource _audio;
 
     private Rigidbody2D _rb;
     private SpriteRenderer _sprite;
@@ -40,19 +40,19 @@ public class MovementPlayer : MonoBehaviour
     {
         if (MoveX > 0f)
         {
-            _audio.Play();
+            //_audio.Play();
             _anim.SetBool("running", true);
             _sprite.flipX = false;
         }
         else if (MoveX < 0f)
         {
-            _audio.Play();
+            //_audio.Play();
             _anim.SetBool("running", true);
             _sprite.flipX = true;
         }
         else
         {
-            _audio.Pause();
+           // _audio.Pause();
             _anim.SetBool("running", false);
         }
     }

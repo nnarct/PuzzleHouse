@@ -20,6 +20,7 @@ public class Interactor : MonoBehaviour
     private Rigidbody2D _rigidBodyPlayer;
     private void Start()
     {
+     
         Puzzle.SetActive(false);
         _movementPlayer = GameObject.FindWithTag("Player").GetComponent<MovementPlayer>();
         _rigidBodyPlayer = GameObject.FindWithTag("Player").GetComponent<Rigidbody2D>();
@@ -27,7 +28,7 @@ public class Interactor : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (PlayerPrefs.GetInt(PuzzleKey, 0) == 0)
+        if (PlayerPrefs.GetInt(PuzzleKey, 0) == 0 || PuzzleKey.Length == 0)
         {
              if (collision.gameObject.tag.Equals("Player"))
              {
@@ -88,7 +89,7 @@ public class Interactor : MonoBehaviour
 
         Puzzle.SetActive(false);
         _movementPlayer.UnfreezeMovement();
-        if (PlayerPrefs.GetInt(PuzzleKey, 0) == 0)
+        if (PlayerPrefs.GetInt(PuzzleKey, 0) == 0 || PuzzleKey.Length == 0)
         {
             InteractText.gameObject.SetActive(true);
 

@@ -1221,7 +1221,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &144857647
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1999,7 +1999,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae9a43b57bdddb34e87cf2b9be9c470a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ChestPuzzleButton: {fileID: 0}
+  ChestPuzzleButton: {fileID: 533160583}
   ChestBoxUI: {fileID: 144857646}
   ParchmentText: {fileID: 1468448904}
 --- !u!4 &162111340
@@ -5106,8 +5106,8 @@ Transform:
   m_GameObject: {fileID: 380015901}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 438.1212, y: 1058.1211, z: 0}
-  m_LocalScale: {x: 120.691444, y: 233.43004, z: 1}
+  m_LocalPosition: {x: 441.5559, y: 1058.1211, z: 0}
+  m_LocalScale: {x: 86.34618, y: 233.43004, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -6537,7 +6537,7 @@ MonoBehaviour:
   Puzzle: {fileID: 172661117}
   IsInRange: 0
   IsInPuzzle: 0
-  PuzzleKey: 
+  PuzzleKey: Chest
   _source: {fileID: 533160584}
 --- !u!61 &533160586
 BoxCollider2D:

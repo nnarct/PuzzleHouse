@@ -127,9 +127,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
-        width: 480
-        height: 480
+        y: 37
+        width: 458
+        height: 434
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -147,10 +147,10 @@ TextureImporter:
       name: key_480x480_24f_1
       rect:
         serializedVersion: 2
-        x: 480
-        y: 0
-        width: 480
-        height: 480
+        x: 472
+        y: 37
+        width: 465
+        height: 434
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -168,10 +168,10 @@ TextureImporter:
       name: key_480x480_24f_2
       rect:
         serializedVersion: 2
-        x: 960
-        y: 0
-        width: 480
-        height: 480
+        x: 982
+        y: 37
+        width: 421
+        height: 434
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -189,9 +189,9 @@ TextureImporter:
       name: key_480x480_24f_3
       rect:
         serializedVersion: 2
-        x: 1440
+        x: 1493
         y: 0
-        width: 480
+        width: 360
         height: 480
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -210,9 +210,9 @@ TextureImporter:
       name: key_480x480_24f_4
       rect:
         serializedVersion: 2
-        x: 1920
+        x: 2017
         y: 0
-        width: 480
+        width: 270
         height: 480
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -231,9 +231,9 @@ TextureImporter:
       name: key_480x480_24f_5
       rect:
         serializedVersion: 2
-        x: 2400
+        x: 2542
         y: 0
-        width: 480
+        width: 181
         height: 480
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -252,9 +252,9 @@ TextureImporter:
       name: key_480x480_24f_6
       rect:
         serializedVersion: 2
-        x: 2880
+        x: 3082
         y: 0
-        width: 480
+        width: 76
         height: 480
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -273,9 +273,9 @@ TextureImporter:
       name: key_480x480_24f_7
       rect:
         serializedVersion: 2
-        x: 3360
+        x: 3518
         y: 0
-        width: 480
+        width: 180
         height: 480
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -294,9 +294,9 @@ TextureImporter:
       name: key_480x480_24f_8
       rect:
         serializedVersion: 2
-        x: 3840
+        x: 3952
         y: 0
-        width: 480
+        width: 270
         height: 480
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -315,9 +315,9 @@ TextureImporter:
       name: key_480x480_24f_9
       rect:
         serializedVersion: 2
-        x: 4320
+        x: 4387
         y: 0
-        width: 480
+        width: 361
         height: 480
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -336,10 +336,10 @@ TextureImporter:
       name: key_480x480_24f_10
       rect:
         serializedVersion: 2
-        x: 4800
-        y: 0
-        width: 480
-        height: 480
+        x: 4837
+        y: 37
+        width: 420
+        height: 434
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -357,10 +357,10 @@ TextureImporter:
       name: key_480x480_24f_11
       rect:
         serializedVersion: 2
-        x: 5280
-        y: 0
-        width: 480
-        height: 480
+        x: 5302
+        y: 37
+        width: 466
+        height: 434
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -378,10 +378,10 @@ TextureImporter:
       name: key_480x480_24f_12
       rect:
         serializedVersion: 2
-        x: 5760
-        y: 0
-        width: 480
-        height: 480
+        x: 5782
+        y: 37
+        width: 465
+        height: 434
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -399,10 +399,10 @@ TextureImporter:
       name: key_480x480_24f_13
       rect:
         serializedVersion: 2
-        x: 6240
-        y: 0
-        width: 480
-        height: 480
+        x: 6263
+        y: 37
+        width: 465
+        height: 434
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -420,10 +420,10 @@ TextureImporter:
       name: key_480x480_24f_14
       rect:
         serializedVersion: 2
-        x: 6720
-        y: 0
-        width: 480
-        height: 480
+        x: 6758
+        y: 37
+        width: 420
+        height: 434
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -441,9 +441,9 @@ TextureImporter:
       name: key_480x480_24f_15
       rect:
         serializedVersion: 2
-        x: 7200
+        x: 7267
         y: 0
-        width: 480
+        width: 361
         height: 480
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -462,9 +462,9 @@ TextureImporter:
       name: key_480x480_24f_16
       rect:
         serializedVersion: 2
-        x: 7680
+        x: 7793
         y: 0
-        width: 480
+        width: 270
         height: 480
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -483,9 +483,9 @@ TextureImporter:
       name: key_480x480_24f_17
       rect:
         serializedVersion: 2
-        x: 8160
+        x: 8317
         y: 0
-        width: 480
+        width: 180
         height: 480
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -504,9 +504,9 @@ TextureImporter:
       name: key_480x480_24f_18
       rect:
         serializedVersion: 2
-        x: 8640
+        x: 8842
         y: 0
-        width: 480
+        width: 76
         height: 480
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -525,9 +525,9 @@ TextureImporter:
       name: key_480x480_24f_19
       rect:
         serializedVersion: 2
-        x: 9116
+        x: 9262
         y: 0
-        width: 480
+        width: 180
         height: 480
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -546,9 +546,9 @@ TextureImporter:
       name: key_480x480_24f_20
       rect:
         serializedVersion: 2
-        x: 9600
+        x: 9697
         y: 0
-        width: 480
+        width: 271
         height: 480
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -567,9 +567,9 @@ TextureImporter:
       name: key_480x480_24f_21
       rect:
         serializedVersion: 2
-        x: 10080
+        x: 10133
         y: 0
-        width: 480
+        width: 360
         height: 480
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -588,10 +588,10 @@ TextureImporter:
       name: key_480x480_24f_22
       rect:
         serializedVersion: 2
-        x: 10560
-        y: 0
-        width: 480
-        height: 480
+        x: 10583
+        y: 37
+        width: 420
+        height: 434
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -609,10 +609,10 @@ TextureImporter:
       name: key_480x480_24f_23
       rect:
         serializedVersion: 2
-        x: 11040
-        y: 0
-        width: 480
-        height: 480
+        x: 11033
+        y: 37
+        width: 487
+        height: 434
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

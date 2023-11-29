@@ -21,7 +21,7 @@ TagManager:
   - Background
   - Floor
   - Player
-  - 
+  - Key
   - 
   - 
   - 
@@ -53,4 +53,7 @@ TagManager:
     locked: 0
   - name: Top
     uniqueID: 227641955
+    locked: 0
+  - name: Key
+    uniqueID: 327474945
     locked: 0

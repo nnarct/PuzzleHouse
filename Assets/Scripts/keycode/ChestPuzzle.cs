@@ -22,21 +22,21 @@ public class ChestPuzzle : MonoBehaviour
     void Update()
     {
         _score = PlayerPrefs.GetInt("Stage1_score", 0);
-      
+        CheckChest(_score);
     }
 
     private void CheckChest(int score)
     {
         if (score == 5)
         {
-            Debug.Log("should be active");
-           /// ChestPuzzleButton.SetActive(true);
-           // ChestBoxUI.SetActive(true);
+          //  Debug.Log("should be active");
+            ChestPuzzleButton.SetActive(true);
+            ChestBoxUI.SetActive(true);
         }
         else if (score < 5)
         {
-           // ChestPuzzleButton.SetActive(false);
-           // ChestBoxUI.SetActive(false);
+            ChestPuzzleButton.SetActive(false);
+            ChestBoxUI.SetActive(false);
         }
     }
 

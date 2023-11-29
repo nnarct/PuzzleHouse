@@ -15,6 +15,12 @@ public class ScoreManager : MonoBehaviour
 
     [SerializeField] private AudioSource _openCorrectPanelSound;
     [SerializeField] private AudioSource _clickKeySound;
+
+    void Awake()
+    {
+        LoadFileToPlayerPrefs();
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -117,11 +123,11 @@ public class ScoreManager : MonoBehaviour
                 return;
             }
             int point = PlayerPrefs.GetInt(PuzzleKeys[i].Key, 0);
-            // Debug.Log("Currect point for " + PuzzleKeys[i].Key + ": " + point);
+            //Debug.Log("Currect point for " + PuzzleKeys[i].Key + ": " + point);
             currentScore += point;
         }
         // Debug.Log("Currect Score : " + currentScore);
-        ScoreText.text = currentScore + "/" + _maxScore;
+        ScoreText.text = currentScore.ToString() + "/" + _maxScore.ToString();
         PlayerPrefs.SetInt("Stage1_score", currentScore);
         PlayerPrefs.Save();
     }
@@ -139,15 +145,15 @@ public class ScoreManager : MonoBehaviour
 
         int PlayerID = PlayerPrefs.GetInt("PlayerID");
 
-        for (int i = 0; i < _maxScore; i++)
+        foreach (var puzzleData in PuzzleKeys)
         {
-            FieldInfo fieldInfo = typeof(Stage1).GetField(PuzzleKeys[i].Key);
+            string puzzleKey = puzzleData.Key;
 
-            int isSolved = (int)fieldInfo.GetValue(this);
+            FieldInfo fieldInfo = typeof(Stage1).GetField(puzzleKey);
 
-            Debug.Log(PuzzleKeys[i].Key + " is " + isSolved);
+            int isSolved = (int)fieldInfo.GetValue(PlayerList[PlayerID].Stage1);
 
-            PlayerPrefs.SetInt(PuzzleKeys[i].Key, isSolved);
+            PlayerPrefs.SetInt(puzzleKey, isSolved);
 
         }
      

@@ -1,0 +1,4 @@
+repository "PuzzleHouse@natchasuha@cloud"
+  path "/"
+    br "/main"
+    co "/main"

@@ -8,6 +8,9 @@ using System.Reflection;
 public class QuizManager : MonoBehaviour
 {
     public List<QuestionAndAnswers> QnA;
+    public GameObject[] options;
+    public int currentQuestion;
+    [SerializeField]
     public GameObject CorrectPanel;
     public GameObject[] Options;
     public Text QuestionTxt;

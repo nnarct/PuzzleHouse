@@ -15,7 +15,8 @@ public class PauseHandler : MonoBehaviour
 
     private Interactor _interactorScript;
     private SpriteRenderer _playerSpriteRenderer;
-    private string[] _puzzleKeys = { "Genetic", "Wooden", "Earth", "Moon", "Time" };
+    private string[] _puzzleKeys1 = { "Genetic", "Wooden", "Earth", "Moon", "Time" };
+    private string[] _puzzleKeys2 = { "Wire", "Pipe", "Kitchenware", "Santa", "Christmas" };
 
     void Start()
     {
@@ -61,16 +62,30 @@ public class PauseHandler : MonoBehaviour
         if(stage == 1)
         {
             Debug.Log("restart stage1");
-            foreach (string key in _puzzleKeys)
+            foreach (string key in _puzzleKeys1)
             {
                 UpdateStage1Field(key, 0);
                 PlayerPrefs.SetInt(key, 0);
-                PlayerPrefs.SetInt("Stage1-score", 0);
+                PlayerPrefs.SetInt("Stage1_score", 0);
                 PlayerPrefs.Save();
             }
             Time.timeScale = 1f;
             _isPaused = false;
             SceneManager.LoadScene("Stage1");
+        }
+        else if(stage == 2)
+        {
+            Debug.Log("restart stage2");
+            foreach (string key in _puzzleKeys2)
+            {
+                UpdateStage2Field(key, 0);
+                PlayerPrefs.SetInt(key, 0);
+                PlayerPrefs.SetInt("Stage2_score", 0);
+                PlayerPrefs.Save();
+            }
+            Time.timeScale = 1f;
+            _isPaused = false;
+            SceneManager.LoadScene("Stage2");
         }
     }
 
@@ -100,6 +115,31 @@ public class PauseHandler : MonoBehaviour
         {
             // Set the value of the field
             fieldInfo.SetValue(Stage1, value);
+            FileHandler.SaveToJSON<PlayerEntry>(PlayerList, "PlayerData.json");
+        }
+        else
+        {
+            UnityEngine.Debug.LogError($"Field not found or not writable: {fieldName}");
+        }
+    }
+    void UpdateStage2Field(string fieldName, int value)
+    {
+        List<PlayerEntry> PlayerList = new List<PlayerEntry>();
+
+        PlayerList = FileHandler.ReadListFromJSON<PlayerEntry>("PlayerData.json");
+
+        int PlayerID = PlayerPrefs.GetInt("PlayerID");
+
+        Stage2 Stage2 = PlayerList[PlayerID].Stage2;
+
+        // Use reflection to get the field by name
+        FieldInfo fieldInfo = typeof(Stage2).GetField(fieldName);
+
+        // Check if the field exists
+        if (fieldInfo != null)
+        {
+            // Set the value of the field
+            fieldInfo.SetValue(Stage2, value);
             FileHandler.SaveToJSON<PlayerEntry>(PlayerList, "PlayerData.json");
         }
         else

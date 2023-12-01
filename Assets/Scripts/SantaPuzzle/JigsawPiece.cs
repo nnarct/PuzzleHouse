@@ -1,69 +1,64 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class JigsawPiece : MonoBehaviour
 {
-    private bool isBeingDragged = false;
-    private bool isPlacedCorrectly = false;
-    private Vector3 startPosition;
-    //private SantaManager jigsawPuzzle;
+    public Vector2 correctAnchoredPosition;
+    public float snapThreshold = 20f; // Adjust as needed
+    private Vector2 initialAnchoredPosition;
 
-    private void Start()
+    private RectTransform rectTransform;
+    private bool isCorrect = false;
+
+    void Start()
     {
-        // Get reference to the main puzzle script
-        //jigsawPuzzle = FindObjectOfType<SantaManager>();
+        rectTransform = GetComponent<RectTransform>();
+        initialAnchoredPosition = rectTransform.anchoredPosition;
     }
 
-    private void OnMouseDown()
+    void Update()
     {
-        if (!isPlacedCorrectly)
+        Vector2 currentAnchoredPosition = rectTransform.anchoredPosition;
+
+        //Debug.Log("Anchored Position: " + currentAnchoredPosition);
+
+        if (IsWithinSnapThreshold(currentAnchoredPosition, correctAnchoredPosition, snapThreshold))
         {
-            isBeingDragged = true;
-            startPosition = transform.position;
+            SnapToCorrectPosition();
+            isCorrect = true;
+            //Debug.Log("Piece correct");
+        }
+        else
+        {
+            isCorrect = false;
         }
     }
 
-    private void OnMouseDrag()
+    bool IsWithinSnapThreshold(Vector2 pos1, Vector2 pos2, float threshold)
     {
-        if (isBeingDragged)
-        {
-            // Move the puzzle piece with the mouse cursor
-            Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            transform.position = new Vector3(mousePosition.x, mousePosition.y, transform.position.z);
-        }
+        float deltaX = Mathf.Abs(pos1.x - pos2.x);
+        float deltaY = Mathf.Abs(pos1.y - pos2.y);
+
+        return deltaX < threshold && deltaY < threshold;
     }
 
-    /*private void OnMouseUp()
+    void SnapToCorrectPosition()
     {
-        isBeingDragged = false;
+        //Debug.Log("Snapping to Position: " + correctAnchoredPosition);
 
-        // Check if the puzzle piece is over a puzzle area
-        JigsawArea[] puzzleAreas = GameObject.FindObjectsOfType<JigsawArea>();
-        bool isOverPuzzleArea = false;
-
-        foreach (JigsawArea puzzleArea in puzzleAreas)
-        {
-            if (puzzleArea.IsPiecePlaced)
-            {
-                // Snap the piece to the center of the puzzle area
-                transform.position = puzzleArea.transform.position;
-                isOverPuzzleArea = true;
-                // You can add more logic here if needed
-                break; // Exit the loop after finding the first matching puzzle area
-            }
-        }
-
-        // If the piece is not over any puzzle area, return it to the start position
-        if (!isOverPuzzleArea)
-        {
-            transform.position = startPosition;
-        }
+        rectTransform.anchoredPosition = correctAnchoredPosition;
+        // Implement logic for snapping action
     }
-    private Vector3 GetCorrectPosition()
-    {
-        // You need to implement logic to determine the correct position for each piece
-        // This can be based on the structure of your puzzle
-        // For simplicity, this example returns the original starting position
-        return startPosition;
-    }*/
 
+    public bool IsPieceCorrect()
+    {
+        return isCorrect;
+    }
+
+    public void ResetPosition()
+    {
+        rectTransform.anchoredPosition = initialAnchoredPosition;
+        isCorrect = false; // Reset correctness status
+    }
 }

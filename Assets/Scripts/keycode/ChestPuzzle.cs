@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 using TMPro;
 
 public class ChestPuzzle : MonoBehaviour
@@ -11,17 +13,25 @@ public class ChestPuzzle : MonoBehaviour
     public TMP_Text ParchmentText;
 
     private int _score;
+    private Scene _currentScene;
 
     void Start()
     {
         //ChestPuzzleButton.SetActive(false);
         ParchmentText.text = GenerateRandomNumericPassword(3, 6) + "#";
+        _currentScene = SceneManager.GetActiveScene();
     }
 
     // Update is called once per frame
     void Update()
     {
-        _score = PlayerPrefs.GetInt("Stage1_score", 0);
+        if(_currentScene.name == "Stage1")
+        {
+            _score = PlayerPrefs.GetInt("Stage1_score", 0);
+        }
+        else if (_currentScene.name == "Stage2") {
+            _score = PlayerPrefs.GetInt("Stage2_score", 0);
+        }
         CheckChest(_score);
     }
 

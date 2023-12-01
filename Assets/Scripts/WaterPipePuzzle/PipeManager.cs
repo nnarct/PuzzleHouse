@@ -5,6 +5,7 @@ using UnityEngine.UIElements;
 
 public class PipeManager : MonoBehaviour
 {
+    public ScoreManager scoreManager;
     public GameObject PipesHolder;
     public GameObject[] Pipes;
 
@@ -14,7 +15,9 @@ public class PipeManager : MonoBehaviour
     [SerializeField]
     int CorrectPipes = 0;
 
-    public GameObject CorectPanel;
+    public GameObject GamePanel;
+    public string PuzzleKey = "Pipe";
+
 
     void Start()
     {
@@ -37,7 +40,8 @@ public class PipeManager : MonoBehaviour
         if(CorrectPipes == TotalPipes)
         {
             Debug.Log("You Win!");
-            CorectPanel.SetActive(true);
+            scoreManager.HandleCorrectAnswer(PuzzleKey, GamePanel);
+            
         }
     }
 

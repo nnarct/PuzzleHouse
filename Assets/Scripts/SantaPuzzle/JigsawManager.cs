@@ -4,18 +4,17 @@ using UnityEngine;
 
 public class JigsawManager : MonoBehaviour
 {
-    [SerializeField]
-    GameObject CorrectPanel;
-    [SerializeField]
-    GameObject GamePanel;
+    [SerializeField] GameObject GamePanel;
+
+    public ScoreManager scoreManager;
     
+    public string PuzzleKey = "Santa";
     public List<JigsawPiece> jigsawPieces; // Drag & drop all 8 pieces in the Inspector
 
     private List<Vector2> initialPositions;
 
     private void Start()
     {
-        CorrectPanel.SetActive(false);
         StartCoroutine(CheckPiecesAfterDelay());
     }
 
@@ -39,14 +38,15 @@ public class JigsawManager : MonoBehaviour
             yield return new WaitForSeconds(1f); // Add a delay before the next check
         }
 
-        // All pieces are in correct positions
-        CorrectPanel.SetActive(true);
-        Invoke("ClosePanel", 1f);
+        // // All pieces are in correct positions
+        // CorrectPanel.SetActive(true);
+        // Invoke("ClosePanel", 1f);
+        Correct();
     }
 
-    public void ClosePanel()
+    public void Correct()
     {
-        GamePanel.SetActive(false);
+        scoreManager.HandleCorrectAnswer(PuzzleKey, GamePanel);
     }
 
     public void ResetPieces()

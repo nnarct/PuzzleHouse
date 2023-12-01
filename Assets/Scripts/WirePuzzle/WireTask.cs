@@ -6,9 +6,10 @@ public class WireTask : MonoBehaviour
 {
     [SerializeField]
     GameObject GamePanel;
-    [SerializeField]
-    GameObject CorrectPanel;
 
+    public ScoreManager scoreManager;
+
+    public string PuzzleKey = "Wire";
     public List<Color> _wireColors = new List<Color>();
 
     public List<Wire> _leftWires = new List<Wire>();
@@ -27,7 +28,7 @@ public class WireTask : MonoBehaviour
     private void Start()
     {
         ClosePanel();
-        CorrectPanel.SetActive(false);
+        
         _availableColors = new List<Color>(_wireColors);
         _availableLeftWireIndex = new List<int>();
         _availableRightWireIndex = new List<int>();
@@ -79,9 +80,8 @@ public class WireTask : MonoBehaviour
 
             if (correctWire >= _rightWires.Count)
             {
-                CorrectPanel.SetActive(true);
                 Debug.Log("Task Complete");
-                Invoke("ClosePanel", 1f);
+                scoreManager.HandleCorrectAnswer(PuzzleKey, GamePanel);
             }
             else
             {

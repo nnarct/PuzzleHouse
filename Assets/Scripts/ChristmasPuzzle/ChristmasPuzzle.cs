@@ -6,12 +6,20 @@ using UnityEngine.UI;
 
 public class ChristmasPuzzle : MonoBehaviour
 {
+    public ScoreManager scoreManager;
+
+    public string PuzzleKey = "Christmas";
+
+    public GameObject GamePanel;
+
     private Button _lastClickedButton;
+
     public GameObject[] correctPositions;
-    public GameObject CorrectPanel;
+
     private Button[] _buttons;
 
     private int _totalScore;
+
     private int _currentScore;
 
     // Start is called before the first frame update
@@ -80,15 +88,23 @@ public class ChristmasPuzzle : MonoBehaviour
             if (Vector3.Distance(correctPositions[i].transform.position, buttons[i].transform.position) <= positionThreshold)
             {
                 _currentScore += 1;
-                //Debug.Log("Current Score: " + currentScore);
+                Debug.Log("Current Score: " + _currentScore);
 
             }
         }
 
         if (_currentScore == _totalScore)
         {
-            Debug.Log("Win!!");
-            CorrectPanel.SetActive(true);
+            Correct();
+            Debug.Log("_totalScore Score: " + _totalScore);
+
+
         }
     }
+
+    public void Correct()
+    {
+        scoreManager.HandleCorrectAnswer(PuzzleKey, GamePanel);
+    }
+
 }

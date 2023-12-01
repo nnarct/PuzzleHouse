@@ -16,10 +16,14 @@ public class HoverEffect : MonoBehaviour, IPointerEnterHandler , IPointerExitHan
     private bool _isClicked = false;
     void Start()
     {
+        if (OriginalSprite == null || HoverSprite == null)
+        {
+            Debug.LogError("OriginalSprite or HoverSprite is null on " + gameObject.name);
+        }
         // Get the Button component attached to this GameObject
         _button = GetComponent<Button>();
         // Get the TMP_Text component in the Button's children
-        _buttonText = button.GetComponentInChildren<TMP_Text>();
+        _buttonText = _button.GetComponentInChildren<TMP_Text>();
         // Get the RectTransform of the text
         _textRectTransform = _buttonText.GetComponent<RectTransform>();
         // Save the original positions

@@ -36,17 +36,17 @@ public class InputHandler : MonoBehaviour
         {
             int PlayerID = _playerList.Count;
             PlayerPrefs.SetInt("PlayerID", PlayerID);
-            _scene = SceneManager.GetActiveScene().buildIndex +1;
-            _playerList.Add(new PlayerEntry(NameInput.text, _scene));
+            _sceneIndex = SceneManager.GetActiveScene().buildIndex +1;
+            _playerList.Add(new PlayerEntry(NameInput.text, _sceneIndex));
             FileHandler.SaveToJSON<PlayerEntry>(_playerList, _fileName);
-            SceneManager.LoadSceneAsync(_scene);
+            SceneManager.LoadSceneAsync(_sceneIndex);
         }
     }
 
     public void BackScene()
     {
-        _scene = SceneManager.GetActiveScene().buildIndex ;
-        SceneManager.LoadSceneAsync(_scene - 1);
+        _sceneIndex = SceneManager.GetActiveScene().buildIndex ;
+        SceneManager.LoadSceneAsync(_sceneIndex - 1);
     }
 
     Boolean ValidateInput(string text)

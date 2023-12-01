@@ -14,20 +14,23 @@ public class Interactor : MonoBehaviour
     public bool IsInPuzzle;
     public string PuzzleKey;
 
+    [SerializeField] private AudioSource _source;
+
     private MovementPlayer _movementPlayer;
     private Rigidbody2D _rigidBodyPlayer;
     private void Start()
     {
+     
         Puzzle.SetActive(false);
-        _movementPlayer = GameObject.Find("Player").GetComponent<MovementPlayer>();
-        _rigidBodyPlayer = GameObject.Find("Player").GetComponent<Rigidbody2D>();
+        _movementPlayer = GameObject.FindWithTag("Player").GetComponent<MovementPlayer>();
+        _rigidBodyPlayer = GameObject.FindWithTag("Player").GetComponent<Rigidbody2D>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (PlayerPrefs.GetInt(PuzzleKey, 0) == 0)
+        if (PlayerPrefs.GetInt(PuzzleKey, 0) == 0 || PuzzleKey.Length == 0)
         {
-             if (collision.gameObject.name.Equals("Player"))
+             if (collision.gameObject.tag.Equals("Player"))
              {
                  InteractText.gameObject.SetActive(true);
                  IsInRange = true;
@@ -39,7 +42,7 @@ public class Interactor : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject.name.Equals("Player"))
+        if (collision.gameObject.tag.Equals("Player"))
         {
             InteractText.gameObject.SetActive(false);
             IsInRange = false;
@@ -63,6 +66,7 @@ public class Interactor : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Escape))
             {
                 EndInteraction();
+                _source.Stop();
             }
         }
 
@@ -70,6 +74,7 @@ public class Interactor : MonoBehaviour
 
     public void playPuzzle()
     {
+        _source.Play();
         Puzzle.SetActive(true);
         InteractText.gameObject.SetActive(false);
 
@@ -79,14 +84,17 @@ public class Interactor : MonoBehaviour
 
     public void EndInteraction()
     {
+        _source.Play();
+        Debug.Log("sound on.");
+
         Puzzle.SetActive(false);
         _movementPlayer.UnfreezeMovement();
-        if (PlayerPrefs.GetInt(PuzzleKey, 0) == 0)
+        if (PlayerPrefs.GetInt(PuzzleKey, 0) == 0 || PuzzleKey.Length == 0)
         {
             InteractText.gameObject.SetActive(true);
 
         }
         IsInPuzzle = false;
-       // Debug.Log("Player exited the puzzle.");
+        // Debug.Log("Player exited the puzzle.");
     }
 }

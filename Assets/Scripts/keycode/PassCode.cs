@@ -12,6 +12,9 @@ public class PassCode : MonoBehaviour
     [SerializeField]
     public GameObject WrongPanel;
 
+    [SerializeField] private AudioSource _source;
+    [SerializeField] private AudioSource _source2;
+
     private string _code;
     private string _answer = null;
     private int _answerIndex = 0;
@@ -34,26 +37,32 @@ public class PassCode : MonoBehaviour
         //Debug.Log("Passcode"+Code);
         if (_answer == _code)
         {
-            Debug.Log("It's Work!!!");
+            // Debug.Log("It's Work!!!");
+            _source.Play();
             //SceneManager.LoadScene("stage2");
         }
         else
         {
-            Debug.Log("It's Wrong!!!");
+            // Debug.Log("It's Wrong!!!");
+            _source2.Play();
             WrongPanel.SetActive(true);
             Invoke("DeactiveWrongPanel", 1f);
-            Invoke("DeleteAll", 1f);
+            Invoke("DeleteAll", 0.5f);
             //Debug.Log("Try again");
         }
     }
 
     public void OnDelete()
     {
-        if(_answerIndex!=0)
+        if(_answerIndex > 0 )
         {
             _answerIndex--;
             _answer = _answer.Substring(0, _answer.Length - 1);
             UiText.text = _answer;
+        }
+        else if (_answerIndex <=0)
+        {
+            _answerIndex = 0;
         }
        
     }

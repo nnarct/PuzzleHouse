@@ -19,7 +19,7 @@ TagManager:
   - Background
   - Floor
   - Player
-  - 
+  - Key
   - 
   - 
   - 
@@ -54,4 +54,6 @@ TagManager:
     locked: 0
   - name: Wire
     uniqueID: 3653166007
+  - name: Key
+    uniqueID: 327474945
     locked: 0

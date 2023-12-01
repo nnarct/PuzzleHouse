@@ -5,14 +5,19 @@ using System.Reflection;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+
 public class ShuffleWordQuizManager : MonoBehaviour
 {
     public static ShuffleWordQuizManager Instance;
     public string PuzzleKey;
     [SerializeField]
-     public float DelayTime = 1f;
+    public float DelayTime = 1f;
     public TMP_Text ScoreText;
+    public ScoreManager scoreManager;
 
+    [SerializeField] private AudioSource _source;
+
+    [SerializeField]
     private QuestionData _question;
     [SerializeField] GameObject GamePanel;
     [SerializeField]
@@ -29,7 +34,7 @@ public class ShuffleWordQuizManager : MonoBehaviour
     private bool _correctAnswer;
     private List<int> _selectWordIndex;
    
-
+    
     private void Awake()
     {
         if (Instance == null) Instance = this;
@@ -93,11 +98,12 @@ public class ShuffleWordQuizManager : MonoBehaviour
 
             if (_correctAnswer) 
             {
-                UnityEngine.Debug.Log("Correct Answer");
+                // UnityEngine.Debug.Log("Correct Answer");
                 Correct();
             }
             else if (!_correctAnswer)
             {
+                _source.Play();
                 _wrongPanel.SetActive(true);
                 Invoke("DeactiveWrongPanel", DelayTime);
                 Invoke("ResetQuestion", DelayTime);
@@ -108,11 +114,8 @@ public class ShuffleWordQuizManager : MonoBehaviour
 
 
     public void Correct()
-    {
-        GamePanel.SetActive(false);
-        _correctPanel.SetActive(true);
-        Button correctButton = GameObject.Find("CorrectKeyButton").GetComponent<Button>();
-        correctButton.onClick.AddListener(OnCorrectButtonClick);
+    { 
+        scoreManager.HandleCorrectAnswer(PuzzleKey, GamePanel);
     }
 
     public void DeactiveWrongPanel()
@@ -120,23 +123,6 @@ public class ShuffleWordQuizManager : MonoBehaviour
         _wrongPanel.SetActive(false);
     }
 
-    void OnCorrectButtonClick()
-    {
-        Debug.Log("Key is clicked!");
-        _correctPanel.SetActive(false);
-        _interactorScript.EndInteraction();
-        Debug.Log("Correct Panel is closed!");
-        int score = PlayerPrefs.GetInt("Stage1-score", 0);
-        if (PlayerPrefs.GetInt(PuzzleKey, 0) == 0)
-        {
-            score++;
-        }
-        PlayerPrefs.SetInt("Stage1-score", score);
-        ScoreText.text = score.ToString() + "/5";
-        PlayerPrefs.SetInt(PuzzleKey, 1);
-        PlayerPrefs.Save();
-        UpdateStage1Field(PuzzleKey, 1);
-    }
 
     public void ResetQuestion()
     {
@@ -161,7 +147,7 @@ public class ShuffleWordQuizManager : MonoBehaviour
 
     public void ResetLastWord() 
     {
-        if (_selectWordIndex.Count > 0)
+        if (_selectWordIndex.Count > 0 && _currentAnswerIndex != 0)
         {
             int index = _selectWordIndex[_selectWordIndex.Count - 1];
             _optionWordArray[index].gameObject.SetActive(true);
@@ -170,34 +156,6 @@ public class ShuffleWordQuizManager : MonoBehaviour
             _answerWordArray[_currentAnswerIndex].SetChar('_');
         }
     }
-
-    void UpdateStage1Field(string fieldName, int value)
-    {
-        List<PlayerEntry> PlayerList = new List<PlayerEntry>();
-
-        PlayerList = FileHandler.ReadListFromJSON<PlayerEntry>("PlayerData.json");
-
-        int PlayerID = PlayerPrefs.GetInt("PlayerID");
-
-        Stage1 Stage1 = PlayerList[PlayerID].Stage1;
-
-        // Use reflection to get the field by name
-        FieldInfo fieldInfo = typeof(Stage1).GetField(fieldName);
-
-        //UnityEngine.Debug.Log("typeof(Stage1) stage1" + typeof(Stage1));
-        // Check if the field exists
-        if (fieldInfo != null)
-        {
-            // Set the value of the field
-            fieldInfo.SetValue(Stage1, value);
-            FileHandler.SaveToJSON<PlayerEntry>(PlayerList, "PlayerData.json");
-        }
-        else
-        {
-            UnityEngine.Debug.LogError($"Field not found or not writable: {fieldName}");
-        }
-    }
-
 
 }
 

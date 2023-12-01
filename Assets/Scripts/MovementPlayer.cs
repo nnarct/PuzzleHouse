@@ -5,8 +5,9 @@ using UnityEngine.InputSystem;
 
 public class MovementPlayer : MonoBehaviour
 {
-    public float MoveX;
-    public float Speed = 456f;
+    private float MoveX;
+    private float Speed = 500;
+    //[SerializeField] private AudioSource _audio;
 
     private Rigidbody2D _rb;
     private SpriteRenderer _sprite;
@@ -26,6 +27,7 @@ public class MovementPlayer : MonoBehaviour
     {
         if (!_isFrozen && _isMoveable)
         {
+            //_audio.Play();
             MoveX = Input.GetAxisRaw("Horizontal");
             _rb.velocity = new Vector2(MoveX * Speed, _rb.velocity.y);
         }
@@ -38,20 +40,22 @@ public class MovementPlayer : MonoBehaviour
     {
         if (MoveX > 0f)
         {
+            //_audio.Play();
             _anim.SetBool("running", true);
             _sprite.flipX = false;
         }
         else if (MoveX < 0f)
         {
+            //_audio.Play();
             _anim.SetBool("running", true);
             _sprite.flipX = true;
         }
         else
         {
+           // _audio.Pause();
             _anim.SetBool("running", false);
         }
     }
-
     public void FreezeMovement()
     {
         _isFrozen = true;

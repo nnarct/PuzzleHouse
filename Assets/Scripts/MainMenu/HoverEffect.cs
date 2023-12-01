@@ -3,8 +3,9 @@ using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using TMPro;
 
-public class HoverEffect : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler
+public class HoverEffect : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler  , IPointerClickHandler
 {
+    public bool TriggerClick = false;
     private RectTransform _textRectTransform;
     private Vector2 _originalTextPosition;
 
@@ -34,7 +35,10 @@ public class HoverEffect : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
 
     public void OnPointerClick(PointerEventData evenData)
     {
-        // Reset the positions when the mouse click the button
-        _textRectTransform.anchoredPosition = _originalTextPosition;
+    // Reset the positions when the mouse click the button
+        if(TriggerClick)
+        {
+            _textRectTransform.anchoredPosition = _originalTextPosition;
+        }    
     }
 }

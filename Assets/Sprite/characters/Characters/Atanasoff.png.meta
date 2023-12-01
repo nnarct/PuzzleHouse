@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -121,7 +121,259 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Atanasoff_0
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 1158
+        width: 108
+        height: 260
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac4874ffd5703934f9761117864287f3
+      internalID: -733122956
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Atanasoff_1
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 1162
+        width: 112
+        height: 260
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f7c6309da9e9d9a4ca137f9c57ef2a60
+      internalID: -169820464
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Atanasoff_2
+      rect:
+        serializedVersion: 2
+        x: 408
+        y: 1158
+        width: 108
+        height: 260
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37615c34672cf804dbb03b32e9c5d097
+      internalID: -2036555314
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Atanasoff_3
+      rect:
+        serializedVersion: 2
+        x: 28
+        y: 794
+        width: 108
+        height: 260
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 479d729553f6d494bb855cf2eb30ce3e
+      internalID: -148533296
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Atanasoff_4
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 794
+        width: 104
+        height: 264
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b18e918fefe6d04cbea3c8c0993ae86
+      internalID: -413608744
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Atanasoff_5
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 794
+        width: 128
+        height: 260
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa7dcb1d467d0dd4dbf2e3a867a80245
+      internalID: 1196760801
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Atanasoff_6
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 426
+        width: 128
+        height: 260
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d12379d465b04a54ab45a5e8ca03d23c
+      internalID: 2080681001
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Atanasoff_7
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 426
+        width: 104
+        height: 264
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ce76f5e02f884c4db8f6f1331d6cf74
+      internalID: 1289914492
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Atanasoff_8
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 426
+        width: 116
+        height: 260
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a41d4ef58fd7c3b4eb32cf0b05c2b93a
+      internalID: 122345868
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Atanasoff_9
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 54
+        width: 112
+        height: 252
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7e238e03c82aa14ba497564185d2d7a
+      internalID: 1128864201
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Atanasoff_10
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 58
+        width: 116
+        height: 252
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d54bf1a973bc63a4c863fa811f6859c0
+      internalID: -1762395901
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Atanasoff_11
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 54
+        width: 112
+        height: 252
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5945b57742dcf94a82fe9a60e4530f0
+      internalID: -889235498
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -132,7 +384,19 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Atanasoff_0: -733122956
+      Atanasoff_1: -169820464
+      Atanasoff_10: -1762395901
+      Atanasoff_11: -889235498
+      Atanasoff_2: -2036555314
+      Atanasoff_3: -148533296
+      Atanasoff_4: -413608744
+      Atanasoff_5: 1196760801
+      Atanasoff_6: 2080681001
+      Atanasoff_7: 1289914492
+      Atanasoff_8: 122345868
+      Atanasoff_9: 1128864201
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

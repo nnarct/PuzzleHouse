@@ -7,35 +7,46 @@ using TMPro;
 
 public class InputHandler : MonoBehaviour
 {
-    [SerializeField] TMP_InputField NameInput;
-    string Filename = "PlayerData.json";
+    public TMP_InputField NameInput;
 
-    List<PlayerEntry> PlayerList = new List<PlayerEntry>();
+    private Button _confirmButton;
 
-    int Scene_index;
+    private string _fileName = "PlayerData.json";
 
-    private void _start()
+    private List<PlayerEntry> _playerList = new List<PlayerEntry>();
+
+    private int _sceneIndex;
+
+
+    void Start()
     {
-        PlayerList = FileHandler.ReadListFromJSON<PlayerEntry>(Filename);
+        _confirmButton = GameObject.Find("ConfirmButton").GetComponent<Button>();
+        _confirmButton.interactable = false;
+        _playerList = FileHandler.ReadListFromJSON<PlayerEntry>(_fileName);
+    }
+
+    void Update()
+    {
+        _confirmButton.interactable = ValidateInput(NameInput.text);
     }
 
     public void AddNameToList()
     {
         if(ValidateInput(NameInput.text))
         {
-            int PlayerID = PlayerList.Count;
+            int PlayerID = _playerList.Count;
             PlayerPrefs.SetInt("PlayerID", PlayerID);
-            Scene_index = SceneManager.GetActiveScene().buildIndex +1;
-            PlayerList.Add(new PlayerEntry(NameInput.text, Scene_index));
-            FileHandler.SaveToJSON<PlayerEntry>(PlayerList, Filename);
-            SceneManager.LoadSceneAsync(Scene_index);
+            _scene = SceneManager.GetActiveScene().buildIndex +1;
+            _playerList.Add(new PlayerEntry(NameInput.text, _scene));
+            FileHandler.SaveToJSON<PlayerEntry>(_playerList, _fileName);
+            SceneManager.LoadSceneAsync(_scene);
         }
     }
 
     public void BackScene()
     {
-        Scene_index = SceneManager.GetActiveScene().buildIndex ;
-        SceneManager.LoadSceneAsync(Scene_index - 1);
+        _scene = SceneManager.GetActiveScene().buildIndex ;
+        SceneManager.LoadSceneAsync(_scene - 1);
     }
 
     Boolean ValidateInput(string text)
@@ -46,5 +57,5 @@ public class InputHandler : MonoBehaviour
         }
         return true;
     }
-   
+
 }

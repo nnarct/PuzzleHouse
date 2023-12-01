@@ -1,13 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting.Antlr3.Runtime.Tree;
-using UnityEditor;
 using UnityEngine;
-using UnityEngine.UI;
+using UnityEngine.InputSystem;
 
 public class Interactor : MonoBehaviour
 {
-
     [SerializeField] GameObject InteractText;
     [SerializeField] GameObject Puzzle;
     public bool IsInRange;
@@ -17,32 +12,28 @@ public class Interactor : MonoBehaviour
     [SerializeField] private AudioSource _source;
 
     private MovementPlayer _movementPlayer;
-    private Rigidbody2D _rigidBodyPlayer;
+
     private void Start()
     {
-     
         Puzzle.SetActive(false);
-        _movementPlayer = GameObject.FindWithTag("Player").GetComponent<MovementPlayer>();
-        _rigidBodyPlayer = GameObject.FindWithTag("Player").GetComponent<Rigidbody2D>();
+        _movementPlayer = FindObjectOfType<MovementPlayer>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (PlayerPrefs.GetInt(PuzzleKey, 0) == 0 || PuzzleKey.Length == 0)
         {
-             if (collision.gameObject.tag.Equals("Player"))
-             {
-                 InteractText.gameObject.SetActive(true);
-                 IsInRange = true;
-             }
+            if (collision.gameObject.CompareTag("Player"))
+            {
+                InteractText.gameObject.SetActive(true);
+                IsInRange = true;
+            }
         }
-       
-
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject.tag.Equals("Player"))
+        if (collision.gameObject.CompareTag("Player"))
         {
             InteractText.gameObject.SetActive(false);
             IsInRange = false;
@@ -51,35 +42,25 @@ public class Interactor : MonoBehaviour
 
     private void Update()
     {
-        if (IsInRange) 
+        if (IsInRange && Input.GetKeyDown(KeyCode.E) && InteractText.gameObject.activeSelf)
         {
-            if (Input.GetKeyDown(KeyCode.E) && InteractText.gameObject.activeSelf)
-            {
-                playPuzzle();
-               _rigidBodyPlayer.velocity = Vector2.zero;
-               _movementPlayer.FreezeMovement();
-            }
+            PlayPuzzle();
+            _movementPlayer.FreezeMovement();
         }
 
-      if (IsInPuzzle)
+        if (IsInPuzzle && Input.GetKeyDown(KeyCode.Escape))
         {
-            if (Input.GetKeyDown(KeyCode.Escape))
-            {
-                EndInteraction();
-                _source.Stop();
-            }
+            EndInteraction();
+            _source.Stop();
         }
-
     }
 
-    public void playPuzzle()
+    public void PlayPuzzle()
     {
         _source.Play();
         Puzzle.SetActive(true);
         InteractText.gameObject.SetActive(false);
-
         IsInPuzzle = true;
-       // Debug.Log("Player entered the puzzle.");
     }
 
     public void EndInteraction()
@@ -89,12 +70,11 @@ public class Interactor : MonoBehaviour
 
         Puzzle.SetActive(false);
         _movementPlayer.UnfreezeMovement();
+
         if (PlayerPrefs.GetInt(PuzzleKey, 0) == 0 || PuzzleKey.Length == 0)
         {
             InteractText.gameObject.SetActive(true);
-
         }
         IsInPuzzle = false;
-        // Debug.Log("Player exited the puzzle.");
     }
 }

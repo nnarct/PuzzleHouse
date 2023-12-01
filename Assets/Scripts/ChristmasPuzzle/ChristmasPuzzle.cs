@@ -87,7 +87,7 @@ public class ChristmasPuzzle : MonoBehaviour
 
         if (_currentScore == _totalScore)
         {
-            //Debug.Log("Win!!");
+            Debug.Log("Win!!");
             CorrectPanel.SetActive(true);
         }
     }

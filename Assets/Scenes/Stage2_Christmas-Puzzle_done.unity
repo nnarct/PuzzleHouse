@@ -3111,17 +3111,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 652f180c47bd4974c9245f8af716e6ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ScoreText: {fileID: 0}
-  ParchmentText: {fileID: 0}
-  ChestBox: {fileID: 0}
-  ChestPuzzleButton: {fileID: 0}
-  _score: 0
-  _puzzleKeys:
-  - Wooden
-  - Genetic
-  - Time
-  - Moon
-  - Earth
 --- !u!114 &824827907
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6321,65 +6310,6 @@ RectTransform:
   m_AnchoredPosition: {x: 1280, y: 720}
   m_SizeDelta: {x: 2560, y: 1440}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!1 &1453689516
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1453689518}
-  - component: {fileID: 1453689517}
-  m_Layer: 0
-  m_Name: QuizManagerforChristmas
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!114 &1453689517
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1453689516}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 271dd8cc9fa625347bfe137b03c70eaf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  QnA:
-  - Question: What time is it?
-    Answers:
-    - 
-    - 
-    - 
-    - 
-    CorrectAnswer: 0
-  Options: []
-  CurrentQuestion: 0
-  PuzzlePanel: {fileID: 0}
-  QuestionTxt: {fileID: 0}
-  PuzzleKey: 
-  WrongPanel: {fileID: 0}
-  _source: {fileID: 0}
---- !u!4 &1453689518
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1453689516}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1480061155
 GameObject:
   m_ObjectHideFlags: 0
@@ -9926,5 +9856,4 @@ SceneRoots:
   - {fileID: 1999993425}
   - {fileID: 1555802853}
   - {fileID: 2074121556}
-  - {fileID: 1453689518}
   - {fileID: 556256262}

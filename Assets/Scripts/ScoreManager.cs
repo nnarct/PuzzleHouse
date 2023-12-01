@@ -73,7 +73,9 @@ public class ScoreManager : MonoBehaviour
 
     public void HandleCorrectAnswer(string puzzleKey, GameObject puzzlePanel)
     {
- 
+
+
+        Debug.Log("handle correct manager");
         if(puzzlePanel == null)
         {
             Debug.LogError("Parameter puzzlePanel cannot be null.");
@@ -82,7 +84,7 @@ public class ScoreManager : MonoBehaviour
         if(!string.IsNullOrEmpty(puzzleKey))
         {
             _puzzleKey = puzzleKey;
-
+            Debug.Log("diable puzzle panel");
             puzzlePanel.SetActive(false);
             CorrectPanel.SetActive(true);
             _openCorrectPanelSound.Play();

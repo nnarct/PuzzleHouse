@@ -27,10 +27,10 @@ public class QuizManager : MonoBehaviour
 
     public void Correct()
     {
-        if (CorrectAnswerEvent != null)
-        {
+        Debug.Log("win");
+       
             CorrectAnswerEvent(PuzzleKey, PuzzlePanel);
-        }
+
     }
 
     public void Wrong()

@@ -500,8 +500,8 @@ MonoBehaviour:
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
-    m_HighlightedSprite: {fileID: -1951789149, guid: 9a22596837493fb45a5e917aae902833, type: 3}
-    m_PressedSprite: {fileID: -1951789149, guid: 9a22596837493fb45a5e917aae902833, type: 3}
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
     m_SelectedSprite: {fileID: 0}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
@@ -563,3 +563,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b6686b63c933f7448e3bffbc36e206f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TriggerClick: 0
+  OriginalSprite: {fileID: -855634561, guid: 9a22596837493fb45a5e917aae902833, type: 3}
+  HoverSprite: {fileID: -1951789149, guid: 9a22596837493fb45a5e917aae902833, type: 3}

@@ -42,6 +42,7 @@ public class ScoreManager : MonoBehaviour
         }
         _maxScore = PuzzleKeys.Count;
         LoadFileToPlayerPrefs();
+        //Debug.Log("Max Score : " + _maxScore);
     }
 
     // Update is called once per frame
@@ -52,10 +53,14 @@ public class ScoreManager : MonoBehaviour
         {
             if (Input.anyKeyDown)
             {
-                _clickKeySound.Play();
+                //_clickKeySound.Play();
+                //Debug.Log("click key");
                 Invoke("ManageScore", 0.5f);
                 _isOpenCorrectPanel = false;
             }
+            Invoke("ManageScore", 4f);
+            _isOpenCorrectPanel = false;
+
         }
     }
 
@@ -87,6 +92,7 @@ public class ScoreManager : MonoBehaviour
             Debug.Log("diable puzzle panel");
             puzzlePanel.SetActive(false);
             CorrectPanel.SetActive(true);
+            _isOpenCorrectPanel = true;
             _openCorrectPanelSound.Play();
             Invoke("DelayCorrectPanelStatus", 2f);
            // Debug.Log("correct panel" + CorrectPanel.activeSelf);
@@ -95,7 +101,6 @@ public class ScoreManager : MonoBehaviour
         {
             Debug.Log("Error! Puzzle Key not found.");
         }
-                   
     }
 
     private void ManageScore()
@@ -130,7 +135,10 @@ public class ScoreManager : MonoBehaviour
         }
         // Debug.Log("Currect Score : " + currentScore);
         ScoreText.text = currentScore.ToString() + "/" + _maxScore.ToString();
-        PlayerPrefs.SetInt("Stage1_score", currentScore);
+        if( Stage == 1)
+            PlayerPrefs.SetInt("Stage1_score", currentScore);
+        else if(Stage == 2)
+            PlayerPrefs.SetInt("Stage2_score", currentScore);
         PlayerPrefs.Save();
     }
 
@@ -150,15 +158,22 @@ public class ScoreManager : MonoBehaviour
         foreach (var puzzleData in PuzzleKeys)
         {
             string puzzleKey = puzzleData.Key;
-
-            FieldInfo fieldInfo = typeof(Stage1).GetField(puzzleKey);
-
-            int isSolved = (int)fieldInfo.GetValue(PlayerList[PlayerID].Stage1);
+            int isSolved = 0;
+            if(Stage == 1)
+            {
+                FieldInfo fieldInfo = typeof(Stage1).GetField(puzzleKey);
+                isSolved = (int)fieldInfo.GetValue(PlayerList[PlayerID].Stage1);
+            }
+            else if(Stage == 2)
+            {
+                FieldInfo fieldInfo = typeof(Stage2).GetField(puzzleKey);
+                isSolved = (int)fieldInfo.GetValue(PlayerList[PlayerID].Stage2);
+            }
 
             PlayerPrefs.SetInt(puzzleKey, isSolved);
 
         }
-     
+        Debug.Log("LoadFileToPlayerPrefs");
         PlayerPrefs.Save();
     }
 
@@ -171,19 +186,28 @@ public class ScoreManager : MonoBehaviour
 
         int PlayerID = PlayerPrefs.GetInt("PlayerID");
 
-        Stage1 Stage1 = PlayerList[PlayerID].Stage1;
+        Stage1 stage1 = PlayerList[PlayerID].Stage1;
+        Stage2 stage2 = PlayerList[PlayerID].Stage2;
 
-        FieldInfo fieldInfo = typeof(Stage1).GetField(fieldName);
+        FieldInfo fieldInfo;
 
-        if (fieldInfo != null)
+        if(Stage == 1)
         {
-            fieldInfo.SetValue(Stage1, value);
-            FileHandler.SaveToJSON<PlayerEntry>(PlayerList, "PlayerData.json");
+            fieldInfo = typeof(Stage1).GetField(fieldName);
+            fieldInfo.SetValue(stage1, value);
         }
+        else if(Stage == 2)
+        {
+            fieldInfo = typeof(Stage2).GetField(fieldName);
+            fieldInfo.SetValue(stage2, value);
+        }
+
         else
         {
             UnityEngine.Debug.LogError($"Field not found or not writable: {fieldName}");
         }
+
+        FileHandler.SaveToJSON<PlayerEntry>(PlayerList, "PlayerData.json");
     }
 
 }

@@ -39,7 +39,7 @@ public class PassCode : MonoBehaviour
         {
             // Debug.Log("It's Work!!!");
             _source.Play();
-            //SceneManager.LoadScene("stage2");
+            SceneManager.LoadScene("Stage2");
         }
         else
         {
@@ -64,7 +64,7 @@ public class PassCode : MonoBehaviour
         {
             _answerIndex = 0;
         }
-       
+
     }
 
     public void DeleteAll()

@@ -3,33 +3,31 @@ using UnityEngine.UI;
 
 public class WordData : MonoBehaviour
 {
-
+    public char CharValue;
     [SerializeField]
-    private Text charText;
-
+    
+    private Text _charText;
     [HideInInspector]
-    public char charValue;
-
-    private Button buttonObj;
+    private Button _buttonObj;
 
     private void Awake()
     {
-        buttonObj = GetComponent<Button>();
+        _buttonObj = GetComponent<Button>();
 
-        if (buttonObj) 
+        if (_buttonObj) 
         {
-            buttonObj.onClick.AddListener(() => CharSelected());
+            _buttonObj.onClick.AddListener(() => CharSelected());
         }
     }
 
     public void SetChar(char value)
     {
-        charText.text = value + "";
-        charValue = value;
+        _charText.text = value + "";
+        CharValue = value;
     }
 
     private void CharSelected() 
     {
-        ShuffleWordQuizManager.instance.SelectedOption(this);
+        ShuffleWordQuizManager.Instance.SelectedOption(this);
     }
 }

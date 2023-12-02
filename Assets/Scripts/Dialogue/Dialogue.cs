@@ -5,10 +5,11 @@ using UnityEngine;
 [System.Serializable]
 public class Dialogue 
 {
-    public string name;
+    public string NpcName;
+    public string PlayerName;
 
     [TextArea(3,10)]
-    public string[] sentences;
+    public string[] Sentences;
 
 
 }

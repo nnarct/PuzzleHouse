@@ -1,49 +1,81 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using TMPro;
+using UnityEngine.SceneManagement;
 using UnityEngine;
-using TMPro;
 
 public class DialogueManager : MonoBehaviour
 {
-    public TextMeshProUGUI nameText;
-    public TextMeshProUGUI dialogueText;
+    public TextMeshProUGUI NpcNameText;
+    public TextMeshProUGUI DialogueText;
+    public GameObject ContinueButton; 
     
-    private Queue<string> sentences;
+    private Queue<string> _sentences;
+
+    public Animator Animator;
+    public Dialogue Dialogue;
     
     // Start is called before the first frame update
     void Start()
     {
-        sentences = new Queue<string>();
+        _sentences = new Queue<string>();
+
+        StartDialogue(Dialogue);
     }
 
     public void StartDialogue(Dialogue dialogue)
     {
-        nameText.text = dialogue.name;
+        Animator.SetBool("isOpen", true);
+        NpcNameText.text = dialogue.NpcName;
 
-        sentences.Clear();
+        _sentences.Clear();
 
-        foreach (string sentence in dialogue.sentences)
+        foreach (string sentence in dialogue.Sentences)
         {
-            sentences.Enqueue(sentence);
+            _sentences.Enqueue(sentence);
         }
 
-        DisplayNextSentence();
+        Invoke("DisplayNextSentence", 1.0f);
     }
 
     public void DisplayNextSentence()
     {
-        if(sentences.Count == 0)
+        
+
+        string sentence = _sentences.Dequeue();
+        DialogueText.text = sentence;
+        StopAllCoroutines();
+        StartCoroutine(TypeSentence(sentence));
+
+        
+    }
+
+    IEnumerator TypeSentence(string sentence)
+    {
+        if (_sentences.Count == 0)
         {
             EndDialogue();
         }
 
-        string sentence = sentences.Dequeue();
-        dialogueText.text = sentence;
+        DialogueText.text = "";
+
+        foreach(char letter in sentence.ToCharArray())
+        {
+            DialogueText.text += letter;
+            yield return new WaitForSeconds(0.05f); ;
+        }
+
+        
     }
 
     void EndDialogue()
     {
-        Debug.Log("End of conversation");
+        Debug.Log("End");
+        ContinueButton.SetActive(false);
+        Animator.SetBool("isOpen", false);
+
+        int nextSceneIndex = SceneManager.GetActiveScene().buildIndex + 1;
+        SceneManager.LoadScene(nextSceneIndex);
     }
 }

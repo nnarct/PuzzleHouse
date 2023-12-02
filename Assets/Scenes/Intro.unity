@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 23905708}
   - component: {fileID: 23905710}
   - component: {fileID: 23905709}
+  - component: {fileID: 23905711}
   m_Layer: 5
   m_Name: Cloud
   m_TagString: Untagged
@@ -198,6 +199,27 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 23905707}
   m_CullTransparentMesh: 1
+--- !u!95 &23905711
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 23905707}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: db06d43295421a4448620fb9f842e7b8, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &93683959
 GameObject:
   m_ObjectHideFlags: 0
@@ -246,10 +268,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 2560, y: 1440}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -315,6 +337,7 @@ GameObject:
   - component: {fileID: 124949923}
   - component: {fileID: 124949925}
   - component: {fileID: 124949924}
+  - component: {fileID: 124949926}
   m_Layer: 5
   m_Name: OldMan
   m_TagString: Untagged
@@ -379,6 +402,27 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 124949922}
   m_CullTransparentMesh: 1
+--- !u!95 &124949926
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 124949922}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 85f8dd09b20a8ae4d9d63e33c7a39e44, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &270820984
 GameObject:
   m_ObjectHideFlags: 0
@@ -389,6 +433,7 @@ GameObject:
   m_Component:
   - component: {fileID: 270820986}
   - component: {fileID: 270820985}
+  - component: {fileID: 270820987}
   m_Layer: 0
   m_Name: DialogueManager
   m_TagString: Untagged
@@ -408,8 +453,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ae1c54570fa7e0438419eb2086de896, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nameText: {fileID: 1456679337}
-  dialogueText: {fileID: 838680596}
+  NpcNameText: {fileID: 1456679337}
+  DialogueText: {fileID: 838680596}
+  ContinueButton: {fileID: 1324916394}
+  Animator: {fileID: 1684305428}
+  Dialogue:
+    NpcName: Huntmans
+    PlayerName: 
+    Sentences:
+    - "Hello warrior! Welcome to CarrotPink.\nI\u2019m glad you here. I\u2019m a
+      huntmans.\r\n"
+    - "I have received a mission from the King to rescue the Princess who was trapped
+      in the PuzzleHouse.\r"
+    - "I\u2019ve never figured out those puzzles on my own. So I hope you could help
+      me out.\r"
+    - "Your mission is to finish all the puzzles to collect the keys and rescue the
+      princess. \nGood luck with that! "
 --- !u!4 &270820986
 Transform:
   m_ObjectHideFlags: 0
@@ -425,6 +484,27 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &270820987
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 270820984}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 4b4dc97828e1b3f4dace6eb404ebeb81, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &325620041
 GameObject:
   m_ObjectHideFlags: 0
@@ -649,8 +729,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Your mission is to finish all the puzzles to collect the keys and rescue
-    the princess. Good luck with that! '
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ac79686a6067bae40a8e26d168d92163, type: 2}
   m_sharedMaterial: {fileID: -7644672757271753672, guid: ac79686a6067bae40a8e26d168d92163, type: 2}
@@ -1207,6 +1286,7 @@ GameObject:
   - component: {fileID: 1684305425}
   - component: {fileID: 1684305427}
   - component: {fileID: 1684305426}
+  - component: {fileID: 1684305428}
   m_Layer: 5
   m_Name: DialogueBlock
   m_TagString: Untagged
@@ -1274,6 +1354,27 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1684305424}
   m_CullTransparentMesh: 1
+--- !u!95 &1684305428
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1684305424}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8b42632ed32d6b04298efe382e0450bf, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1786642942
 GameObject:
   m_ObjectHideFlags: 0
@@ -1286,14 +1387,13 @@ GameObject:
   - component: {fileID: 1786642946}
   - component: {fileID: 1786642945}
   - component: {fileID: 1786642944}
-  - component: {fileID: 1786642947}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1786642943
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1358,7 +1458,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1786642947}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: DialogueTrigger, Assembly-CSharp
         m_MethodName: TriggerDialogue
         m_Mode: 1
@@ -1408,29 +1508,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1786642942}
   m_CullTransparentMesh: 1
---- !u!114 &1786642947
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1786642942}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 61948d08b495db44489c83703be4224d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogue:
-    name: Huntmans
-    sentences:
-    - "Hello warrior! welcome to CarrotPink. \nI\u2019m glad you here. I\u2019m a
-      huntmans.\r\n"
-    - 'I have received a mission from the King to rescue the Princess who was trapped
-      in the PuzzleHouse.
-
-'
-    - 'Your mission is to finish all the puzzles to collect the keys and rescue the
-      princess. Good luck with that! '
 --- !u!1 &2062401483
 GameObject:
   m_ObjectHideFlags: 0

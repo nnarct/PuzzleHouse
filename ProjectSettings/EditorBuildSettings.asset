@@ -15,6 +15,9 @@ EditorBuildSettings:
     path: Assets/Scenes/EnterPlayerName.unity
     guid: 357778b7453e0d148b2fc02c58c762f0
   - enabled: 1
+    path: Assets/Scenes/Intro.unity
+    guid: 19cf979089b9f9f419b05ead7a2b7bfc
+  - enabled: 1
     path: Assets/Scenes/Stage1.unity
     guid: 5122ec67a856a444d8e08bb43772358e
   - enabled: 0

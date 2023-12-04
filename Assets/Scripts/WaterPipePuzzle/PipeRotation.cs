@@ -7,7 +7,8 @@ public class PipeRotation : MonoBehaviour
     float[] RotationValue = { 0, 90, 180, 270 };
 
 
-    public float[] CoorrectRotation;
+    public float[] CorrectRotation;
+    
     [SerializeField]
     bool isPlace = false;
 
@@ -26,13 +27,15 @@ public class PipeRotation : MonoBehaviour
     }
     private void Start()
     {
-        PossibleRots = CoorrectRotation.Length;
+    
+
+        PossibleRots = CorrectRotation.Length;
         int RotationIndex = Random.Range(0, RotationValue.Length);
-        this.transform.eulerAngles = new Vector3(0, 0, RotationValue[RotationIndex]);
+        transform.eulerAngles = new Vector3(0, 0, RotationValue[RotationIndex]);
 
         if(PossibleRots > 1)
         {
-            if (transform.eulerAngles.z == CoorrectRotation[0] || transform.eulerAngles.z == CoorrectRotation[1])
+            if (transform.eulerAngles.z == CorrectRotation[0] || transform.eulerAngles.z == CorrectRotation[1])
             {
                 isPlace = true;
                 pipeManager.CorrectMove();
@@ -40,7 +43,7 @@ public class PipeRotation : MonoBehaviour
         }
         else
         {
-            if (transform.eulerAngles.z == CoorrectRotation[0])
+            if (transform.eulerAngles.z == CorrectRotation[0])
             {
                 isPlace = true;
                 pipeManager.CorrectMove();
@@ -56,7 +59,7 @@ public class PipeRotation : MonoBehaviour
 
         if (PossibleRots > 1)
         {
-            if (transform.eulerAngles.z == CoorrectRotation[0] || transform.eulerAngles.z == CoorrectRotation[1] && isPlace == false)
+            if (transform.eulerAngles.z == CorrectRotation[0] || transform.eulerAngles.z == CorrectRotation[1] && isPlace == false)
             {
                 isPlace = true;
                 pipeManager.CorrectMove();
@@ -69,7 +72,7 @@ public class PipeRotation : MonoBehaviour
         }
         else
         {
-            if (transform.eulerAngles.z == CoorrectRotation[0] && isPlace == false)
+            if (transform.eulerAngles.z == CorrectRotation[0] && isPlace == false)
             {
                 isPlace = true;
                 pipeManager.CorrectMove();

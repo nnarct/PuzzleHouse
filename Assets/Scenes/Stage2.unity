@@ -9616,6 +9616,8 @@ MonoBehaviour:
   - {fileID: 1833353984}
   - {fileID: 1274241940}
   - {fileID: 1016950856}
+  _totalScore: 0
+  _currentScore: 0
 --- !u!1 &727524728
 GameObject:
   m_ObjectHideFlags: 0
@@ -11019,7 +11021,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!222 &818920354
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -15204,7 +15206,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 818920356}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: ExitButton, Assembly-CSharp
         m_MethodName: ClosePanel
         m_Mode: 1

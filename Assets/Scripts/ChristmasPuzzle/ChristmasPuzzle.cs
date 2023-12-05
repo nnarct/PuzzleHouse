@@ -18,9 +18,9 @@ public class ChristmasPuzzle : MonoBehaviour
 
     private Button[] _buttons;
 
-    private int _totalScore;
+    public int _totalScore;
 
-    private int _currentScore;
+    public int _currentScore;
 
     // Start is called before the first frame update
     void Start()
@@ -48,6 +48,7 @@ public class ChristmasPuzzle : MonoBehaviour
         }
         else
         {
+
             // Swap positions if a button was already clicked
             Vector3 tempPosition = _lastClickedButton.transform.position;
             _lastClickedButton.transform.position = clickedButton.transform.position;
@@ -56,6 +57,8 @@ public class ChristmasPuzzle : MonoBehaviour
             // Reset the last clicked button
             _lastClickedButton = null;
 
+
+            
             // Check correct positions after swapping
             CheckCorrectPosition(correctPositions, _buttons);
         }
@@ -80,10 +83,15 @@ public class ChristmasPuzzle : MonoBehaviour
     void CheckCorrectPosition(GameObject[] correctPositions, Button[] buttons)
     {
         _currentScore = 0;
-        int positionThreshold = 0; // Adjust this threshold as needed
+        int positionThreshold = 1; // Adjust this threshold as needed
 
         for (int i = 0; i < buttons.Length; i++)
         {
+            Debug.Log("Button : " +  i);
+            //Debug.Log("correctPosition : " + correctPositions[i].transform.position);
+            //Debug.Log("ButtonPosition : " + buttons[i].transform.position);
+            Debug.Log(Vector3.Distance(correctPositions[i].transform.position, buttons[i].transform.position));
+
             // Check if the positions are close enough
             if (Vector3.Distance(correctPositions[i].transform.position, buttons[i].transform.position) <= positionThreshold)
             {
@@ -100,6 +108,7 @@ public class ChristmasPuzzle : MonoBehaviour
 
 
         }
+
     }
 
     public void Correct()

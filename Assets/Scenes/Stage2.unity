@@ -18274,9 +18274,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scoreManager: {fileID: 404999560}
   PipesHolder: {fileID: 939266380}
-  Pipes: []
-  TotalPipes: 0
-  CorrectPipes: 0
+  Pipes:
+  - {fileID: 1989958920}
+  - {fileID: 1896406846}
+  - {fileID: 1929523912}
+  - {fileID: 389731172}
+  - {fileID: 1508626200}
+  - {fileID: 1050117117}
+  - {fileID: 2091065332}
+  - {fileID: 10076361}
+  - {fileID: 609773671}
+  - {fileID: 727524728}
+  TotalPipes: 10
+  CorrectPipes: 3
   GamePanel: {fileID: 1751830788}
   PuzzleKey: Pipe
 --- !u!1 &1429758248

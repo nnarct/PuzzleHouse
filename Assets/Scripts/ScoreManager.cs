@@ -154,6 +154,7 @@ public class ScoreManager : MonoBehaviour
         PlayerList = FileHandler.ReadListFromJSON<PlayerEntry>("PlayerData.json");
 
         int PlayerID = PlayerPrefs.GetInt("PlayerID");
+        PlayerPrefs.SetString("Character", PlayerList[PlayerID].CharacterChoose);
 
         foreach (var puzzleData in PuzzleKeys)
         {

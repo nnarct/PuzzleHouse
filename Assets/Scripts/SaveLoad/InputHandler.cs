@@ -34,10 +34,11 @@ public class InputHandler : MonoBehaviour
     {
         if(ValidateInput(NameInput.text))
         {
-            int PlayerID = _playerList.Count;
-            PlayerPrefs.SetInt("PlayerID", PlayerID);
+            int playerID = _playerList.Count;
+            string characterName = PlayerPrefs.GetString("Character");
+            PlayerPrefs.SetInt("PlayerID", playerID);
             _sceneIndex = SceneManager.GetActiveScene().buildIndex +1;
-            _playerList.Add(new PlayerEntry(NameInput.text, _sceneIndex));
+            _playerList.Add(new PlayerEntry(NameInput.text, _sceneIndex, characterName));
             FileHandler.SaveToJSON<PlayerEntry>(_playerList, _fileName);
             SceneManager.LoadSceneAsync(_sceneIndex);
         }

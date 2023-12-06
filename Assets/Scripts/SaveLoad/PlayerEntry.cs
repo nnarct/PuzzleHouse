@@ -5,16 +5,19 @@ using System.Collections.Generic;
 public class PlayerEntry 
 {
     public string PlayerName;
+    public string CharacterChoose;
     public int Level;
     public Stage1 Stage1;
     public Stage2 Stage2;
 
-    public PlayerEntry(string name, int Level)
+    public PlayerEntry(string name, int level, string characterChoose)
     {
         PlayerName = name;
-        this.Level = Level;
+        CharacterChoose = characterChoose;
+        this.Level = level;
         Stage1 = new Stage1(0, 0, 0, 0, 0);
         Stage2 = new Stage2(0, 0, 0, 0, 0);
+        
     }
 }
 

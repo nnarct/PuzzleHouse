@@ -6,26 +6,27 @@ using UnityEngine.UIElements;
 public class PipeManager : MonoBehaviour
 {
     public ScoreManager scoreManager;
+    public GameObject GamePanel;
     public GameObject PipesHolder;
     public GameObject[] Pipes;
 
     [SerializeField]
-    public int TotalPipes = 0;
+    private int _totalPipe = 0;
 
     [SerializeField]
-    int CorrectPipes = 0;
 
-    public GameObject GamePanel;
     public string PuzzleKey = "Pipe";
+    private int _correctPipes = 0;
 
+    public bool isRotating = false;
 
     void Start()
     {
-        TotalPipes = PipesHolder.transform.childCount;
+        _totalPipe = PipesHolder.transform.childCount;
 
-        Pipes = new GameObject[TotalPipes];
+        Pipes = new GameObject[_totalPipe];
 
-        for (int i = 0; i < Pipes.Length; i++)
+        for (int i = 0; i < Pipes.Length ; i++)
         {
             Pipes[i] = PipesHolder.transform.GetChild(i).gameObject;
         }
@@ -33,20 +34,23 @@ public class PipeManager : MonoBehaviour
 
     public void CorrectMove()
     {
-        CorrectPipes += 1;
+        _correctPipes += 1;
 
-        Debug.Log("Correct Move");
+        Debug.Log("Correct Move : " + _correctPipes );
 
-        if(CorrectPipes == TotalPipes)
+        if(_correctPipes == _totalPipe)
         {
             Debug.Log("You Win!");
+
             scoreManager.HandleCorrectAnswer(PuzzleKey, GamePanel);
             
+            isRotating = false;
         }
     }
 
     public void WrongMove()
     {
-        CorrectPipes -= 1;
+        _correctPipes -= 1;
+        Debug.Log("Wrong Move : " + _correctPipes );
     }
 }

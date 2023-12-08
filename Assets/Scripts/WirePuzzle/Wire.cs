@@ -18,6 +18,8 @@ public class Wire : MonoBehaviour , IDragHandler , IBeginDragHandler , IEndDragH
 
     private WireTask _wireTask;
 
+    [SerializeField] private AudioSource _source;
+
     private void Awake()
     {
         _image = GetComponent<Image>();
@@ -74,6 +76,7 @@ public class Wire : MonoBehaviour , IDragHandler , IBeginDragHandler , IEndDragH
 
     public void OnBeginDrag(PointerEventData eventData)
     {
+        _source.Play();
         if (!isLeftWire) { return; }
         //if it correct don't draw more line
         if (!_isCorrect) { return; }
@@ -83,7 +86,8 @@ public class Wire : MonoBehaviour , IDragHandler , IBeginDragHandler , IEndDragH
 
     public void OnEndDrag(PointerEventData eventData)
     {
-        if(_wireTask.CurrentHoveredWire != null) 
+        _source.Play();
+        if (_wireTask.CurrentHoveredWire != null) 
         {
             if (_wireTask.CurrentHoveredWire.CustomColor == CustomColor && !_wireTask.CurrentHoveredWire.isLeftWire)
             {

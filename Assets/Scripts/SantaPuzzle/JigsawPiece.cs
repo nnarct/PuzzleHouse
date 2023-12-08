@@ -11,6 +11,8 @@ public class JigsawPiece : MonoBehaviour
     private RectTransform rectTransform;
     private bool isCorrect = false;
 
+    [SerializeField] private AudioSource _source;
+
     void Start()
     {
         rectTransform = GetComponent<RectTransform>();
@@ -53,6 +55,7 @@ public class JigsawPiece : MonoBehaviour
 
     public bool IsPieceCorrect()
     {
+        //_source.Play();
         return isCorrect;
     }
 

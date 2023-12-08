@@ -8,6 +8,7 @@ public class UIDrag : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IDr
     private bool isDragging = false;
     private Vector3 startPosition;
     private RectTransform rectTransform;
+    [SerializeField] private AudioSource _source;
 
     void Start()
     {
@@ -16,6 +17,7 @@ public class UIDrag : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IDr
 
     public void OnPointerDown(PointerEventData eventData)
     {
+        _source.Play();
         isDragging = true;
         startPosition = rectTransform.position;
     }

@@ -15,6 +15,8 @@ public class PipeRotation : MonoBehaviour
 
     PipeManager pipeManager;
 
+    [SerializeField] private AudioSource _source;
+
     private void Awake()
     {
         pipeManager = GameObject.Find("PipeManager").GetComponent<PipeManager>();
@@ -51,7 +53,8 @@ public class PipeRotation : MonoBehaviour
 
     private void OnMouseDown()
     {
-        if(!pipeManager.isRotating)
+        _source.Play();
+        if (!pipeManager.isRotating)
         {
             pipeManager.isRotating = true;
             transform.Rotate(new Vector3(0, 0, 90));

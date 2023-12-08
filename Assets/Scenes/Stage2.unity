@@ -177,6 +177,7 @@ MonoBehaviour:
   CorrectRotation:
   - 90
   isPlace: 0
+  _source: {fileID: 1983924338}
 --- !u!61 &10076364
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -448,6 +449,7 @@ MonoBehaviour:
   isLeftWire: 0
   CustomColor: {r: 0, g: 0, b: 0, a: 0}
   _isCorrect: 0
+  _source: {fileID: 0}
 --- !u!222 &18114761
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2064,6 +2066,7 @@ MonoBehaviour:
   isLeftWire: 0
   CustomColor: {r: 0, g: 0, b: 0, a: 0}
   _isCorrect: 0
+  _source: {fileID: 0}
 --- !u!222 &180015162
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2505,7 +2508,7 @@ MonoBehaviour:
           m_StringArgument: 1
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 854875415}
         m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
         m_MethodName: Play
         m_Mode: 1
@@ -2714,7 +2717,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1767847366}
         m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
         m_MethodName: Play
         m_Mode: 1
@@ -2726,7 +2729,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1102483776}
         m_TargetAssemblyTypeName: SoundManager, Assembly-CSharp
         m_MethodName: OnButtonPress
         m_Mode: 1
@@ -2857,6 +2860,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d7286182c02a2e41ad1b58d4adcc4fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _source: {fileID: 1983924338}
 --- !u!222 &229409911
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2879,6 +2883,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   correctAnchoredPosition: {x: -183, y: 12}
   snapThreshold: 20
+  _source: {fileID: 1983924338}
 --- !u!1 &242853415
 GameObject:
   m_ObjectHideFlags: 0
@@ -3067,6 +3072,7 @@ MonoBehaviour:
   isLeftWire: 1
   CustomColor: {r: 0, g: 0, b: 0, a: 0}
   _isCorrect: 0
+  _source: {fileID: 1983924338}
 --- !u!222 &242853420
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3354,6 +3360,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 1983924338}
+        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 1384534713}
         m_TargetAssemblyTypeName: PauseHandler, Assembly-CSharp
         m_MethodName: PauseGame
@@ -3486,6 +3504,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 1767847366}
+        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 1429758250}
         m_TargetAssemblyTypeName: ExitButton, Assembly-CSharp
         m_MethodName: ClosePanel
@@ -3617,6 +3647,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d7286182c02a2e41ad1b58d4adcc4fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _source: {fileID: 1983924338}
 --- !u!222 &308378639
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3639,6 +3670,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   correctAnchoredPosition: {x: -183, y: -192}
   snapThreshold: 20
+  _source: {fileID: 1983924338}
 --- !u!1 &312154556
 GameObject:
   m_ObjectHideFlags: 0
@@ -4051,6 +4083,7 @@ MonoBehaviour:
   isLeftWire: 1
   CustomColor: {r: 0, g: 0, b: 0, a: 0}
   _isCorrect: 0
+  _source: {fileID: 1983924338}
 --- !u!222 &327041078
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4140,6 +4173,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d7286182c02a2e41ad1b58d4adcc4fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _source: {fileID: 1983924338}
 --- !u!222 &338964717
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4162,6 +4196,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   correctAnchoredPosition: {x: 229, y: 220}
   snapThreshold: 20
+  _source: {fileID: 1983924338}
 --- !u!1 &342749440
 GameObject:
   m_ObjectHideFlags: 0
@@ -4613,6 +4648,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d7286182c02a2e41ad1b58d4adcc4fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _source: {fileID: 1983924338}
 --- !u!222 &376199799
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4635,6 +4671,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   correctAnchoredPosition: {x: 141, y: -258}
   snapThreshold: 20
+  _source: {fileID: 1983924338}
 --- !u!1 &389731172
 GameObject:
   m_ObjectHideFlags: 0
@@ -4690,6 +4727,7 @@ MonoBehaviour:
   - 0
   - 180
   isPlace: 0
+  _source: {fileID: 1983924338}
 --- !u!61 &389731175
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4811,8 +4849,8 @@ MonoBehaviour:
   - Key: Santa
   - Key: Wire
   CorrectPanel: {fileID: 1105472575}
-  _openCorrectPanelSound: {fileID: 0}
-  _clickKeySound: {fileID: 0}
+  _openCorrectPanelSound: {fileID: 600554493}
+  _clickKeySound: {fileID: 194273585}
 --- !u!4 &404999561
 Transform:
   m_ObjectHideFlags: 0
@@ -4979,7 +5017,7 @@ MonoBehaviour:
           m_StringArgument: 2
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 854875415}
         m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
         m_MethodName: Play
         m_Mode: 1
@@ -5288,7 +5326,7 @@ MonoBehaviour:
           m_StringArgument: 7
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 854875415}
         m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
         m_MethodName: Play
         m_Mode: 1
@@ -5420,13 +5458,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
+      - m_Target: {fileID: 1983924338}
+        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+        m_MethodName: Play
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -5768,6 +5806,7 @@ GameObject:
   - component: {fileID: 503988110}
   - component: {fileID: 503988112}
   - component: {fileID: 503988111}
+  - component: {fileID: 503988113}
   m_Layer: 3
   m_Name: DoorPuzzle
   m_TagString: Untagged
@@ -5816,8 +5855,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   UiText: {fileID: 1124520164}
   WrongPanel: {fileID: 1499880206}
-  _source: {fileID: 0}
-  _source2: {fileID: 0}
+  _source: {fileID: 600554493}
+  _source2: {fileID: 460691090}
 --- !u!222 &503988112
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5826,6 +5865,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 503988109}
   m_CullTransparentMesh: 1
+--- !u!114 &503988113
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 503988109}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec826cdfa26897a439ca1f4d336c44ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GamePanel: {fileID: 503988109}
 --- !u!1 &507593150
 GameObject:
   m_ObjectHideFlags: 0
@@ -5935,7 +5987,7 @@ MonoBehaviour:
           m_StringArgument: 5
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 854875415}
         m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
         m_MethodName: Play
         m_Mode: 1
@@ -6083,6 +6135,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 1983924338}
+        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 509793019}
         m_TargetAssemblyTypeName: AnswerScript, Assembly-CSharp
         m_MethodName: Answer
@@ -6242,7 +6306,7 @@ MonoBehaviour:
           m_StringArgument: 6
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 854875415}
         m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
         m_MethodName: Play
         m_Mode: 1
@@ -7003,6 +7067,7 @@ MonoBehaviour:
   CorrectRotation:
   - 0
   isPlace: 0
+  _source: {fileID: 1983924338}
 --- !u!61 &562907424
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -7168,7 +7233,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1983924338}
         m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
         m_MethodName: PlayOneShot
         m_Mode: 2
@@ -7414,7 +7479,7 @@ MonoBehaviour:
           m_StringArgument: 0
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 854875415}
         m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
         m_MethodName: Play
         m_Mode: 1
@@ -7518,6 +7583,7 @@ MonoBehaviour:
   CorrectRotation:
   - 0
   isPlace: 0
+  _source: {fileID: 1983924338}
 --- !u!61 &588084895
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -7823,6 +7889,7 @@ MonoBehaviour:
   - 0
   - 180
   isPlace: 0
+  _source: {fileID: 1983924338}
 --- !u!61 &609773674
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -8282,6 +8349,7 @@ MonoBehaviour:
   isLeftWire: 0
   CustomColor: {r: 0, g: 0, b: 0, a: 0}
   _isCorrect: 0
+  _source: {fileID: 0}
 --- !u!222 &636339543
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -8456,7 +8524,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1767847366}
         m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
         m_MethodName: Play
         m_Mode: 1
@@ -8468,9 +8536,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Interactor, Assembly-CSharp
-        m_MethodName: EndInteraction
+      - m_Target: {fileID: 503988113}
+        m_TargetAssemblyTypeName: ExitButton, Assembly-CSharp
+        m_MethodName: ClosePanel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -8949,6 +9017,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 1767847366}
+        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 1688921300}
         m_TargetAssemblyTypeName: ExitButton, Assembly-CSharp
         m_MethodName: ClosePanel
@@ -9672,6 +9752,7 @@ MonoBehaviour:
   CorrectRotation:
   - 270
   isPlace: 0
+  _source: {fileID: 1983924338}
 --- !u!61 &727524731
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -9911,7 +9992,7 @@ MonoBehaviour:
           m_StringArgument: 9
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 854875415}
         m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
         m_MethodName: Play
         m_Mode: 1
@@ -10357,13 +10438,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
+      - m_Target: {fileID: 1983924338}
+        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+        m_MethodName: Play
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -10488,6 +10569,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d7286182c02a2e41ad1b58d4adcc4fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _source: {fileID: 1983924338}
 --- !u!222 &788286444
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -10510,6 +10592,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   correctAnchoredPosition: {x: -225, y: 204}
   snapThreshold: 20
+  _source: {fileID: 1983924338}
 --- !u!1 &793797383
 GameObject:
   m_ObjectHideFlags: 0
@@ -11016,7 +11099,7 @@ GameObject:
   - component: {fileID: 818920354}
   - component: {fileID: 818920356}
   m_Layer: 3
-  m_Name: ChristmasPuzzleFIX
+  m_Name: ChristmasPuzzle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12314,7 +12397,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1767847366}
         m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
         m_MethodName: Play
         m_Mode: 1
@@ -12458,7 +12541,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1983924338}
         m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
         m_MethodName: PlayOneShot
         m_Mode: 2
@@ -12618,6 +12701,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 1983924338}
+        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 968713895}
         m_TargetAssemblyTypeName: AnswerScript, Assembly-CSharp
         m_MethodName: Answer
@@ -13521,6 +13616,7 @@ MonoBehaviour:
   CorrectRotation:
   - 270
   isPlace: 0
+  _source: {fileID: 1983924338}
 --- !u!61 &1050117120
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -13925,6 +14021,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 1767847366}
+        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 322984633}
         m_TargetAssemblyTypeName: ExitButton, Assembly-CSharp
         m_MethodName: ClosePanel
@@ -14169,8 +14277,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6acd129eb3ca1c6498f7259ced1608af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  soundOnIcon: {fileID: 0}
-  soundOffIcon: {fileID: 0}
+  soundOnIcon: {fileID: 1246178076}
+  soundOffIcon: {fileID: 1034192214}
 --- !u!1 &1103773074
 GameObject:
   m_ObjectHideFlags: 0
@@ -14280,7 +14388,7 @@ MonoBehaviour:
           m_StringArgument: 3
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 854875415}
         m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
         m_MethodName: Play
         m_Mode: 1
@@ -14774,7 +14882,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 854875415}
         m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
         m_MethodName: Play
         m_Mode: 1
@@ -16005,7 +16113,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 854875415}
         m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
         m_MethodName: Play
         m_Mode: 1
@@ -16164,7 +16272,7 @@ MonoBehaviour:
           m_StringArgument: 4
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 854875415}
         m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
         m_MethodName: Play
         m_Mode: 1
@@ -16928,6 +17036,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 1983924338}
+        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 611486194}
         m_TargetAssemblyTypeName: JigsawManager, Assembly-CSharp
         m_MethodName: ResetPieces
@@ -17704,7 +17824,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1983924338}
         m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
         m_MethodName: PlayOneShot
         m_Mode: 2
@@ -18101,6 +18221,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 1767847366}
+        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 1751830790}
         m_TargetAssemblyTypeName: ExitButton, Assembly-CSharp
         m_MethodName: ClosePanel
@@ -18275,6 +18407,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreManager: {fileID: 404999560}
+  GamePanel: {fileID: 1751830788}
   PipesHolder: {fileID: 939266380}
   Pipes:
   - {fileID: 1989958920}
@@ -18287,10 +18420,9 @@ MonoBehaviour:
   - {fileID: 10076361}
   - {fileID: 609773671}
   - {fileID: 727524728}
-  TotalPipes: 10
-  CorrectPipes: 3
-  GamePanel: {fileID: 1751830788}
+  _totalPipe: 0
   PuzzleKey: Pipe
+  isRotating: 0
 --- !u!1 &1429758248
 GameObject:
   m_ObjectHideFlags: 0
@@ -18620,13 +18752,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
+      - m_Target: {fileID: 1983924338}
+        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+        m_MethodName: Play
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -18839,6 +18971,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1494428664}
   - component: {fileID: 1494428665}
+  - component: {fileID: 1494428666}
   m_Layer: 3
   m_Name: ChestPuzzle
   m_TagString: Untagged
@@ -18876,6 +19009,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1494428663}
   m_CullTransparentMesh: 1
+--- !u!114 &1494428666
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1494428663}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec826cdfa26897a439ca1f4d336c44ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GamePanel: {fileID: 1494428663}
 --- !u!1 &1495149194
 GameObject:
   m_ObjectHideFlags: 0
@@ -19042,13 +19188,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
+      - m_Target: {fileID: 1983924338}
+        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+        m_MethodName: Play
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -19277,7 +19423,7 @@ MonoBehaviour:
           m_StringArgument: 8
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 854875415}
         m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
         m_MethodName: Play
         m_Mode: 1
@@ -19382,6 +19528,7 @@ MonoBehaviour:
   - 180
   - -180
   isPlace: 0
+  _source: {fileID: 1983924338}
 --- !u!61 &1508626203
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -19653,6 +19800,7 @@ MonoBehaviour:
   isLeftWire: 1
   CustomColor: {r: 0, g: 0, b: 0, a: 0}
   _isCorrect: 0
+  _source: {fileID: 1983924338}
 --- !u!222 &1514089892
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -20344,13 +20492,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
+      - m_Target: {fileID: 1983924338}
+        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+        m_MethodName: Play
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -21059,6 +21207,7 @@ MonoBehaviour:
   CorrectRotation:
   - 0
   isPlace: 0
+  _source: {fileID: 1983924338}
 --- !u!61 &1649157564
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -21370,6 +21519,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 1983924338}
+        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 1673853805}
         m_TargetAssemblyTypeName: AnswerScript, Assembly-CSharp
         m_MethodName: Answer
@@ -22058,6 +22219,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d7286182c02a2e41ad1b58d4adcc4fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _source: {fileID: 1983924338}
 --- !u!222 &1751814305
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -22080,6 +22242,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   correctAnchoredPosition: {x: 5, y: 204}
   snapThreshold: 20
+  _source: {fileID: 1983924338}
 --- !u!1 &1751830788
 GameObject:
   m_ObjectHideFlags: 0
@@ -22291,7 +22454,7 @@ MonoBehaviour:
   QuestionTxt: {fileID: 716427098}
   PuzzleKey: Kitchenware
   WrongPanel: {fileID: 78211864}
-  _source: {fileID: 0}
+  _source: {fileID: 460691090}
 --- !u!4 &1761909113
 Transform:
   m_ObjectHideFlags: 0
@@ -22517,13 +22680,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
+      - m_Target: {fileID: 1983924338}
+        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+        m_MethodName: Play
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -22984,13 +23147,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
+      - m_Target: {fileID: 1983924338}
+        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+        m_MethodName: Play
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -23334,13 +23497,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
+      - m_Target: {fileID: 1983924338}
+        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+        m_MethodName: Play
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -23572,6 +23735,7 @@ MonoBehaviour:
   isLeftWire: 0
   CustomColor: {r: 0, g: 0, b: 0, a: 0}
   _isCorrect: 0
+  _source: {fileID: 0}
 --- !u!222 &1873080296
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -23661,6 +23825,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d7286182c02a2e41ad1b58d4adcc4fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _source: {fileID: 1983924338}
 --- !u!222 &1881243750
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -23683,6 +23848,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   correctAnchoredPosition: {x: 229, y: -38}
   snapThreshold: 20
+  _source: {fileID: 1983924338}
 --- !u!1 &1896406846
 GameObject:
   m_ObjectHideFlags: 0
@@ -23737,6 +23903,7 @@ MonoBehaviour:
   CorrectRotation:
   - 180
   isPlace: 0
+  _source: {fileID: 1983924338}
 --- !u!61 &1896406849
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -24156,6 +24323,7 @@ MonoBehaviour:
   - 0
   - 180
   isPlace: 0
+  _source: {fileID: 1983924338}
 --- !u!61 &1929523915
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -24373,13 +24541,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
+      - m_Target: {fileID: 1983924338}
+        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+        m_MethodName: Play
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -24745,6 +24913,7 @@ MonoBehaviour:
   isLeftWire: 1
   CustomColor: {r: 0, g: 0, b: 0, a: 0}
   _isCorrect: 0
+  _source: {fileID: 1983924338}
 --- !u!222 &1969442942
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -24808,6 +24977,7 @@ MonoBehaviour:
   CorrectRotation:
   - 0
   isPlace: 0
+  _source: {fileID: 1983924338}
 --- !u!61 &1982615784
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -25153,7 +25323,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1767847366}
         m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
         m_MethodName: Play
         m_Mode: 1
@@ -25165,9 +25335,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Interactor, Assembly-CSharp
-        m_MethodName: EndInteraction
+      - m_Target: {fileID: 1494428666}
+        m_TargetAssemblyTypeName: ExitButton, Assembly-CSharp
+        m_MethodName: ClosePanel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -25269,6 +25439,7 @@ MonoBehaviour:
   CorrectRotation:
   - 90
   isPlace: 0
+  _source: {fileID: 1983924338}
 --- !u!61 &1989958923
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -25565,6 +25736,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d7286182c02a2e41ad1b58d4adcc4fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _source: {fileID: 1983924338}
 --- !u!222 &2036852466
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -25587,6 +25759,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   correctAnchoredPosition: {x: 47, y: -54}
   snapThreshold: 20
+  _source: {fileID: 1983924338}
 --- !u!1 &2043920655
 GameObject:
   m_ObjectHideFlags: 0
@@ -26087,6 +26260,7 @@ MonoBehaviour:
   CorrectRotation:
   - 180
   isPlace: 0
+  _source: {fileID: 1983924338}
 --- !u!61 &2091065335
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -26868,6 +27042,6 @@ SceneRoots:
   - {fileID: 611486195}
   - {fileID: 1761909113}
   - {fileID: 737729612}
-  - {fileID: 410666131}
   - {fileID: 2074121556}
   - {fileID: 404999561}
+  - {fileID: 410666131}

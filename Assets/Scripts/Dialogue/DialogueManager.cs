@@ -25,10 +25,15 @@ public class DialogueManager : MonoBehaviour
     {
         _sentences = new Queue<string>();
 
-        StartDialogue(Dialogue);
+        List<PlayerEntry> playerList = new List<PlayerEntry>();
+        playerList = FileHandler.ReadListFromJSON<PlayerEntry>("PlayerData.json");
+        int playerId = PlayerPrefs.GetInt("PlayerID");
+        string playerName = playerList[playerId].PlayerName;
+
+        StartDialogue(Dialogue, playerName);
     }
 
-    public void StartDialogue(Dialogue dialogue)
+    public void StartDialogue(Dialogue dialogue, string playerName)
     {
         Animator.SetBool("isOpen", true);
         NpcNameText.text = dialogue.NpcName;
@@ -37,7 +42,8 @@ public class DialogueManager : MonoBehaviour
 
         foreach (string sentence in dialogue.Sentences)
         {
-            _sentences.Enqueue(sentence);
+            string formattedSentence = sentence.Replace("{player}", playerName);
+            _sentences.Enqueue(formattedSentence);
         }
 
 

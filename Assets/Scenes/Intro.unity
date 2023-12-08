@@ -460,10 +460,9 @@ MonoBehaviour:
   Animator: {fileID: 1684305428}
   Dialogue:
     NpcName: Huntmans
-    PlayerName: 
     Sentences:
-    - "Hello warrior! Welcome to CarrotPink.\nI\u2019m glad you here. I\u2019m a
-      huntmans.\r\n"
+    - "Hello {player}! Welcome to CarrotPink.\nI\u2019m glad you here. I\u2019m a
+      Huntmans.\r\n"
     - "I have received a mission from the King to rescue the Princess who was trapped
       in the PuzzleHouse.\r"
     - "I\u2019ve never figured out those puzzles on my own. So I hope you could help

@@ -22,7 +22,7 @@ public class PassCode : MonoBehaviour
 
     public void AddNumber(string number)
     {
-        if(_answerIndex < 7)
+        if(_answerIndex < 6)
         {
             _answerIndex++;
             _answer = _answer + number;

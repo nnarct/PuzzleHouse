@@ -149,12 +149,12 @@ public class ScoreManager : MonoBehaviour
 
     void LoadFileToPlayerPrefs()
     {
-        List<PlayerEntry> PlayerList = new List<PlayerEntry>();
+        List<PlayerEntry> playerList = new List<PlayerEntry>();
 
-        PlayerList = FileHandler.ReadListFromJSON<PlayerEntry>("PlayerData.json");
+        playerList = FileHandler.ReadListFromJSON<PlayerEntry>("PlayerData.json");
 
-        int PlayerID = PlayerPrefs.GetInt("PlayerID");
-        PlayerPrefs.SetString("Character", PlayerList[PlayerID].CharacterChoose);
+        int playerId = PlayerPrefs.GetInt("PlayerID");
+        PlayerPrefs.SetString("Character", playerList[playerId].CharacterChoose);
 
         foreach (var puzzleData in PuzzleKeys)
         {
@@ -163,12 +163,12 @@ public class ScoreManager : MonoBehaviour
             if(Stage == 1)
             {
                 FieldInfo fieldInfo = typeof(Stage1).GetField(puzzleKey);
-                isSolved = (int)fieldInfo.GetValue(PlayerList[PlayerID].Stage1);
+                isSolved = (int)fieldInfo.GetValue(playerList[playerId].Stage1);
             }
             else if(Stage == 2)
             {
                 FieldInfo fieldInfo = typeof(Stage2).GetField(puzzleKey);
-                isSolved = (int)fieldInfo.GetValue(PlayerList[PlayerID].Stage2);
+                isSolved = (int)fieldInfo.GetValue(playerList[playerId].Stage2);
             }
 
             PlayerPrefs.SetInt(puzzleKey, isSolved);
@@ -181,14 +181,14 @@ public class ScoreManager : MonoBehaviour
 
     void UpdateStage1Field(string fieldName, int value)
     {
-        List<PlayerEntry> PlayerList = new List<PlayerEntry>();
+        List<PlayerEntry> playerList = new List<PlayerEntry>();
 
-        PlayerList = FileHandler.ReadListFromJSON<PlayerEntry>("PlayerData.json");
+        playerList = FileHandler.ReadListFromJSON<PlayerEntry>("PlayerData.json");
 
-        int PlayerID = PlayerPrefs.GetInt("PlayerID");
+        int playerId = PlayerPrefs.GetInt("PlayerID");
 
-        Stage1 stage1 = PlayerList[PlayerID].Stage1;
-        Stage2 stage2 = PlayerList[PlayerID].Stage2;
+        Stage1 stage1 = playerList[playerId].Stage1;
+        Stage2 stage2 = playerList[playerId].Stage2;
 
         FieldInfo fieldInfo;
 
@@ -208,7 +208,7 @@ public class ScoreManager : MonoBehaviour
             UnityEngine.Debug.LogError($"Field not found or not writable: {fieldName}");
         }
 
-        FileHandler.SaveToJSON<PlayerEntry>(PlayerList, "PlayerData.json");
+        FileHandler.SaveToJSON<PlayerEntry>(playerList, "PlayerData.json");
     }
 
 }

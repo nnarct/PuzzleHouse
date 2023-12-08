@@ -25017,7 +25017,7 @@ GameObject:
   - component: {fileID: 1968339626}
   m_Layer: 8
   m_Name: Player
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -25035,7 +25035,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2140805250}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1968339626
 MonoBehaviour:
@@ -26545,7 +26545,6 @@ RectTransform:
   - {fileID: 427841076}
   - {fileID: 2097063238}
   - {fileID: 172661118}
-  - {fileID: 1968339625}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -26868,6 +26867,7 @@ SceneRoots:
   m_Roots:
   - {fileID: 1673855228}
   - {fileID: 2140805250}
+  - {fileID: 1968339625}
   - {fileID: 1438727330}
   - {fileID: 1999993425}
   - {fileID: 1609721523}

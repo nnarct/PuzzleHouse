@@ -52,7 +52,7 @@ public class MovementPlayer : MonoBehaviour
         }
         else
         {
-           // _audio.Pause();
+            // _audio.Pause();
             _anim.SetBool("running", false);
         }
     }

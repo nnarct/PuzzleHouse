@@ -20,7 +20,6 @@ public class Interactor : MonoBehaviour
     private Rigidbody2D _rigidBodyPlayer;
     private void Start()
     {
-     
         Puzzle.SetActive(false);
         _movementPlayer = GameObject.FindWithTag("Player").GetComponent<MovementPlayer>();
         _rigidBodyPlayer = GameObject.FindWithTag("Player").GetComponent<Rigidbody2D>();
@@ -28,15 +27,15 @@ public class Interactor : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (PlayerPrefs.GetInt(PuzzleKey, 0) == 0 || PuzzleKey.Length == 0)
+        if (PlayerPrefs.GetInt(PuzzleKey, 0) == 0)
         {
-             if (collision.gameObject.tag.Equals("Player"))
-             {
-                 InteractText.gameObject.SetActive(true);
-                 IsInRange = true;
-             }
+            if (collision.gameObject.tag.Equals("Player"))
+            {
+                InteractText.gameObject.SetActive(true);
+                IsInRange = true;
+            }
         }
-       
+
 
     }
 
@@ -51,17 +50,17 @@ public class Interactor : MonoBehaviour
 
     private void Update()
     {
-        if (IsInRange) 
+        if (IsInRange)
         {
             if (Input.GetKeyDown(KeyCode.E) && InteractText.gameObject.activeSelf)
             {
                 playPuzzle();
-               _rigidBodyPlayer.velocity = Vector2.zero;
-               _movementPlayer.FreezeMovement();
+                _rigidBodyPlayer.velocity = Vector2.zero;
+                _movementPlayer.FreezeMovement();
             }
         }
 
-      if (IsInPuzzle)
+        if (IsInPuzzle)
         {
             if (Input.GetKeyDown(KeyCode.Escape))
             {
@@ -79,7 +78,7 @@ public class Interactor : MonoBehaviour
         InteractText.gameObject.SetActive(false);
 
         IsInPuzzle = true;
-       // Debug.Log("Player entered the puzzle.");
+        // Debug.Log("Player entered the puzzle.");
     }
 
     public void EndInteraction()
@@ -89,7 +88,7 @@ public class Interactor : MonoBehaviour
 
         Puzzle.SetActive(false);
         _movementPlayer.UnfreezeMovement();
-        if (PlayerPrefs.GetInt(PuzzleKey, 0) == 0 || PuzzleKey.Length == 0)
+        if (PlayerPrefs.GetInt(PuzzleKey, 0) == 0)
         {
             InteractText.gameObject.SetActive(true);
 

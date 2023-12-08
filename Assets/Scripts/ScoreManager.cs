@@ -12,6 +12,7 @@ public class ScoreManager : MonoBehaviour
     private int _maxScore;
     private bool _isOpenCorrectPanel = false ;
     private string _puzzleKey;
+    private MovementPlayer _movementPlayer;
 
     [SerializeField] private AudioSource _openCorrectPanelSound;
     [SerializeField] private AudioSource _clickKeySound;
@@ -24,7 +25,8 @@ public class ScoreManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if(ScoreText == null)
+        _movementPlayer = FindObjectOfType<MovementPlayer>();
+        if (ScoreText == null)
         {
             Debug.LogError("Error! Cannot find reference of ScoreText.");
         } 
@@ -109,6 +111,7 @@ public class ScoreManager : MonoBehaviour
         UpdateStage1Field(_puzzleKey, 1);
 
         UpdateScoreDisplay();
+        _movementPlayer.UnfreezeMovement();
 
     }
 

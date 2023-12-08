@@ -4,18 +4,22 @@ using System.Linq;
 using TMPro;
 using UnityEngine.SceneManagement;
 using UnityEngine;
+using Unity.VisualScripting;
 
 public class DialogueManager : MonoBehaviour
 {
     public TextMeshProUGUI NpcNameText;
     public TextMeshProUGUI DialogueText;
-    public GameObject ContinueButton; 
-    
+    public GameObject ContinueButton;
+    public GameObject NextSceneButton;
+
     private Queue<string> _sentences;
 
     public Animator Animator;
     public Dialogue Dialogue;
-    
+
+    private string _lastText;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -36,44 +40,62 @@ public class DialogueManager : MonoBehaviour
             _sentences.Enqueue(sentence);
         }
 
+
         Invoke("DisplayNextSentence", 1.0f);
     }
 
     public void DisplayNextSentence()
     {
-        
-
         string sentence = _sentences.Dequeue();
         DialogueText.text = sentence;
         StopAllCoroutines();
-        StartCoroutine(TypeSentence(sentence));
 
-        
+        if (_sentences.Count > 0)
+        {
+            StartCoroutine(TypeSentence(sentence));
+        }
+        else
+        {
+            StartCoroutine(TypeSentence(sentence));
+            _lastText = sentence;
+            EndDialogue();
+
+        }
+
+
     }
 
     IEnumerator TypeSentence(string sentence)
     {
-        if (_sentences.Count == 0)
-        {
-            EndDialogue();
-        }
-
         DialogueText.text = "";
 
-        foreach(char letter in sentence.ToCharArray())
+        foreach (char letter in sentence.ToCharArray())
         {
             DialogueText.text += letter;
-            yield return new WaitForSeconds(0.05f); ;
+            yield return new WaitForSeconds(0.05f);
         }
 
-        
+        if (_sentences.Count == 0)
+        {
+
+            NextSceneButton.SetActive(true);
+        }
     }
 
-    void EndDialogue()
+    public void EndDialogue()
     {
+
         Debug.Log("End");
         ContinueButton.SetActive(false);
-        Animator.SetBool("isOpen", false);
+
+    }
+
+    public void NextScene()
+    {
+        StopAllCoroutines();
+        DialogueText.text = _lastText;
+
+        //Animator.SetBool("isOpen", false);
 
         int nextSceneIndex = SceneManager.GetActiveScene().buildIndex + 1;
         SceneManager.LoadScene(nextSceneIndex);

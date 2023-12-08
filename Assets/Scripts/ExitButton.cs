@@ -11,7 +11,7 @@ public class ExitButton : MonoBehaviour
     private void Start()
     {
         // _interactorScript = GameObject.FindWithTag("Interactable").GetComponent<Interactor>();
-        _movementPlayer = GameObject.Find("Player").GetComponent<MovementPlayer>();
+        _movementPlayer = FindObjectOfType<MovementPlayer>();
 
     }
 

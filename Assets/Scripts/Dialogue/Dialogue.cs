@@ -6,7 +6,6 @@ using UnityEngine;
 public class Dialogue 
 {
     public string NpcName;
-    public string PlayerName;
 
     [TextArea(3,10)]
     public string[] Sentences;

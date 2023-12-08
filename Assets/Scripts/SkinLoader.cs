@@ -22,7 +22,7 @@ public class SkinLoader : MonoBehaviour
                 Instantiate(HumphreyPrefab, transform);
                 break;
             default:
-                Debug.LogWarning("No character selected or character prefab not assigned.");
+                Instantiate(AlanPrefab, transform);
                 break;
         }
     }

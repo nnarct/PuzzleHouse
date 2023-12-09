@@ -13,8 +13,8 @@ public class Wire : MonoBehaviour , IDragHandler , IBeginDragHandler , IEndDragH
     private LineRenderer _lineRenderer;
     private Canvas _canvas;
 
-    private bool _isDragStarted = false;
-    public bool _isCorrect = false;
+    [SerializeField] private bool _isDragStarted = false;
+    [SerializeField] public bool _isCorrect = false;
 
     private WireTask _wireTask;
 
@@ -41,21 +41,16 @@ public class Wire : MonoBehaviour , IDragHandler , IBeginDragHandler , IEndDragH
 
             _lineRenderer.SetPosition(0, transform.position);
             _lineRenderer.SetPosition(1, _canvas.transform.TransformPoint(movePosition));
-
         }
-        else
+        else if (!_isCorrect)
         {
-            //hide the line if not connect
-            if (!_isCorrect)
-            { 
-                _lineRenderer.SetPosition(0, Vector3.zero);
-                _lineRenderer.SetPosition(1, Vector3.zero);
-            }
+            _lineRenderer.SetPosition(0, Vector3.zero);
+            _lineRenderer.SetPosition(1, Vector3.zero);
         }
 
         bool isHovered = RectTransformUtility.RectangleContainsScreenPoint(transform as RectTransform, Input.mousePosition, _canvas.worldCamera);
 
-        if (isHovered) 
+        if (isHovered)
         {
             _wireTask.CurrentHoveredWire = this;
         }
@@ -79,9 +74,11 @@ public class Wire : MonoBehaviour , IDragHandler , IBeginDragHandler , IEndDragH
         _source.Play();
         if (!isLeftWire) { return; }
         //if it correct don't draw more line
-        if (!_isCorrect) { return; }
-        _isDragStarted = true;
-        _wireTask.CurrentDraggedWire = this;
+        if (!_isCorrect)
+        {
+            _isDragStarted = true;
+            _wireTask.CurrentDraggedWire = this;
+        }
     }
 
     public void OnEndDrag(PointerEventData eventData)

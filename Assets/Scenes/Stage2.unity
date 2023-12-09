@@ -6208,7 +6208,7 @@ MonoBehaviour:
   PuzzlePanel: {fileID: 503988109}
   FinishStagePanel: {fileID: 677826381}
   WrongPanel: {fileID: 1499880206}
-  _source: {fileID: 600554493}
+  _source: {fileID: 2043920657}
   _source2: {fileID: 460691090}
 --- !u!222 &503988112
 CanvasRenderer:

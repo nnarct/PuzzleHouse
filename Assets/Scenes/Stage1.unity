@@ -5613,11 +5613,11 @@ RectTransform:
   - {fileID: 1952176786}
   - {fileID: 374595460}
   - {fileID: 1846588300}
-  m_Father: {fileID: 2097063238}
+  m_Father: {fileID: 2140805250}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -4.126953, y: 22}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 2560, y: 1440}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &427841077
@@ -27178,7 +27178,6 @@ RectTransform:
   - {fileID: 1336557984}
   - {fileID: 1162890249}
   - {fileID: 2126013529}
-  - {fileID: 427841076}
   m_Father: {fileID: 2140805250}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -27202,7 +27201,7 @@ MonoBehaviour:
   PuzzlePanel: {fileID: 2097063237}
   FinishStagePanel: {fileID: 1732409509}
   WrongPanel: {fileID: 2126013528}
-  _source: {fileID: 1744758575}
+  _source: {fileID: 1736950189}
   _source2: {fileID: 1888980059}
 --- !u!222 &2097063242
 CanvasRenderer:
@@ -27477,6 +27476,7 @@ RectTransform:
   - {fileID: 553951120}
   - {fileID: 1031225728}
   - {fileID: 87942004}
+  - {fileID: 427841076}
   - {fileID: 2097063238}
   - {fileID: 172661118}
   m_Father: {fileID: 0}

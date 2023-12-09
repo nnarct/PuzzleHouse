@@ -9,7 +9,7 @@ public class FinishStageAnimation : MonoBehaviour
 
     [SerializeField]
 
-    GameObject EndGamePanel, Star, UiText, NextButton, ReplayButton, LightWheel;
+    GameObject PanelBackground, EndGamePanel, Star, UiText, NextButton, ReplayButton, LightWheel;
 
     private Image _lightWheelImage;
     // Start is called before the first frame update
@@ -18,6 +18,7 @@ public class FinishStageAnimation : MonoBehaviour
         _lightWheelImage = LightWheel.GetComponent<Image>();
         StartCoroutine(RandomColorChange());
         LeanTween.rotateAround(LightWheel, Vector3.forward, -360, 10f).setLoopClamp();
+        LeanTween.scale(PanelBackground, new Vector3(1f, 1f, 1f), 1f).setDelay(.5f).setEase(LeanTweenType.easeOutElastic);
         LeanTween.scale(Star, new Vector3(2f, 2f, 2f), 2f).setDelay(.5f).setEase(LeanTweenType.easeOutElastic).setOnComplete(ShowText);
         LeanTween.scale(LightWheel, new Vector3(1f, 1f, 1f), 2f).setDelay(.5f).setEase(LeanTweenType.easeOutElastic);
         LeanTween.moveLocal(Star, new Vector3(0f, 240f, 0f), .7f).setDelay(2f).setEase(LeanTweenType.easeInOutCubic);

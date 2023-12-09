@@ -79,9 +79,11 @@ public class Wire : MonoBehaviour , IDragHandler , IBeginDragHandler , IEndDragH
         _source.Play();
         if (!isLeftWire) { return; }
         //if it correct don't draw more line
-        if (!_isCorrect) { return; }
-        _isDragStarted = true;
-        _wireTask.CurrentDraggedWire = this;
+        if (!_isCorrect)
+        {
+            _isDragStarted = true;
+            _wireTask.CurrentDraggedWire = this;
+        }
     }
 
     public void OnEndDrag(PointerEventData eventData)

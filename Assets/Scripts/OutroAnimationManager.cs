@@ -23,7 +23,7 @@ public class OutroAnimationManager : MonoBehaviour
         sequence.append(LeanTween.moveLocal(Cloud, new Vector3(0f, 384f, 0f), 1f).setEase(LeanTweenType.linear));
 
         // Loop the sequence with a ping-pong effect
-        LeanTween.setLoopPingPong(sequence.id)
+        //LeanTween.setLoopPingPong(sequence.id);
     }
 
 // Update is called once per frame

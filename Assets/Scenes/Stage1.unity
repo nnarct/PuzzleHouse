@@ -5601,7 +5601,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 427841075}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -5613,11 +5613,11 @@ RectTransform:
   - {fileID: 1952176786}
   - {fileID: 374595460}
   - {fileID: 1846588300}
-  m_Father: {fileID: 2140805250}
+  m_Father: {fileID: 2097063238}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -4.126953, y: 22}
   m_SizeDelta: {x: 2560, y: 1440}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &427841077
@@ -7775,7 +7775,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 405, y: -312}
+  m_AnchoredPosition: {x: 405, y: -412}
   m_SizeDelta: {x: 661, y: 211}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &589519892
@@ -7838,7 +7838,7 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_HighlightedColor: {r: 0.745283, g: 0.745283, b: 0.745283, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
@@ -12184,7 +12184,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -405, y: -312}
+  m_AnchoredPosition: {x: -405, y: -412}
   m_SizeDelta: {x: 661, y: 211}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &836371217
@@ -12247,7 +12247,7 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_HighlightedColor: {r: 0.745283, g: 0.745283, b: 0.745283, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
@@ -23301,9 +23301,9 @@ RectTransform:
   - {fileID: 271719218}
   - {fileID: 589519891}
   - {fileID: 836371216}
+  - {fileID: 1249575429}
   - {fileID: 1371114856}
   - {fileID: 1401339180}
-  - {fileID: 1249575429}
   m_Father: {fileID: 2140805250}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -23328,7 +23328,7 @@ MonoBehaviour:
   UiText: {fileID: 1401339179}
   NextButton: {fileID: 589519890}
   ReplayButton: {fileID: 836371215}
-  LightWheel: {fileID: 0}
+  LightWheel: {fileID: 1249575428}
 --- !u!222 &1732409512
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -27177,6 +27177,7 @@ RectTransform:
   - {fileID: 1336557984}
   - {fileID: 1162890249}
   - {fileID: 2126013529}
+  - {fileID: 427841076}
   m_Father: {fileID: 2140805250}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -27197,6 +27198,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UiText: {fileID: 886550559}
+  PuzzlePanel: {fileID: 2097063237}
+  FinishStagePanel: {fileID: 1732409509}
   WrongPanel: {fileID: 2126013528}
   _source: {fileID: 1744758575}
   _source2: {fileID: 1888980059}
@@ -27473,7 +27476,6 @@ RectTransform:
   - {fileID: 553951120}
   - {fileID: 1031225728}
   - {fileID: 87942004}
-  - {fileID: 427841076}
   - {fileID: 2097063238}
   - {fileID: 172661118}
   m_Father: {fileID: 0}

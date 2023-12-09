@@ -9,6 +9,10 @@ public class PassCode : MonoBehaviour
 { 
     public TMP_Text UiText = null;
 
+    public GameObject PuzzlePanel;
+
+    public GameObject FinishStagePanel;
+
     [SerializeField]
     public GameObject WrongPanel;
 
@@ -39,7 +43,7 @@ public class PassCode : MonoBehaviour
         {
             // Debug.Log("It's Work!!!");
             _source.Play();
-            SceneManager.LoadScene("Stage2");
+            Correct();
         }
         else
         {
@@ -80,4 +84,9 @@ public class PassCode : MonoBehaviour
         WrongPanel.SetActive(false);
     }
 
+    void Correct()
+    {
+        PuzzlePanel.SetActive(false);
+        FinishStagePanel.SetActive(true);
+    }
 }

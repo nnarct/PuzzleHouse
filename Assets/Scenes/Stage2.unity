@@ -150,13 +150,13 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 10076361}
-  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
+  m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 939266381}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -150, y: -157}
@@ -176,7 +176,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CorrectRotation:
   - 90
-  isPlace: 0
+  isManyPossibleRots: 0
   _source: {fileID: 1983924338}
 --- !u!61 &10076364
 BoxCollider2D:
@@ -243,7 +243,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 15f10dc55d04e3c4484e3ec82a9a32bd, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b14df8728f97800499f0432ee38d3c07, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -4726,7 +4726,7 @@ MonoBehaviour:
   CorrectRotation:
   - 0
   - 180
-  isPlace: 0
+  isManyPossibleRots: 0
   _source: {fileID: 1983924338}
 --- !u!61 &389731175
 BoxCollider2D:
@@ -7066,7 +7066,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CorrectRotation:
   - 0
-  isPlace: 0
+  isManyPossibleRots: 0
   _source: {fileID: 1983924338}
 --- !u!61 &562907424
 BoxCollider2D:
@@ -7556,7 +7556,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 588084892}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: 1, w: -0.00000004371139}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -7582,7 +7582,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CorrectRotation:
   - 0
-  isPlace: 0
+  isManyPossibleRots: 0
   _source: {fileID: 1983924338}
 --- !u!61 &588084895
 BoxCollider2D:
@@ -7861,7 +7861,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 609773671}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: -0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -7888,7 +7888,7 @@ MonoBehaviour:
   CorrectRotation:
   - 0
   - 180
-  isPlace: 0
+  isManyPossibleRots: 0
   _source: {fileID: 1983924338}
 --- !u!61 &609773674
 BoxCollider2D:
@@ -9835,13 +9835,13 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 727524728}
-  m_LocalRotation: {x: 0, y: -0, z: 0.7071068, w: -0.7071068}
+  m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 939266381}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 270}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 458, y: -461}
@@ -9861,7 +9861,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CorrectRotation:
   - 270
-  isPlace: 0
+  isManyPossibleRots: 0
   _source: {fileID: 1983924338}
 --- !u!61 &727524731
 BoxCollider2D:
@@ -9928,7 +9928,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 60071f03eaa7cdf4380b47f97f8fc34d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e1214a600de98f24b91b862ad3883ab0, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -11332,7 +11332,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 0/5
+  m_text: 1/5
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b269190c6a0a7934f84f876096805fd2, type: 2}
   m_sharedMaterial: {fileID: -7846200430254626449, guid: b269190c6a0a7934f84f876096805fd2, type: 2}
@@ -12765,7 +12765,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b33679f7763d4654480efa9ccd961a45, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  IsCorrect: 0
+  IsCorrect: 1
   quizManager: {fileID: 1761909112}
 --- !u!114 &968713896
 MonoBehaviour:
@@ -13699,13 +13699,13 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1050117117}
-  m_LocalRotation: {x: 0, y: -0, z: 0.7071068, w: -0.7071068}
+  m_LocalRotation: {x: -0, y: -0, z: 1, w: -0.00000004371139}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 939266381}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 270}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 458, y: 147}
@@ -13725,7 +13725,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CorrectRotation:
   - 270
-  isPlace: 0
+  isManyPossibleRots: 0
   _source: {fileID: 1983924338}
 --- !u!61 &1050117120
 BoxCollider2D:
@@ -13792,7 +13792,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 89273fa4dbde2564faff763aba0f885f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e5e481c76b4a65f47bf700370311b67c, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -16604,7 +16604,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!82 &1259030589
 AudioSource:
   m_ObjectHideFlags: 0
@@ -16875,7 +16875,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1270902193
 RectTransform:
   m_ObjectHideFlags: 0
@@ -18521,18 +18521,20 @@ MonoBehaviour:
   GamePanel: {fileID: 1751830788}
   PipesHolder: {fileID: 939266380}
   Pipes:
-  - {fileID: 1989958920}
-  - {fileID: 1896406846}
-  - {fileID: 1929523912}
-  - {fileID: 389731172}
-  - {fileID: 1508626200}
-  - {fileID: 1050117117}
-  - {fileID: 2091065332}
-  - {fileID: 10076361}
-  - {fileID: 609773671}
-  - {fileID: 727524728}
-  _totalPipe: 0
+  - {fileID: 1989958921}
+  - {fileID: 1896406847}
+  - {fileID: 1929523913}
+  - {fileID: 389731173}
+  - {fileID: 1508626201}
+  - {fileID: 1050117118}
+  - {fileID: 2091065333}
+  - {fileID: 10076362}
+  - {fileID: 609773672}
+  - {fileID: 727524729}
+  _totalPipe: 10
+  ManyRotsIndex: 020000000300000008000000
   PuzzleKey: Pipe
+  _correctPipes: 2
   isRotating: 0
 --- !u!1 &1429758248
 GameObject:
@@ -19611,13 +19613,13 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1508626200}
-  m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
+  m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 939266381}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 154, y: 147}
@@ -19638,7 +19640,7 @@ MonoBehaviour:
   CorrectRotation:
   - 180
   - -180
-  isPlace: 0
+  isManyPossibleRots: 0
   _source: {fileID: 1983924338}
 --- !u!61 &1508626203
 BoxCollider2D:
@@ -19705,7 +19707,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 55ac41edec37d86489e955ead7a74a0a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 15f10dc55d04e3c4484e3ec82a9a32bd, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -20126,8 +20128,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   InteractText: {fileID: 1398492749}
   Puzzle: {fileID: 1751830788}
-  IsInRange: 0
-  IsInPuzzle: 0
+  IsInRange: 1
+  IsInPuzzle: 1
   PuzzleKey: Pipe
   _source: {fileID: 1573299282}
 --- !u!61 &1573299284
@@ -21291,7 +21293,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1649157561}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: 1, w: -0.00000004371139}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -21317,7 +21319,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CorrectRotation:
   - 0
-  isPlace: 0
+  isManyPossibleRots: 0
   _source: {fileID: 1983924338}
 --- !u!61 &1649157564
 BoxCollider2D:
@@ -22371,7 +22373,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1751830789
 RectTransform:
   m_ObjectHideFlags: 0
@@ -23365,7 +23367,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 
+  m_text: 390#
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b269190c6a0a7934f84f876096805fd2, type: 2}
   m_sharedMaterial: {fileID: -7846200430254626449, guid: b269190c6a0a7934f84f876096805fd2, type: 2}
@@ -23987,13 +23989,13 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1896406846}
-  m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
+  m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: -0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 939266381}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 154, y: 451}
@@ -24013,7 +24015,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CorrectRotation:
   - 180
-  isPlace: 0
+  isManyPossibleRots: 0
   _source: {fileID: 1983924338}
 --- !u!61 &1896406849
 BoxCollider2D:
@@ -24080,7 +24082,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: a5fa7d80e41edc14f9ea80c43b40fd79, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 55ac41edec37d86489e955ead7a74a0a, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -24406,7 +24408,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1929523912}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: -0.0000000842937, w: -1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -24433,7 +24435,7 @@ MonoBehaviour:
   CorrectRotation:
   - 0
   - 180
-  isPlace: 0
+  isManyPossibleRots: 0
   _source: {fileID: 1983924338}
 --- !u!61 &1929523915
 BoxCollider2D:
@@ -25087,7 +25089,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CorrectRotation:
   - 0
-  isPlace: 0
+  isManyPossibleRots: 0
   _source: {fileID: 1983924338}
 --- !u!61 &1982615784
 BoxCollider2D:
@@ -25523,13 +25525,13 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1989958920}
-  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
+  m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 939266381}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -150, y: 451}
@@ -25549,7 +25551,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CorrectRotation:
   - 90
-  isPlace: 0
+  isManyPossibleRots: 0
   _source: {fileID: 1983924338}
 --- !u!61 &1989958923
 BoxCollider2D:
@@ -25616,7 +25618,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: e5e481c76b4a65f47bf700370311b67c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 89273fa4dbde2564faff763aba0f885f, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -26175,6 +26177,7 @@ GameObject:
   - component: {fileID: 2074121556}
   - component: {fileID: 2074121555}
   - component: {fileID: 2074121554}
+  - component: {fileID: 2074121557}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -26232,6 +26235,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2074121557
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2074121553}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1511ccae7919cfc46b603b9b337fdc94, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2075648616
 GameObject:
   m_ObjectHideFlags: 0
@@ -26344,13 +26359,13 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2091065332}
-  m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
+  m_LocalRotation: {x: -0, y: -0, z: 1, w: -0.00000004371139}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 939266381}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -454, y: -157}
@@ -26370,7 +26385,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CorrectRotation:
   - 180
-  isPlace: 0
+  isManyPossibleRots: 0
   _source: {fileID: 1983924338}
 --- !u!61 &2091065335
 BoxCollider2D:
@@ -26489,7 +26504,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: e5e481c76b4a65f47bf700370311b67c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a5fa7d80e41edc14f9ea80c43b40fd79, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

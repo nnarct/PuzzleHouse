@@ -9,7 +9,7 @@ public class PipeRotation : MonoBehaviour
     public float[] CorrectRotation;
     
     [SerializeField]
-    bool isPlace = false;
+    public bool isManyPossibleRots;
 
     int PossibleRots = 1;
 
@@ -32,59 +32,27 @@ public class PipeRotation : MonoBehaviour
         PossibleRots = CorrectRotation.Length;
         int RotationIndex = Random.Range(0, RotationValue.Length);
         transform.eulerAngles = new Vector3(0, 0, RotationValue[RotationIndex]);
-        if(PossibleRots > 1)
-        {
-            if (transform.eulerAngles.z == CorrectRotation[0] || transform.eulerAngles.z == CorrectRotation[1])
-            {
-                isPlace = true;
-                pipeManager.CorrectMove();
-            }
-        }
-        else
-        {
-            if (transform.eulerAngles.z == CorrectRotation[0])
-            {
-                isPlace = true;
-                pipeManager.CorrectMove();
-            }
-        }
-        
+        pipeManager.CheckCorrect();
+
     }
 
     private void OnMouseDown()
     {
         _source.Play();
+
         if (!pipeManager.isRotating)
         {
             pipeManager.isRotating = true;
             transform.Rotate(new Vector3(0, 0, 90));
-            if (PossibleRots > 1)
-            {
-                if ((transform.eulerAngles.z == CorrectRotation[0] || transform.eulerAngles.z == CorrectRotation[1]) && isPlace == false)
-                {
-                    isPlace = true;
-                    pipeManager.CorrectMove();
-                }
-                else if (isPlace == true)
-                {
-                    isPlace = false;
-                    pipeManager.WrongMove();
-                }
-            }
-            else
-            {
-                if (transform.eulerAngles.z == CorrectRotation[0] && isPlace == false)
-                {
-                    isPlace = true;
-                    pipeManager.CorrectMove();
-                }
-                else if (isPlace == true)
-                {
-                    isPlace = false;
-                    pipeManager.WrongMove();
-                }
-            }
+            Debug.Log("Pipe rotation: " + transform.rotation.z);
+
+            pipeManager.CheckCorrect();
+
             pipeManager.isRotating = false;
         }
+
+
+        
     }
+
 }

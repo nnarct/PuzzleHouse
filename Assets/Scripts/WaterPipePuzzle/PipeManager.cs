@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -8,49 +9,73 @@ public class PipeManager : MonoBehaviour
     public ScoreManager scoreManager;
     public GameObject GamePanel;
     public GameObject PipesHolder;
-    public GameObject[] Pipes;
+    public Transform[] Pipes;
 
     [SerializeField]
     private int _totalPipe = 0;
 
+    public int[] ManyRotsIndex; 
+
     [SerializeField]
 
     public string PuzzleKey = "Pipe";
-    private int _correctPipes = 0;
+    public int _correctPipes = 0;
 
     public bool isRotating = false;
 
     void Start()
     {
+
         _totalPipe = PipesHolder.transform.childCount;
 
-        Pipes = new GameObject[_totalPipe];
+        Pipes = new Transform[_totalPipe];
 
         for (int i = 0; i < Pipes.Length ; i++)
         {
-            Pipes[i] = PipesHolder.transform.GetChild(i).gameObject;
+            Pipes[i] = PipesHolder.transform.GetChild(i);
         }
     }
 
-    public void CorrectMove()
+    public void CheckCorrect()
     {
-        _correctPipes += 1;
-
-        Debug.Log("Correct Move : " + _correctPipes );
-
-        if(_correctPipes == _totalPipe)
+        _correctPipes = 0;
+        for (int i = 0; i < Pipes.Length; i++)
         {
-            Debug.Log("You Win!");
+            if (ManyRotsIndex.Contains(i))
+            {
+                //Debug.Log(roundedRotation);
+                if (Pipes[i].rotation.z == 1 || Pipes[i].rotation.z == -1)
+                {
+                    _correctPipes++;
+                }
+            }
 
-            scoreManager.HandleCorrectAnswer(PuzzleKey, GamePanel);
-            
-            isRotating = false;
+            if (Mathf.Round(Pipes[i].rotation.z) == 0)
+            {
+                _correctPipes++;
+            }
+
         }
+        
+        Debug.Log(_correctPipes);
+
+        if (_correctPipes == _totalPipe)
+        {
+            Debug.Log("Win");
+
+            StartCoroutine(Win());
+        }
+
     }
 
-    public void WrongMove()
+    IEnumerator Win()
     {
-        _correctPipes -= 1;
-        Debug.Log("Wrong Move : " + _correctPipes );
+        yield return new WaitForSeconds(1.0f); // Adjust the delay time as needed
+
+        Debug.Log("Win");
+        scoreManager.HandleCorrectAnswer(PuzzleKey, GamePanel);
     }
+
+
+
 }

@@ -27,7 +27,7 @@ public class Interactor : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (PlayerPrefs.GetInt(PuzzleKey, 0) == 0)
+        if (PlayerPrefs.GetInt(PuzzleKey, 0) == 0 || PuzzleKey.Length == 0)
         {
             if (collision.gameObject.tag.Equals("Player"))
             {
@@ -76,7 +76,6 @@ public class Interactor : MonoBehaviour
         _source.Play();
         Puzzle.SetActive(true);
         InteractText.gameObject.SetActive(false);
-
         IsInPuzzle = true;
         // Debug.Log("Player entered the puzzle.");
     }
@@ -84,14 +83,13 @@ public class Interactor : MonoBehaviour
     public void EndInteraction()
     {
         _source.Play();
-        Debug.Log("sound on.");
+        // Debug.Log("sound on.");
 
         Puzzle.SetActive(false);
         _movementPlayer.UnfreezeMovement();
         if (PlayerPrefs.GetInt(PuzzleKey, 0) == 0)
         {
             InteractText.gameObject.SetActive(true);
-
         }
         IsInPuzzle = false;
         // Debug.Log("Player exited the puzzle.");

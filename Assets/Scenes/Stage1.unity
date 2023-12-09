@@ -7856,7 +7856,7 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 0}
+  m_TargetGraphic: {fileID: 589519892}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
@@ -23283,7 +23283,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1732409510
 RectTransform:
   m_ObjectHideFlags: 0
@@ -23328,7 +23328,7 @@ MonoBehaviour:
   UiText: {fileID: 1401339179}
   NextButton: {fileID: 589519890}
   ReplayButton: {fileID: 836371215}
-  Sparkling: {fileID: 1249575428}
+  LightWheel: {fileID: 0}
 --- !u!222 &1732409512
 CanvasRenderer:
   m_ObjectHideFlags: 0

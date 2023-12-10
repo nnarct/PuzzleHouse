@@ -416,7 +416,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 2100000, guid: 985407223f2cbc041bd9558280589689, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
@@ -446,10 +446,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 190099c3daafc7f4597630b7c18642f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isLeftWire: 0
+  IsLeftWire: 0
   CustomColor: {r: 0, g: 0, b: 0, a: 0}
-  _isCorrect: 0
-  _source: {fileID: 0}
+  IsCorrect: 0
+  _source: {fileID: 1983924338}
 --- !u!222 &18114761
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1456,7 +1456,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   InteractText: {fileID: 312154556}
-  isInRange: 0
+  IsInRange: 0
 --- !u!60 &117578581
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -2252,7 +2252,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 2100000, guid: 985407223f2cbc041bd9558280589689, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
@@ -2282,10 +2282,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 190099c3daafc7f4597630b7c18642f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isLeftWire: 0
+  IsLeftWire: 0
   CustomColor: {r: 0, g: 0, b: 0, a: 0}
-  _isCorrect: 0
-  _source: {fileID: 0}
+  IsCorrect: 0
+  _source: {fileID: 1983924338}
 --- !u!222 &180015162
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3258,7 +3258,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 2100000, guid: 985407223f2cbc041bd9558280589689, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
@@ -3288,9 +3288,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 190099c3daafc7f4597630b7c18642f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isLeftWire: 1
-  CustomColor: {r: 0, g: 0, b: 0, a: 0}
-  _isCorrect: 0
+  IsLeftWire: 1
+  CustomColor: {r: 0, g: 0, b: 0, a: 1}
+  IsCorrect: 0
   _source: {fileID: 1983924338}
 --- !u!222 &242853420
 CanvasRenderer:
@@ -4413,7 +4413,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 2100000, guid: 985407223f2cbc041bd9558280589689, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
@@ -4443,9 +4443,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 190099c3daafc7f4597630b7c18642f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isLeftWire: 1
+  IsLeftWire: 1
   CustomColor: {r: 0, g: 0, b: 0, a: 0}
-  _isCorrect: 0
+  IsCorrect: 0
   _source: {fileID: 1983924338}
 --- !u!222 &327041078
 CanvasRenderer:
@@ -8866,7 +8866,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 2100000, guid: 985407223f2cbc041bd9558280589689, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
@@ -8896,10 +8896,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 190099c3daafc7f4597630b7c18642f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isLeftWire: 0
+  IsLeftWire: 0
   CustomColor: {r: 0, g: 0, b: 0, a: 0}
-  _isCorrect: 0
-  _source: {fileID: 0}
+  IsCorrect: 0
+  _source: {fileID: 1983924338}
 --- !u!222 &636339543
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -10308,7 +10308,7 @@ MonoBehaviour:
   scoreManager: {fileID: 404999560}
   PuzzleKey: Christmas
   GamePanel: {fileID: 818920353}
-  correctPositions:
+  CorrectPositions:
   - {fileID: 850555893}
   - {fileID: 908753036}
   - {fileID: 611308222}
@@ -10318,8 +10318,6 @@ MonoBehaviour:
   - {fileID: 1833353984}
   - {fileID: 1274241940}
   - {fileID: 1016950856}
-  _totalScore: 0
-  _currentScore: 0
 --- !u!1 &727524728
 GameObject:
   m_ObjectHideFlags: 0
@@ -10712,7 +10710,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   InteractText: {fileID: 1926959719}
-  isInRange: 0
+  IsInRange: 0
 --- !u!60 &743303044
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -14665,7 +14663,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   InteractText: {fileID: 1460174908}
-  isInRange: 0
+  IsInRange: 0
 --- !u!60 &1055678305
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -20687,7 +20685,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 2100000, guid: 985407223f2cbc041bd9558280589689, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
@@ -20717,9 +20715,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 190099c3daafc7f4597630b7c18642f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isLeftWire: 1
+  IsLeftWire: 1
   CustomColor: {r: 0, g: 0, b: 0, a: 0}
-  _isCorrect: 0
+  IsCorrect: 0
   _source: {fileID: 1983924338}
 --- !u!222 &1514089892
 CanvasRenderer:
@@ -21281,7 +21279,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   InteractText: {fileID: 1495149194}
-  isInRange: 0
+  IsInRange: 0
 --- !u!222 &1595337383
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -22751,27 +22749,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb35e84e08f4923418970dde5c73b0b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GamePanel: {fileID: 1688921298}
+  gamePanel: {fileID: 1688921298}
   scoreManager: {fileID: 404999560}
   PuzzleKey: Wire
-  _wireColors:
+  WireColors:
   - {r: 1, g: 0, b: 0, a: 1}
-  - {r: 1, g: 0.87004155, b: 0, a: 1}
-  - {r: 0, g: 1, b: 0, a: 1}
-  - {r: 0, g: 0, b: 1, a: 1}
-  _leftWires:
+  - {r: 1, g: 0.98706424, b: 0, a: 1}
+  - {r: 0.11502433, g: 1, b: 0, a: 1}
+  - {r: 0, g: 0.029061794, b: 1, a: 1}
+  LeftWires:
   - {fileID: 242853419}
   - {fileID: 327041077}
   - {fileID: 1969442941}
   - {fileID: 1514089891}
-  _rightWires:
+  RightWires:
   - {fileID: 1873080295}
   - {fileID: 180015161}
   - {fileID: 18114760}
   - {fileID: 636339542}
   CurrentDraggedWire: {fileID: 0}
   CurrentHoveredWire: {fileID: 0}
-  _isTaskComplete: 0
+  IsTaskComplete: 0
 --- !u!222 &1688921302
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -24772,7 +24770,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 2100000, guid: 985407223f2cbc041bd9558280589689, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
@@ -24802,10 +24800,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 190099c3daafc7f4597630b7c18642f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isLeftWire: 0
+  IsLeftWire: 0
   CustomColor: {r: 0, g: 0, b: 0, a: 0}
-  _isCorrect: 0
-  _source: {fileID: 0}
+  IsCorrect: 0
+  _source: {fileID: 1983924338}
 --- !u!222 &1873080296
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -25950,7 +25948,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 2100000, guid: 985407223f2cbc041bd9558280589689, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
@@ -25980,9 +25978,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 190099c3daafc7f4597630b7c18642f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isLeftWire: 1
+  IsLeftWire: 1
   CustomColor: {r: 0, g: 0, b: 0, a: 0}
-  _isCorrect: 0
+  IsCorrect: 0
   _source: {fileID: 1983924338}
 --- !u!222 &1969442942
 CanvasRenderer:

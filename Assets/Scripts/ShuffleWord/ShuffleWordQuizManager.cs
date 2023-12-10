@@ -21,7 +21,7 @@ public class ShuffleWordQuizManager : MonoBehaviour
     private QuestionData _question;
     [SerializeField] GameObject GamePanel;
     [SerializeField]
-    private WordData[] _answerWordArray;
+    private WordData[] _AnswerWordArray;
     [SerializeField]
     private WordData[] _optionWordArray;
     [SerializeField]
@@ -57,12 +57,12 @@ public class ShuffleWordQuizManager : MonoBehaviour
 
         ResetQuestion();
 
-        for (int i = 0; i < _question.answer.Length; i++) 
+        for (int i = 0; i < _question.Answer.Length; i++) 
         {
-            _charArray[i] = char.ToUpper(_question.answer[i]);
+            _charArray[i] = char.ToUpper(_question.Answer[i]);
         }
 
-        for (int i = _question.answer.Length ;i < _optionWordArray.Length; i++)
+        for (int i = _question.Answer.Length ;i < _optionWordArray.Length; i++)
         {
             _charArray[i] = (char)UnityEngine.Random.Range(65, 91);
         }
@@ -77,20 +77,20 @@ public class ShuffleWordQuizManager : MonoBehaviour
 
     public void SelectedOption(WordData wordData)
     {
-        if(_currentAnswerIndex >= _question.answer.Length) return;
+        if(_currentAnswerIndex >= _question.Answer.Length) return;
 
         _selectWordIndex.Add(wordData.transform.GetSiblingIndex());
-        _answerWordArray[_currentAnswerIndex].SetChar(wordData.CharValue);
+        _AnswerWordArray[_currentAnswerIndex].SetChar(wordData.CharValue);
         wordData.gameObject.SetActive(false);
         _currentAnswerIndex++;
 
-        if (_currentAnswerIndex >= _question.answer.Length)
+        if (_currentAnswerIndex >= _question.Answer.Length)
         {
             _correctAnswer = true;
 
-            for (int i = 0;i < _question.answer.Length;i++)
+            for (int i = 0;i < _question.Answer.Length;i++)
             {
-                if (char.ToUpper(_question.answer[i]) != char.ToUpper(_answerWordArray[i].CharValue))
+                if (char.ToUpper(_question.Answer[i]) != char.ToUpper(_AnswerWordArray[i].CharValue))
                 {
                     _correctAnswer = false;
                     break;
@@ -123,15 +123,15 @@ public class ShuffleWordQuizManager : MonoBehaviour
 
     public void ResetQuestion()
     {
-        for (int i = 0; i < _answerWordArray.Length; i++) 
+        for (int i = 0; i < _AnswerWordArray.Length; i++) 
         {
-            _answerWordArray[i].gameObject.SetActive(true);
-            _answerWordArray[i].SetChar('_');
+            _AnswerWordArray[i].gameObject.SetActive(true);
+            _AnswerWordArray[i].SetChar('_');
         }
 
-        for (int i = _question.answer.Length; i < _answerWordArray.Length; i++)
+        for (int i = _question.Answer.Length; i < _AnswerWordArray.Length; i++)
         {
-            _answerWordArray[i].gameObject.SetActive(false);
+            _AnswerWordArray[i].gameObject.SetActive(false);
         }
         
         for (int i = 0; i < _optionWordArray.Length; i++)
@@ -150,7 +150,7 @@ public class ShuffleWordQuizManager : MonoBehaviour
             _optionWordArray[index].gameObject.SetActive(true);
             _selectWordIndex.RemoveAt(_selectWordIndex.Count - 1);
             _currentAnswerIndex--;
-            _answerWordArray[_currentAnswerIndex].SetChar('_');
+            _AnswerWordArray[_currentAnswerIndex].SetChar('_');
         }
     }
 
@@ -159,5 +159,5 @@ public class ShuffleWordQuizManager : MonoBehaviour
 [System.Serializable]
 public class QuestionData
 {
-    public string answer;
+    public string Answer;
 }

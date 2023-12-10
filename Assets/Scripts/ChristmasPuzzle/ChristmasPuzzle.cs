@@ -14,13 +14,13 @@ public class ChristmasPuzzle : MonoBehaviour
 
     private Button _lastClickedButton;
 
-    public GameObject[] correctPositions;
+    public GameObject[] CorrectPositions;
 
     private Button[] _buttons;
 
-    public int _totalScore;
+    private int _totalScore;
 
-    public int _currentScore;
+    private int _currentScore;
 
     // Start is called before the first frame update
     void Start()
@@ -60,7 +60,7 @@ public class ChristmasPuzzle : MonoBehaviour
 
             
             // Check correct positions after swapping
-            CheckCorrectPosition(correctPositions, _buttons);
+            CheckCorrectPosition(CorrectPositions, _buttons);
         }
     }
 
@@ -80,7 +80,7 @@ public class ChristmasPuzzle : MonoBehaviour
         }
     }
 
-    void CheckCorrectPosition(GameObject[] correctPositions, Button[] buttons)
+    void CheckCorrectPosition(GameObject[] CorrectPositions, Button[] buttons)
     {
         _currentScore = 0;
         int positionThreshold = 1; // Adjust this threshold as needed
@@ -88,12 +88,12 @@ public class ChristmasPuzzle : MonoBehaviour
         for (int i = 0; i < buttons.Length; i++)
         {
             Debug.Log("Button : " +  i);
-            //Debug.Log("correctPosition : " + correctPositions[i].transform.position);
+            //Debug.Log("correctPosition : " + CorrectPositions[i].transform.position);
             //Debug.Log("ButtonPosition : " + buttons[i].transform.position);
-            Debug.Log(Vector3.Distance(correctPositions[i].transform.position, buttons[i].transform.position));
+            Debug.Log(Vector3.Distance(CorrectPositions[i].transform.position, buttons[i].transform.position));
 
             // Check if the positions are close enough
-            if (Vector3.Distance(correctPositions[i].transform.position, buttons[i].transform.position) <= positionThreshold)
+            if (Vector3.Distance(CorrectPositions[i].transform.position, buttons[i].transform.position) <= positionThreshold)
             {
                 _currentScore += 1;
                 Debug.Log("Current Score: " + _currentScore);

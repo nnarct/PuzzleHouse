@@ -12206,9 +12206,9 @@ MonoBehaviour:
   scoreManager: {fileID: 1471586958}
   _source: {fileID: 1888980059}
   _question:
-    answer: earth
+    Answer: earth
   GamePanel: {fileID: 427841075}
-  _answerWordArray:
+  _AnswerWordArray:
   - {fileID: 2145968345}
   - {fileID: 2010641830}
   - {fileID: 618544783}
@@ -12947,7 +12947,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   InteractText: {fileID: 1569222113}
-  isInRange: 0
+  IsInRange: 0
 --- !u!1 &939754040
 GameObject:
   m_ObjectHideFlags: 0
@@ -14572,7 +14572,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   InteractText: {fileID: 517675437}
-  isInRange: 0
+  IsInRange: 0
 --- !u!1 &1031225725
 GameObject:
   m_ObjectHideFlags: 0
@@ -15320,7 +15320,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   InteractText: {fileID: 446630597}
-  isInRange: 0
+  IsInRange: 0
 --- !u!1 &1083293410
 GameObject:
   m_ObjectHideFlags: 0
@@ -23131,7 +23131,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   InteractText: {fileID: 1648380145}
-  isInRange: 0
+  IsInRange: 0
 --- !u!1 &1703428639
 GameObject:
   m_ObjectHideFlags: 0

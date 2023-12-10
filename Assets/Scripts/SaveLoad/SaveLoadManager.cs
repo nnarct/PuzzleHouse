@@ -8,44 +8,44 @@ using TMPro;
 public class SaveLoadManager : MonoBehaviour
 {
     
-    int SceneIndex;
-    int PlayerID;
-    string Filename = "PlayerData.json" ;
-    List<PlayerEntry> PlayerList = new List<PlayerEntry>();
+    private int _sceneIndex;
+    private int _playerID;
+    private string _filename = "PlayerData.json" ;
+    private List<PlayerEntry> _playerList = new List<PlayerEntry>();
 
     private void Awake()
     {
-        PlayerList = FileHandler.ReadListFromJSON<PlayerEntry>(Filename);
+        _playerList = FileHandler.ReadListFromJSON<PlayerEntry>(_filename);
     }
     public void NewGame()
     {
-        SceneIndex = SceneManager.GetActiveScene().buildIndex + 1;
-        SceneManager.LoadSceneAsync(SceneIndex);
+        _sceneIndex = SceneManager.GetActiveScene().buildIndex + 1;
+        SceneManager.LoadSceneAsync(_sceneIndex);
         
         PlayerPrefs.Save();
     }
     
     public void LoadGame()
     {
-        PlayerID = int.Parse(EventSystem.current.currentSelectedGameObject.name);
-        PlayerPrefs.SetInt("PlayerID", PlayerID);
-        SceneManager.LoadSceneAsync(PlayerList[PlayerID].Level);
+        _playerID = int.Parse(EventSystem.current.currentSelectedGameObject.name);
+        PlayerPrefs.SetInt("PlayerID", _playerID);
+        SceneManager.LoadSceneAsync(_playerList[_playerID].Level);
     }
 
     public void SaveGame()
     {
-        PlayerID = PlayerPrefs.GetInt("PlayerID");
-        SceneIndex = SceneManager.GetActiveScene().buildIndex;
-        PlayerList[PlayerID].Level = SceneIndex;
-        FileHandler.SaveToJSON<PlayerEntry>(PlayerList, Filename);
+        _playerID = PlayerPrefs.GetInt("PlayerID");
+        _sceneIndex = SceneManager.GetActiveScene().buildIndex;
+        _playerList[_playerID].Level = _sceneIndex;
+        FileHandler.SaveToJSON<PlayerEntry>(_playerList, _filename);
         SceneManager.LoadSceneAsync(0);
     }
 
     public void DelPlayer()
     {
-        PlayerID = int.Parse(EventSystem.current.currentSelectedGameObject.name);
-        PlayerList.RemoveAt(PlayerID);
-        FileHandler.SaveToJSON<PlayerEntry>(PlayerList, Filename);
+        _playerID = int.Parse(EventSystem.current.currentSelectedGameObject.name);
+        _playerList.RemoveAt(_playerID);
+        FileHandler.SaveToJSON<PlayerEntry>(_playerList, _filename);
         int currentSceneBuildIndex = SceneManager.GetActiveScene().buildIndex;
         SceneManager.LoadScene(currentSceneBuildIndex);
     }

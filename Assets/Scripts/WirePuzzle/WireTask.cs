@@ -5,15 +5,15 @@ using UnityEngine;
 public class WireTask : MonoBehaviour
 {
     [SerializeField]
-    GameObject GamePanel;
+    private GameObject gamePanel;
 
     public ScoreManager scoreManager;
 
     public string PuzzleKey = "Wire";
-    public List<Color> _wireColors = new List<Color>();
+    public List<Color> WireColors = new List<Color>();
 
-    public List<Wire> _leftWires = new List<Wire>();
-    public List<Wire> _rightWires = new List<Wire>();
+    public List<Wire> LeftWires = new List<Wire>();
+    public List<Wire> RightWires = new List<Wire>();
 
     public Wire CurrentDraggedWire;
     public Wire CurrentHoveredWire;
@@ -22,22 +22,22 @@ public class WireTask : MonoBehaviour
     private List<int> _availableLeftWireIndex;
     private List<int> _availableRightWireIndex;
 
-    public bool _isTaskComplete = false;
+    public bool IsTaskComplete = false;
     private bool _isCoroutineStarted = false;
 
     private void Start()
     {
         ClosePanel();
         
-        _availableColors = new List<Color>(_wireColors);
+        _availableColors = new List<Color>(WireColors);
         _availableLeftWireIndex = new List<int>();
         _availableRightWireIndex = new List<int>();
 
-        for (int i = 0; i < _leftWires.Count; i++)
+        for (int i = 0; i < LeftWires.Count; i++)
         {
             _availableLeftWireIndex.Add(i);
         }
-        for (int i = 0; i < _rightWires.Count; i++)
+        for (int i = 0; i < RightWires.Count; i++)
         {
             _availableRightWireIndex.Add(i);
         }
@@ -48,8 +48,8 @@ public class WireTask : MonoBehaviour
             int pickedLeftWireIndex = Random.Range(0, _availableLeftWireIndex.Count);
             int pickedRightWireIndex = Random.Range(0, _availableRightWireIndex.Count);
 
-            _leftWires[_availableLeftWireIndex[pickedLeftWireIndex]].SetColor(pickedColor);
-            _rightWires[_availableRightWireIndex[pickedRightWireIndex]].SetColor(pickedColor);
+            LeftWires[_availableLeftWireIndex[pickedLeftWireIndex]].SetColor(pickedColor);
+            RightWires[_availableRightWireIndex[pickedRightWireIndex]].SetColor(pickedColor);
 
             _availableColors.Remove(pickedColor);
             _availableLeftWireIndex.RemoveAt(pickedLeftWireIndex);
@@ -60,7 +60,7 @@ public class WireTask : MonoBehaviour
 
     private void Update()
     {
-        // Check if the GamePanel is inactive and the coroutine hasn't been started
+        // Check if the gamePanel is inactive and the coroutine hasn't been started
         if (!_isCoroutineStarted)
         {
             StartCoroutine(CheckTaskCompletion());
@@ -70,18 +70,18 @@ public class WireTask : MonoBehaviour
 
     private IEnumerator CheckTaskCompletion()
     {
-        while(!_isTaskComplete)
+        while(!IsTaskComplete)
         {
             int correctWire = 0;
-            for (int i = 0; i < _rightWires.Count; i++)
+            for (int i = 0; i < RightWires.Count; i++)
             {
-                if (_rightWires[i]._isCorrect) { correctWire++; }
+                if (RightWires[i].IsCorrect) { correctWire++; }
             }
 
-            if (correctWire >= _rightWires.Count)
+            if (correctWire >= RightWires.Count)
             {
                 Debug.Log("Task Complete");
-                scoreManager.HandleCorrectAnswer(PuzzleKey, GamePanel);
+                scoreManager.HandleCorrectAnswer(PuzzleKey, gamePanel);
             }
             else
             {
@@ -94,6 +94,6 @@ public class WireTask : MonoBehaviour
 
     private void ClosePanel()
     {
-        GamePanel.SetActive(false);
+        gamePanel.SetActive(false);
     }
 }

@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -39,8 +40,17 @@ public class FinishStageAnimation : MonoBehaviour
 
     public void GoToNextScene()
     {
+        List<PlayerEntry> playerList = new List<PlayerEntry>();
+        playerList = FileHandler.ReadListFromJSON<PlayerEntry>("PlayerData.json");
+        int playerId = PlayerPrefs.GetInt("PlayerID");
+
+
         EndGamePanel.SetActive(false);
         int nextSceneIndex = SceneManager.GetActiveScene().buildIndex + 1;
+        playerList[playerId].Level = nextSceneIndex;
+        FileHandler.SaveToJSON<PlayerEntry>(playerList, "PlayerData.json");
+
+        Debug.Log(nextSceneIndex);
         SceneManager.LoadScene(nextSceneIndex);
     }
 

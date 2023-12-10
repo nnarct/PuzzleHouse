@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class Wire : MonoBehaviour , IDragHandler , IBeginDragHandler , IEndDragHandler
 {
-    public bool isLeftWire;
+    public bool IsLeftWire;
     public Color CustomColor;
 
     private Image _image;
@@ -14,7 +14,7 @@ public class Wire : MonoBehaviour , IDragHandler , IBeginDragHandler , IEndDragH
     private Canvas _canvas;
 
     private bool _isDragStarted = false;
-    public bool _isCorrect = false;
+    public bool IsCorrect = false;
 
     private WireTask _wireTask;
 
@@ -46,7 +46,7 @@ public class Wire : MonoBehaviour , IDragHandler , IBeginDragHandler , IEndDragH
         else
         {
             //hide the line if not connect
-            if (!_isCorrect)
+            if (!IsCorrect)
             { 
                 _lineRenderer.SetPosition(0, Vector3.zero);
                 _lineRenderer.SetPosition(1, Vector3.zero);
@@ -71,15 +71,15 @@ public class Wire : MonoBehaviour , IDragHandler , IBeginDragHandler , IEndDragH
 
     public void OnDrag(PointerEventData eventData)
     {
-        //needed for drag but has no use
+        //Use for unity
     }
 
     public void OnBeginDrag(PointerEventData eventData)
     {
         _source.Play();
-        if (!isLeftWire) { return; }
+        if (!IsLeftWire) { return; }
         //if it correct don't draw more line
-        if (!_isCorrect)
+        if (!IsCorrect)
         {
             _isDragStarted = true;
             _wireTask.CurrentDraggedWire = this;
@@ -91,10 +91,10 @@ public class Wire : MonoBehaviour , IDragHandler , IBeginDragHandler , IEndDragH
         _source.Play();
         if (_wireTask.CurrentHoveredWire != null) 
         {
-            if (_wireTask.CurrentHoveredWire.CustomColor == CustomColor && !_wireTask.CurrentHoveredWire.isLeftWire)
+            if (_wireTask.CurrentHoveredWire.CustomColor == CustomColor && !_wireTask.CurrentHoveredWire.IsLeftWire)
             {
-                _isCorrect = true;
-                _wireTask.CurrentHoveredWire._isCorrect = true;
+                IsCorrect = true;
+                _wireTask.CurrentHoveredWire.IsCorrect = true;
             }
         }
 

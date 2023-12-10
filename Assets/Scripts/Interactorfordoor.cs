@@ -2,18 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Interactorfordoor : MonoBehaviour
+public class InteractorForDoor : MonoBehaviour
 {
-
     [SerializeField] GameObject InteractText;
-    public bool isInRange;
+    public bool IsInRange;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag.Equals("Player"))
         {
             InteractText.gameObject.SetActive(true);
-            isInRange = true;
+            IsInRange = true;
         }
 
     }
@@ -23,8 +22,7 @@ public class Interactorfordoor : MonoBehaviour
         if (collision.gameObject.tag.Equals("Player"))
         {
             InteractText.gameObject.SetActive(false);
-            isInRange = false;
+            IsInRange = false;
         }
     }
-
 }

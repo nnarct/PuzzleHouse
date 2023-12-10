@@ -9,20 +9,20 @@ public static class FileHandler
 
     public static void SaveToJSON<T>(List<T> toSave, string filename)
     {
-        Debug.Log(_getPath(filename));
+        Debug.Log(GetPath(filename));
         string content = JsonHelper.ToJson<T>(toSave.ToArray());
-        _writeFile(_getPath(filename), content);
+        WriteFile(GetPath(filename), content);
     }
 
     public static void SaveToJSON<T>(T toSave, string filename)
     {
         string content = JsonUtility.ToJson(toSave);
-        _writeFile(_getPath(filename), content);
+        WriteFile(GetPath(filename), content);
     }
 
     public static List<T> ReadListFromJSON<T>(string filename)
     {
-        string content = _readFile(_getPath(filename));
+        string content = ReadFile(GetPath(filename));
 
         if (string.IsNullOrEmpty(content) || content == "{}")
         {
@@ -37,7 +37,7 @@ public static class FileHandler
 
     public static T ReadFromJSON<T>(string filename)
     {
-        string content = _readFile(_getPath(filename));
+        string content = ReadFile(GetPath(filename));
 
         if (string.IsNullOrEmpty(content) || content == "{}")
         {
@@ -50,12 +50,12 @@ public static class FileHandler
 
     }
 
-    private static string _getPath(string filename)
+    private static string GetPath(string filename)
     {
         return Application.persistentDataPath + "/" + filename;
     }
 
-    private static void _writeFile(string path, string content)
+    private static void WriteFile(string path, string content)
     {
         FileStream fileStream = new FileStream(path, FileMode.Create);
 
@@ -65,7 +65,7 @@ public static class FileHandler
         }
     }
 
-    private static string _readFile(string path)
+    private static string ReadFile(string path)
     {
         if (File.Exists(path))
         {

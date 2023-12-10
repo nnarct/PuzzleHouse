@@ -50,6 +50,14 @@ public class DialogueManager : MonoBehaviour
         Invoke("DisplayNextSentence", 1.0f);
     }
 
+    void Update()
+    {
+        if(Input.anyKeyDown && ContinueButton.activeSelf)
+        {
+            DisplayNextSentence();
+        }
+    }
+
     public void DisplayNextSentence()
     {
         string sentence = _sentences.Dequeue();
@@ -90,10 +98,8 @@ public class DialogueManager : MonoBehaviour
 
     public void EndDialogue()
     {
-
-        Debug.Log("End");
+        // Debug.Log("End");
         ContinueButton.SetActive(false);
-
     }
 
     public void NextScene()

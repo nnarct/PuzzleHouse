@@ -49,6 +49,7 @@ public class ShuffleWordQuizManager : MonoBehaviour
         SetQuestion();
         _interactorScript = GameObject.FindWithTag("Interactable").GetComponent<Interactor>();
     }
+
     private void SetQuestion()
     {
         _currentAnswerIndex = 0;
@@ -98,8 +99,7 @@ public class ShuffleWordQuizManager : MonoBehaviour
 
             if (_correctAnswer) 
             {
-                // UnityEngine.Debug.Log("Correct Answer");
-                Correct();
+                Invoke("Correct", .7f);
             }
             else if (!_correctAnswer)
             {
@@ -107,11 +107,9 @@ public class ShuffleWordQuizManager : MonoBehaviour
                 _wrongPanel.SetActive(true);
                 Invoke("DeactiveWrongPanel", DelayTime);
                 Invoke("ResetQuestion", DelayTime);
-                //Debug.Log("Wrong Answer");
             }
         }
     }
-
 
     public void Correct()
     { 
@@ -122,7 +120,6 @@ public class ShuffleWordQuizManager : MonoBehaviour
     {
         _wrongPanel.SetActive(false);
     }
-
 
     public void ResetQuestion()
     {

@@ -25,19 +25,6 @@ public class WinScript : MonoBehaviour
         _pointToWin = Block.transform.childCount;
     }
 
-//void Update()
-   // {
-     //   if (CurrentPoint >= PointToWin)
-      //  {
-            //Win
-       //     transform.GetChild(0).gameObject.SetActive(true);
-       //     score++;
-        //    PlayerPrefs.SetInt("Stage1-score", score);
-        //    PlayerPrefs.SetInt(puzzleKey, 1);
-        //    PlayerPrefs.Save();
-       // }
-   // }
-
     public void AddPoint()
     {
         _currentPoint++;
@@ -50,7 +37,7 @@ public class WinScript : MonoBehaviour
         {
             //Win
             transform.GetChild(0).gameObject.SetActive(true);
-            Correct();
+            Invoke("Correct", .7f);
         }
     }
 

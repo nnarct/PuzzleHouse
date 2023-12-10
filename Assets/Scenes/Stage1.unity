@@ -980,7 +980,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &87942004
 RectTransform:
   m_ObjectHideFlags: 0
@@ -996,6 +996,7 @@ RectTransform:
   - {fileID: 1390030572}
   - {fileID: 1556144568}
   - {fileID: 840101474}
+  - {fileID: 1602308329}
   - {fileID: 783109195}
   - {fileID: 1685633448}
   - {fileID: 1058403855}
@@ -11535,7 +11536,7 @@ RectTransform:
   - {fileID: 1224233812}
   - {fileID: 2016815832}
   - {fileID: 585003730}
-  - {fileID: 1602308329}
+  - {fileID: 821883510}
   m_Father: {fileID: 87942004}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -11949,6 +11950,81 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1 &821883507
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 821883510}
+  - component: {fileID: 821883509}
+  - component: {fileID: 821883508}
+  m_Layer: 3
+  m_Name: TrapezoidBlack
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &821883508
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 821883507}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 52dc77b42639ca543a9e5160316e2b58, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &821883509
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 821883507}
+  m_CullTransparentMesh: 1
+--- !u!224 &821883510
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 821883507}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 783109195}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 207, y: -68}
+  m_SizeDelta: {x: 640, y: 200}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &824827904
 GameObject:
   m_ObjectHideFlags: 0
@@ -19818,7 +19894,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd47e7121134e3b459ecd1590f6be445, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CorrectForm: {fileID: 1602308328}
+  CorrectForm: {fileID: 821883507}
   _source: {fileID: 1501090885}
   _pickUpClip: {fileID: 8300000, guid: a9b0313b9da0dc14e90fe6244c6187c8, type: 3}
 --- !u!61 &1501090882
@@ -21719,7 +21795,7 @@ GameObject:
   - component: {fileID: 1602308331}
   - component: {fileID: 1602308330}
   m_Layer: 3
-  m_Name: TrapezoidBlack
+  m_Name: TrapezoidBlock
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -21737,11 +21813,11 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 783109195}
+  m_Father: {fileID: 87942004}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 200.5498, y: -70.95001}
+  m_AnchoredPosition: {x: 1110.5498, y: -580.95}
   m_SizeDelta: {x: 684, y: 224}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1602308330

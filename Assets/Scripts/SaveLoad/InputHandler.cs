@@ -9,6 +9,8 @@ public class InputHandler : MonoBehaviour
 {
     public TMP_InputField NameInput;
 
+    public GameObject ErrorText;
+
     private Button _confirmButton;
 
     private string _fileName = "PlayerData.json";
@@ -17,12 +19,14 @@ public class InputHandler : MonoBehaviour
 
     private int _sceneIndex;
 
+    private string[] _existName;
 
     void Start()
     {
         _confirmButton = GameObject.Find("ConfirmButton").GetComponent<Button>();
         _confirmButton.interactable = false;
         _playerList = FileHandler.ReadListFromJSON<PlayerEntry>(_fileName);
+
     }
 
     void Update()
@@ -32,7 +36,7 @@ public class InputHandler : MonoBehaviour
 
     public void AddNameToList()
     {
-        if(ValidateInput(NameInput.text))
+        if(ValidateInput(NameInput.text) && ValidateName())
         {
             int playerID = _playerList.Count;
             string characterName = PlayerPrefs.GetString("Character");
@@ -57,6 +61,27 @@ public class InputHandler : MonoBehaviour
             return false;
         }
         return true;
+    }
+
+    Boolean ValidateName()
+    {
+        foreach(var player in _playerList)
+        {
+            if(player.PlayerName == NameInput.text)
+            {
+                ErrorText.SetActive(true);
+                LeanTween.scale(ErrorText, new Vector3(1f, 1f, 1f), .7f).setDelay(.5f).setEase(LeanTweenType.easeInOutElastic);
+                Invoke("CloseErrorText", 3f);
+                return false;
+            }
+        }
+        return true;
+    }
+
+    void CloseErrorText()
+    {
+        ErrorText.SetActive(false);
+        LeanTween.scale(ErrorText, new Vector3(0f, 0f, 0f), .7f).setEase(LeanTweenType.linear);
     }
 
 }

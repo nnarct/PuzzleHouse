@@ -10,6 +10,7 @@ public class ScoreManager : MonoBehaviour
     public int Stage;
     public List<PuzzleKeysData> PuzzleKeys;
     public GameObject CorrectPanel;
+
     private int _maxScore;
     private bool _isOpenCorrectPanel = false ;
     private string _puzzleKey;
@@ -27,6 +28,7 @@ public class ScoreManager : MonoBehaviour
     void Start()
     {
         _movementPlayer = FindObjectOfType<MovementPlayer>();
+
         if (ScoreText == null)
         {
             Debug.LogError("Error! Cannot find reference of ScoreText.");
@@ -43,9 +45,10 @@ public class ScoreManager : MonoBehaviour
         {
             Debug.LogError("Error! Cannot find reference of CorrectPanel.");
         }
+
         _maxScore = PuzzleKeys.Count;
+
         LoadFileToPlayerPrefs();
-        //Debug.Log("Max Score : " + _maxScore);
     }
 
     // Update is called once per frame
@@ -56,14 +59,9 @@ public class ScoreManager : MonoBehaviour
         {
             if (Input.anyKeyDown)
             {
-                //_clickKeySound.Play();
-                //Debug.Log("click key");
-                Invoke("ManageScore", 0.5f);
-                _isOpenCorrectPanel = false;
+                _clickKeySound.Play();
+                Invoke("ManageScore", 0.5f);    
             }
-            Invoke("ManageScore", 4f);
-            _isOpenCorrectPanel = false;
-
         }
     }
 
@@ -81,9 +79,6 @@ public class ScoreManager : MonoBehaviour
 
     public void HandleCorrectAnswer(string puzzleKey, GameObject puzzlePanel)
     {
-
-
-        Debug.Log("handle correct manager");
         if(puzzlePanel == null)
         {
             Debug.LogError("Parameter puzzlePanel cannot be null.");
@@ -92,17 +87,15 @@ public class ScoreManager : MonoBehaviour
         if(!string.IsNullOrEmpty(puzzleKey))
         {
             _puzzleKey = puzzleKey;
-            Debug.Log("diable puzzle panel");
             puzzlePanel.SetActive(false);
             CorrectPanel.SetActive(true);
             _isOpenCorrectPanel = true;
             _openCorrectPanelSound.Play();
             Invoke("DelayCorrectPanelStatus", 2f);
-           // Debug.Log("correct panel" + CorrectPanel.activeSelf);
         }
         else
         {
-            Debug.Log("Error! Puzzle Key not found.");
+            Debug.LogError("Error! Puzzle Key not found.");
         }
     }
 
@@ -110,7 +103,7 @@ public class ScoreManager : MonoBehaviour
     {
         CorrectPanel.SetActive(false);
 
-        // Debug.Log(_puzzleKey + " : Correct answer! Incrementing score.");
+        _isOpenCorrectPanel = false;
 
         PlayerPrefs.SetInt(_puzzleKey, 1);
 
@@ -131,25 +124,32 @@ public class ScoreManager : MonoBehaviour
         {
             if (string.IsNullOrEmpty(PuzzleKeys[i].Key))
             {
-                Debug.Log("Error! Puzzle Key not found.");
+                Debug.LogError("Error! Puzzle Key not found.");
                 return;
             }
             int point = PlayerPrefs.GetInt(PuzzleKeys[i].Key, 0);
-            //Debug.Log("Currect point for " + PuzzleKeys[i].Key + ": " + point);
+            
             currentScore += point;
         }
-        // Debug.Log("Currect Score : " + currentScore);
+ 
         ScoreText.text = currentScore.ToString() + "/" + _maxScore.ToString();
+
         if( Stage == 1)
+        { 
             PlayerPrefs.SetInt("Stage1_score", currentScore);
+        }
         else if(Stage == 2)
+        {
             PlayerPrefs.SetInt("Stage2_score", currentScore);
+        }
+
         PlayerPrefs.Save();
     }
 
     public void DelayCorrectPanelStatus()
     {
         _isOpenCorrectPanel = true;
+        Invoke("ManageScore", 4f);
     }
 
     void LoadFileToPlayerPrefs()
@@ -159,12 +159,14 @@ public class ScoreManager : MonoBehaviour
         playerList = FileHandler.ReadListFromJSON<PlayerEntry>("PlayerData.json");
 
         int playerId = PlayerPrefs.GetInt("PlayerID");
+
         PlayerPrefs.SetString("Character", playerList[playerId].CharacterChoose);
 
         foreach (var puzzleData in PuzzleKeys)
         {
             string puzzleKey = puzzleData.Key;
             int isSolved = 0;
+
             if(Stage == 1)
             {
                 FieldInfo fieldInfo = typeof(Stage1).GetField(puzzleKey);
@@ -179,7 +181,7 @@ public class ScoreManager : MonoBehaviour
             PlayerPrefs.SetInt(puzzleKey, isSolved);
 
         }
-        Debug.Log("LoadFileToPlayerPrefs");
+
         PlayerPrefs.Save();
     }
 

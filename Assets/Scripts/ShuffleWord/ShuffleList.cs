@@ -4,21 +4,34 @@ using UnityEngine;
 
 public abstract class ShuffleList
 {
+    // A method to shuffle items in a list
     public static List<E> ShuffleListItems<E>(List<E> inputList)
     {
+        // Create a copy of the input list
         List<E> originalList = new List<E>();
         originalList.AddRange(inputList);
+
+        // Create a new list to store shuffled items
         List<E> randomList = new List<E>();
 
+        // Create a random number generator
         System.Random r = new System.Random();
         int randomIndex = 0;
+
+        // Shuffle the list by picking random elements from the original list
         while (originalList.Count > 0)
         {
-            randomIndex = r.Next(0, originalList.Count); //Choose a random object in the list
-            randomList.Add(originalList[randomIndex]); //add it to the new, random list
-            originalList.RemoveAt(randomIndex); //remove to avoid duplicates
+            //Choose a random object in the list
+            randomIndex = r.Next(0, originalList.Count);
+
+            //add it to the new, random list
+            randomList.Add(originalList[randomIndex]);
+
+            //remove to avoid duplicates
+            originalList.RemoveAt(randomIndex);
         }
 
-        return randomList; //return the new random list
+        // Return the new randomly shuffled list
+        return randomList;
     }
 }

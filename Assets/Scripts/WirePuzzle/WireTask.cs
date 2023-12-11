@@ -4,36 +4,27 @@ using UnityEngine;
 
 public class WireTask : MonoBehaviour
 {
-    [SerializeField] private GameObject gamePanel;
+    // Public variables accessible in the Inspector
+    public bool IsTaskComplete = false; // Indicates if the task is complete
+    public ScoreManager scoreManager; // Reference to the score manager
+    public string PuzzleKey = "Wire"; // Key for identifying the puzzle
+    public List<Color> WireColors = new List<Color>(); // List of available wire colors
+    public List<Wire> LeftWires = new List<Wire>(); // List of wires on the left side
+    public List<Wire> RightWires = new List<Wire>(); // List of wires on the right side
+    public Wire CurrentDraggedWire; // Reference to the currently dragged wire
+    public Wire CurrentHoveredWire; // Reference to the wire currently being hovered over
 
-    public ScoreManager scoreManager;
-
-    public string PuzzleKey = "Wire";
-
-    public List<Color> WireColors = new List<Color>();
-
-    public List<Wire> LeftWires = new List<Wire>();
-
-    public List<Wire> RightWires = new List<Wire>();
-
-    public Wire CurrentDraggedWire;
-
-    public Wire CurrentHoveredWire;
-
-    private List<Color> _availableColors;
-
-    private List<int> _availableLeftWireIndex;
-
-    private List<int> _availableRightWireIndex;
-
-    public bool IsTaskComplete = false;
-
-    private bool _isCoroutineStarted = false;
-
+    [SerializeField] private GameObject gamePanel; // Reference to the game panel UI
+    private bool _isCoroutineStarted = false; // Indicates if the coroutine has started
+    private List<Color> _availableColors; // List of available colors for wires
+    private List<int> _availableLeftWireIndex; // List of available indices for left wires
+    private List<int> _availableRightWireIndex; // List of available indices for right wires
     private void Start()
     {
+        //Hide the game panel
         ClosePanel();
-        
+
+        // Initialize lists and assign indices for wires
         _availableColors = new List<Color>(WireColors);
         _availableLeftWireIndex = new List<int>();
         _availableRightWireIndex = new List<int>();
@@ -47,6 +38,7 @@ public class WireTask : MonoBehaviour
             _availableRightWireIndex.Add(i);
         }
 
+        // Assign random colors to pairs of left and right wires
         while (_availableColors.Count > 0 && _availableLeftWireIndex.Count > 0 && _availableRightWireIndex.Count > 0)
         {
             Color pickedColor = _availableColors[Random.Range(0, _availableColors.Count)];
@@ -73,9 +65,10 @@ public class WireTask : MonoBehaviour
         }
     }
 
+    // Coroutine to check task completion
     private IEnumerator CheckTaskCompletion()
     {
-        while(!IsTaskComplete)
+        while (!IsTaskComplete)
         {
             int correctWire = 0;
             for (int i = 0; i < RightWires.Count; i++)
@@ -83,6 +76,7 @@ public class WireTask : MonoBehaviour
                 if (RightWires[i].IsCorrect) { correctWire++; }
             }
 
+            // Check if all right wires are in correct positions
             if (correctWire >= RightWires.Count)
             {
                 Debug.Log("Task Complete");
@@ -97,6 +91,7 @@ public class WireTask : MonoBehaviour
         }
     }
 
+    // Method to close the game panel
     private void ClosePanel()
     {
         gamePanel.SetActive(false);

@@ -4,14 +4,9 @@ using UnityEngine;
 
 public class SantaManager : MonoBehaviour
 {
-    // List to store all puzzle pieces
-    public List<GameObject> puzzlePieces;
-
-    // Number of correct placements required to consider the puzzle solved
-    private int correctPlacementsRequired;
-
-    // Counter to keep track of correct placements
-    private int correctPlacementCount;
+    public List<GameObject> puzzlePieces; // List to store all puzzle pieces
+    private int correctPlacementsRequired; // Number of correct placements required to consider the puzzle solved
+    private int correctPlacementCount; // Counter to keep track of correct placements
 
     private void Start()
     {
@@ -40,6 +35,5 @@ public class SantaManager : MonoBehaviour
     private void PuzzleComplete()
     {
         Debug.Log("Congratulations! Puzzle complete!");
-        // You can add any additional actions or animations here
     }
 }

@@ -10,7 +10,6 @@ public class JigsawArea : MonoBehaviour
         if (other.CompareTag("JigsawPiece"))
         {
             IsPiecePlaced = true;
-            // You can add more logic here if needed
         }
     }
 
@@ -20,7 +19,6 @@ public class JigsawArea : MonoBehaviour
         if (other.CompareTag("JigsawPiece"))
         {
             IsPiecePlaced = false;
-            // You can add more logic here if needed
         }
     }
 }

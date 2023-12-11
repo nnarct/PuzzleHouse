@@ -4,22 +4,22 @@ using UnityEngine;
 
 public class ExitButton : MonoBehaviour
 {
-    [SerializeField] GameObject GamePanel;
-    // private Interactor _interactorScript;
-    private MovementPlayer _movementPlayer;
+    [SerializeField] GameObject GamePanel; // Reference to the game panel in the Inspector
+    private MovementPlayer _movementPlayer; // MovementPlayer script reference
 
     private void Start()
     {
-        // _interactorScript = GameObject.FindWithTag("Interactable").GetComponent<Interactor>();
+        // Find and assign the MovementPlayer script in the scene
         _movementPlayer = FindObjectOfType<MovementPlayer>();
-
     }
 
-        public void ClosePanel()
+    // Method to close the game panel and unfreeze the player's movement
+    public void ClosePanel()
     {
+        // Deactivate the game panel
         GamePanel.SetActive(false);
+
+        // Unfreeze the movement of the player
         _movementPlayer.UnfreezeMovement();
-        //_interactorScript.EndInteraction();
-        //Debug.Log("Exit button pressed. Calling EndInteraction.");
     }
 }

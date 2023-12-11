@@ -8,21 +8,21 @@ using Unity.VisualScripting;
 
 public class DialogueManager : MonoBehaviour
 {
-    public TextMeshProUGUI NpcNameText;
+    public TextMeshProUGUI NpcNameText; // TextMeshProUGUI component for NPC name display
 
-    public TextMeshProUGUI DialogueText;
+    public TextMeshProUGUI DialogueText; // TextMeshProUGUI component for dialogue text display
 
-    public GameObject ContinueButton;
+    public GameObject ContinueButton; // Button for continue dialogue
 
-    public GameObject NextSceneButton;
+    public GameObject NextSceneButton; // Button for go to next scene
 
-    private Queue<string> _sentences;
+    public Animator Animator; // animation for dialogue box
 
-    public Animator Animator;
+    public Dialogue Dialogue; // The dialogue data for the current conversation
 
-    public Dialogue Dialogue;
+    private Queue<string> _sentences; // the sentences in dialogue
 
-    private string _lastText;
+    private string _lastText; // Last displayed text in the dialogue
 
     // Start is called before the first frame update
     void Start()

@@ -6,39 +6,42 @@ using UnityEngine.UI;
 
 public class ChristmasPuzzle : MonoBehaviour
 {
-    public ScoreManager scoreManager;
+    public GameObject GamePanel; // Panel that show when finish game
 
-    public string PuzzleKey = "Christmas";
+    public GameObject[] CorrectPositions; // Array of correct positions for buttons 
 
-    public GameObject GamePanel;
+    public ScoreManager scoreManager;  // Reference to the ScoreManager script
 
-    private Button _lastClickedButton;
+    public string PuzzleKey = "Christmas"; // Key of this Puzzle
 
-    public GameObject[] CorrectPositions;
+    private Button _lastClickedButton; //last click button
 
-    private Button[] _buttons;
+    private Button[] _buttons;  // Array to store all buttons in the puzzle
 
-    private int _totalScore;
+    private int _totalScore; 
 
     private int _currentScore;
 
     // Start is called before the first frame update
     void Start()
     {
+        // Get all buttons in the puzzle
         _buttons = GetComponentsInChildren<Button>();
 
+        // Set the total score based on the number of buttons
         _totalScore = _buttons.Length;
 
-        SwapButtonsRandomly(_buttons); // Randomize button positions
-        
+        // Randomize button positions
+        SwapButtonsRandomly(_buttons);
+
+        // Attach a button click listener to each button
         foreach (Button button in _buttons)
         {
-            // Attach a listener to each button
             button.onClick.AddListener(() => OnButtonClick(button));
-            
         }
     }
 
+    // Method called when a button is clicked
     void OnButtonClick(Button clickedButton)
     {
         // Check if this is the first button clicked
@@ -48,7 +51,6 @@ public class ChristmasPuzzle : MonoBehaviour
         }
         else
         {
-
             // Swap positions if a button was already clicked
             Vector3 tempPosition = _lastClickedButton.transform.position;
             _lastClickedButton.transform.position = clickedButton.transform.position;
@@ -56,16 +58,18 @@ public class ChristmasPuzzle : MonoBehaviour
 
             // Reset the last clicked button
             _lastClickedButton = null;
-            
+
             // Check correct positions after swapping
             CheckCorrectPosition(CorrectPositions, _buttons);
         }
     }
 
+    // Method to swap the positions of buttons randomly
     void SwapButtonsRandomly(Button[] buttons)
     {
         for (int i = 0; i < buttons.Length; i++)
         {
+            // Generate a random index
             int randomIndex = UnityEngine.Random.Range(0, buttons.Length);
 
             // Swap the positions of buttons[i] and buttons[randomIndex]
@@ -78,30 +82,32 @@ public class ChristmasPuzzle : MonoBehaviour
         }
     }
 
-    void CheckCorrectPosition(GameObject[] CorrectPositions, Button[] buttons)
+    // Method to check if buttons are in correct positions
+    void CheckCorrectPosition(GameObject[] correctPositions, Button[] buttons)
     {
         _currentScore = 0;
-        int positionThreshold = 1; // Adjust this threshold as needed
+        int positionThreshold = 1; // Distance that close enough
 
+        // Check all button positions are close enough
         for (int i = 0; i < buttons.Length; i++)
         {
-            // Check if the positions are close enough
-            if (Vector3.Distance(CorrectPositions[i].transform.position, buttons[i].transform.position) <= positionThreshold)
+            if (Vector3.Distance(correctPositions[i].transform.position, buttons[i].transform.position) <= positionThreshold)
             {
                 _currentScore += 1;
             }
         }
 
+        // If all buttons are in correct positions, call the Correct method
         if (_currentScore == _totalScore)
         {
             Correct();
         }
-
     }
 
+    // Method called when the puzzle is solved
     public void Correct()
     {
+        // Call the HandleCorrectAnswer method in the ScoreManager script
         scoreManager.HandleCorrectAnswer(PuzzleKey, GamePanel);
     }
-
 }

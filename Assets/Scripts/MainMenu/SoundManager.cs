@@ -8,7 +8,9 @@ public class SoundManager : MonoBehaviour
 {
 
     [SerializeField] Image soundOnIcon;
+
     [SerializeField] Image soundOffIcon;
+    
     private bool _isMuted = false;
 
     // Start is called before the first frame update

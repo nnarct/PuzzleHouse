@@ -8,14 +8,19 @@ using UnityEngine.UI;
 public class PauseHandler : MonoBehaviour
 {
     public GameObject Player;
+
     public GameObject PausePanel;
+
     public Button PauseButton;
     
     private bool _isPaused = false;
 
     private Interactor _interactorScript;
+
     private SpriteRenderer _playerSpriteRenderer;
-    private string[] _puzzleKeys1 = { "Genetic", "Wooden", "Earth", "Moon", "Time" };
+
+    private string[] _puzzleKeys1 = { "Genetic", "Wooden", "Earth", "Moon", "Time" }
+    ;
     private string[] _puzzleKeys2 = { "Wire", "Pipe", "Kitchenware", "Santa", "Christmas" };
 
     void Start()
@@ -39,7 +44,6 @@ public class PauseHandler : MonoBehaviour
                 PauseGame();
             }
         }
-        
     }
 
     public void GoToMainMenu()
@@ -52,7 +56,6 @@ public class PauseHandler : MonoBehaviour
     public void PauseGame()
     {
         PausePanel.SetActive(true);
-       // playerSpriteRenderer.color = new Color(0.3608f, 0.3608f, 0.3608f);
         Time.timeScale = 0f;
         _isPaused = true;
     }

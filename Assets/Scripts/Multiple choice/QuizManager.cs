@@ -8,15 +8,22 @@ public class QuizManager : MonoBehaviour
 {
     // Define an event to notify other scripts when a question is answered correctly
     public delegate void OnCorrectAnswer(string puzzleKey, GameObject puzzlePanel);
+
     public static event OnCorrectAnswer CorrectAnswerEvent;
 
     public List<QuestionAndAnswers> QnA;
+
     public GameObject[] Options;
-    public int CurrentQuestion;
+
     public GameObject PuzzlePanel;
-    public TMP_Text QuestionTxt;
-    public string PuzzleKey;
+    
     public GameObject WrongPanel;
+
+    public int CurrentQuestion;
+
+    public TMP_Text QuestionTxt;
+
+    public string PuzzleKey;
 
     [SerializeField] private AudioSource _source;
 
@@ -27,10 +34,7 @@ public class QuizManager : MonoBehaviour
 
     public void Correct()
     {
-        Debug.Log("win");
-       
-            CorrectAnswerEvent(PuzzleKey, PuzzlePanel);
-
+        CorrectAnswerEvent(PuzzleKey, PuzzlePanel);
     }
 
     public void Wrong()

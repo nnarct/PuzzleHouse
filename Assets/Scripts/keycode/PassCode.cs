@@ -13,16 +13,17 @@ public class PassCode : MonoBehaviour
 
     public GameObject FinishStagePanel;
 
-    [SerializeField]
-    public GameObject WrongPanel;
+    [SerializeField] public GameObject WrongPanel;
 
     [SerializeField] private AudioSource _source;
+
     [SerializeField] private AudioSource _source2;
 
     private string _code;
+
     private string _answer = null;
+
     private int _answerIndex = 0;
-   
 
     public void AddNumber(string number)
     {
@@ -37,22 +38,17 @@ public class PassCode : MonoBehaviour
     public void OnEnter()
     {
         _code = PlayerPrefs.GetString("Passcode");
-        //Debug.Log("Number"+ Number);
-        //Debug.Log("Passcode"+Code);
         if (_answer == _code)
         {
-            // Debug.Log("It's Work!!!");
             _source.Play();
             Correct();
         }
         else
         {
-            // Debug.Log("It's Wrong!!!");
             _source2.Play();
             WrongPanel.SetActive(true);
             Invoke("DeactiveWrongPanel", 1f);
             Invoke("DeleteAll", 0.5f);
-            //Debug.Log("Try again");
         }
     }
 
@@ -68,7 +64,6 @@ public class PassCode : MonoBehaviour
         {
             _answerIndex = 0;
         }
-
     }
 
     public void DeleteAll()
@@ -76,7 +71,6 @@ public class PassCode : MonoBehaviour
             _answerIndex = 0;
             _answer = null;
             UiText.text = _answer;
-
     }
 
     public void DeactiveWrongPanel()

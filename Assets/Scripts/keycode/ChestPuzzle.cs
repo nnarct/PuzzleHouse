@@ -9,15 +9,17 @@ public class ChestPuzzle : MonoBehaviour
 {
     // Start is called before the first frame update
     public GameObject ChestPuzzleButton;
+
     public GameObject ChestBoxUI;
+
     public TMP_Text ParchmentText;
 
     private int _score;
+    
     private Scene _currentScene;
 
     void Start()
     {
-        //ChestPuzzleButton.SetActive(false);
         ParchmentText.text = GenerateRandomNumericPassword(3, 6) + "#";
         _currentScene = SceneManager.GetActiveScene();
     }
@@ -39,7 +41,6 @@ public class ChestPuzzle : MonoBehaviour
     {
         if (score == 5)
         {
-          //  Debug.Log("should be active");
             ChestPuzzleButton.SetActive(true);
             ChestBoxUI.SetActive(true);
         }

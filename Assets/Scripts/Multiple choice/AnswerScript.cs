@@ -6,8 +6,8 @@ using UnityEngine.UI;
 public class AnswerScript : MonoBehaviour
 {
     public bool IsCorrect = false;
+    
     public QuizManager quizManager;
-
 
     public void Answer()
     {

@@ -9,13 +9,17 @@ using Unity.VisualScripting;
 public class DialogueManager : MonoBehaviour
 {
     public TextMeshProUGUI NpcNameText;
+
     public TextMeshProUGUI DialogueText;
+
     public GameObject ContinueButton;
+
     public GameObject NextSceneButton;
 
     private Queue<string> _sentences;
 
     public Animator Animator;
+
     public Dialogue Dialogue;
 
     private string _lastText;
@@ -24,9 +28,9 @@ public class DialogueManager : MonoBehaviour
     void Start()
     {
         _sentences = new Queue<string>();
-
         List<PlayerEntry> playerList = new List<PlayerEntry>();
         playerList = FileHandler.ReadListFromJSON<PlayerEntry>("PlayerData.json");
+
         int playerId = PlayerPrefs.GetInt("PlayerID");
         string playerName = playerList[playerId].PlayerName;
 
@@ -37,7 +41,6 @@ public class DialogueManager : MonoBehaviour
     {
         Animator.SetBool("isOpen", true);
         NpcNameText.text = dialogue.NpcName;
-
         _sentences.Clear();
 
         foreach (string sentence in dialogue.Sentences)
@@ -45,7 +48,6 @@ public class DialogueManager : MonoBehaviour
             string formattedSentence = sentence.Replace("{player}", playerName);
             _sentences.Enqueue(formattedSentence);
         }
-
 
         Invoke("DisplayNextSentence", 1.0f);
     }
@@ -61,6 +63,7 @@ public class DialogueManager : MonoBehaviour
     public void DisplayNextSentence()
     {
         string sentence = _sentences.Dequeue();
+
         DialogueText.text = sentence;
         StopAllCoroutines();
 
@@ -73,10 +76,7 @@ public class DialogueManager : MonoBehaviour
             StartCoroutine(TypeSentence(sentence));
             _lastText = sentence;
             EndDialogue();
-
         }
-
-
     }
 
     IEnumerator TypeSentence(string sentence)
@@ -88,17 +88,14 @@ public class DialogueManager : MonoBehaviour
             DialogueText.text += letter;
             yield return new WaitForSeconds(0.05f);
         }
-
         if (_sentences.Count == 0)
         {
-
             NextSceneButton.SetActive(true);
         }
     }
 
     public void EndDialogue()
     {
-        // Debug.Log("End");
         ContinueButton.SetActive(false);
     }
 
@@ -106,9 +103,6 @@ public class DialogueManager : MonoBehaviour
     {
         StopAllCoroutines();
         DialogueText.text = _lastText;
-
-        //Animator.SetBool("isOpen", false);
-
         int nextSceneIndex = SceneManager.GetActiveScene().buildIndex + 1;
         SceneManager.LoadScene(nextSceneIndex);
     }

@@ -6,14 +6,21 @@ using TMPro;
 public class HoverEffect : MonoBehaviour, IPointerEnterHandler , IPointerExitHandler , IPointerDownHandler , IPointerUpHandler
 {
     public Sprite OriginalSprite;
+
     public Sprite HoverSprite;
+
     private RectTransform _textRectTransform;
+
     private Vector2 _originalTextPosition;
 
     private bool _isDisable = false;
-    private TMP_Text _buttonText;
-    private Button _button;
+
     private bool _isClicked = false;
+
+    private TMP_Text _buttonText;
+
+    private Button _button;
+    
     void Start()
     {
         if (OriginalSprite == null || HoverSprite == null)

@@ -56,8 +56,6 @@ public class ChristmasPuzzle : MonoBehaviour
 
             // Reset the last clicked button
             _lastClickedButton = null;
-
-
             
             // Check correct positions after swapping
             CheckCorrectPosition(CorrectPositions, _buttons);
@@ -87,26 +85,16 @@ public class ChristmasPuzzle : MonoBehaviour
 
         for (int i = 0; i < buttons.Length; i++)
         {
-            Debug.Log("Button : " +  i);
-            //Debug.Log("correctPosition : " + CorrectPositions[i].transform.position);
-            //Debug.Log("ButtonPosition : " + buttons[i].transform.position);
-            Debug.Log(Vector3.Distance(CorrectPositions[i].transform.position, buttons[i].transform.position));
-
             // Check if the positions are close enough
             if (Vector3.Distance(CorrectPositions[i].transform.position, buttons[i].transform.position) <= positionThreshold)
             {
                 _currentScore += 1;
-                Debug.Log("Current Score: " + _currentScore);
-
             }
         }
 
         if (_currentScore == _totalScore)
         {
             Correct();
-            Debug.Log("_totalScore Score: " + _totalScore);
-
-
         }
 
     }

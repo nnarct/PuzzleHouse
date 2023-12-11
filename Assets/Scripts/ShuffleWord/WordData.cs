@@ -4,9 +4,9 @@ using UnityEngine.UI;
 public class WordData : MonoBehaviour
 {
     public char CharValue;
-    [SerializeField]
+
+    [SerializeField] private Text _charText;
     
-    private Text _charText;
     [HideInInspector]
     private Button _buttonObj;
 

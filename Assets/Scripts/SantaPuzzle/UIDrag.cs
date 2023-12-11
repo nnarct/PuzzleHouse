@@ -6,8 +6,11 @@ using UnityEngine.EventSystems;
 public class UIDrag : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IDragHandler
 {
     private bool isDragging = false;
+
     private Vector3 startPosition;
+
     private RectTransform rectTransform;
+    
     [SerializeField] private AudioSource _source;
 
     void Start()

@@ -5,10 +5,13 @@ using UnityEngine;
 public class JigsawPiece : MonoBehaviour
 {
     public Vector2 correctAnchoredPosition;
+
     public float snapThreshold = 20f; // Adjust as needed
+
     private Vector2 initialAnchoredPosition;
 
     private RectTransform rectTransform;
+
     private bool isCorrect = false;
 
     [SerializeField] private AudioSource _source;
@@ -23,13 +26,10 @@ public class JigsawPiece : MonoBehaviour
     {
         Vector2 currentAnchoredPosition = rectTransform.anchoredPosition;
 
-        //Debug.Log("Anchored Position: " + currentAnchoredPosition);
-
         if (IsWithinSnapThreshold(currentAnchoredPosition, correctAnchoredPosition, snapThreshold))
         {
             SnapToCorrectPosition();
             isCorrect = true;
-            //Debug.Log("Piece correct");
         }
         else
         {
@@ -47,15 +47,11 @@ public class JigsawPiece : MonoBehaviour
 
     void SnapToCorrectPosition()
     {
-        //Debug.Log("Snapping to Position: " + correctAnchoredPosition);
-
         rectTransform.anchoredPosition = correctAnchoredPosition;
-        // Implement logic for snapping action
     }
 
     public bool IsPieceCorrect()
     {
-        //_source.Play();
         return isCorrect;
     }
 

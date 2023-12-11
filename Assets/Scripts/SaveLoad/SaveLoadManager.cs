@@ -9,14 +9,18 @@ public class SaveLoadManager : MonoBehaviour
 {
     
     private int _sceneIndex;
+
     private int _playerID;
+
     private string _filename = "PlayerData.json" ;
+
     private List<PlayerEntry> _playerList = new List<PlayerEntry>();
 
     private void Awake()
     {
         _playerList = FileHandler.ReadListFromJSON<PlayerEntry>(_filename);
     }
+    
     public void NewGame()
     {
         _sceneIndex = SceneManager.GetActiveScene().buildIndex + 1;

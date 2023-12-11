@@ -5,6 +5,7 @@ using UnityEngine;
 public class InteractorForDoor : MonoBehaviour
 {
     [SerializeField] GameObject InteractText;
+    
     public bool IsInRange;
 
     private void OnTriggerEnter2D(Collider2D collision)

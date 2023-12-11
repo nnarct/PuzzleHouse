@@ -7,7 +7,6 @@ public class PlayerWarp : MonoBehaviour
 
     private GameObject _currentWarp;
 
-
     void Update()
     {
             if (Input.GetKeyDown(KeyCode.E))
@@ -33,10 +32,10 @@ public class PlayerWarp : MonoBehaviour
     {
         if (collision.CompareTag("Stair"))
         {
-           if (collision.gameObject == _currentWarp)
-           {
+            if (collision.gameObject == _currentWarp)
+            {
                 _currentWarp = null;
-           }
+            }
         }
     }
 }

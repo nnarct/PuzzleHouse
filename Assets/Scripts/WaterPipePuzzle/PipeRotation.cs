@@ -8,8 +8,7 @@ public class PipeRotation : MonoBehaviour
 
     public float[] CorrectRotation;
     
-    [SerializeField]
-    public bool isManyPossibleRots;
+    [SerializeField] public bool isManyPossibleRots;
 
     int PossibleRots = 1;
 

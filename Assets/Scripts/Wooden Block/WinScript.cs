@@ -9,13 +9,19 @@ using TMPro;
 public class WinScript : MonoBehaviour
 {
     public ScoreManager scoreManager;
+
     public GameObject Block;
+
     public string PuzzleKey = "Wooden";
+
     [SerializeField] GameObject GamePanel;
-   
+
     private int _pointToWin;
+
     private int _currentPoint;
+
     private int _score;
+    
     private Interactor _interactorScript;
 
     void Start()

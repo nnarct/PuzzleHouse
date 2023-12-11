@@ -9,6 +9,7 @@ public class JigsawManager : MonoBehaviour
     public ScoreManager scoreManager;
     
     public string PuzzleKey = "Santa";
+
     public List<JigsawPiece> jigsawPieces; // Drag & drop all 8 pieces in the Inspector
 
     private List<Vector2> initialPositions;
@@ -31,16 +32,12 @@ public class JigsawManager : MonoBehaviour
                 if (!piece.IsPieceCorrect())
                 {
                     allCorrect = false;
-                    //Debug.Log("Piece is incorrect.");
                 }
             }
 
             yield return new WaitForSeconds(1f); // Add a delay before the next check
         }
 
-        // // All pieces are in correct positions
-        // CorrectPanel.SetActive(true);
-        // Invoke("ClosePanel", 1f);
         Correct();
     }
 

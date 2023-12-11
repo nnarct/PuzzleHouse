@@ -4,25 +4,30 @@ using UnityEngine;
 
 public class WireTask : MonoBehaviour
 {
-    [SerializeField]
-    private GameObject gamePanel;
+    [SerializeField] private GameObject gamePanel;
 
     public ScoreManager scoreManager;
 
     public string PuzzleKey = "Wire";
+
     public List<Color> WireColors = new List<Color>();
 
     public List<Wire> LeftWires = new List<Wire>();
+
     public List<Wire> RightWires = new List<Wire>();
 
     public Wire CurrentDraggedWire;
+
     public Wire CurrentHoveredWire;
 
     private List<Color> _availableColors;
+
     private List<int> _availableLeftWireIndex;
+
     private List<int> _availableRightWireIndex;
 
     public bool IsTaskComplete = false;
+
     private bool _isCoroutineStarted = false;
 
     private void Start()

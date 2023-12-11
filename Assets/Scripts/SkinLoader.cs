@@ -6,7 +6,9 @@ public class SkinLoader : MonoBehaviour
 
     public GameObject AlanPrefab; // Assign prefabs in the Inspector for different characters
     public GameObject JennyPrefab;
+
     public GameObject HumphreyPrefab;
+    
 	private void Awake()
     {
         string choosenCharacter = PlayerPrefs.GetString("Character", "Alan");

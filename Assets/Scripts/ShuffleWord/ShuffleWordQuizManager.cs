@@ -9,38 +9,49 @@ using TMPro;
 public class ShuffleWordQuizManager : MonoBehaviour
 {
     public static ShuffleWordQuizManager Instance;
+
     public string PuzzleKey;
-    [SerializeField]
-    public float DelayTime = 1f;
+
+    [SerializeField] public float DelayTime = 1f;
+
     public TMP_Text ScoreText;
+
     public ScoreManager scoreManager;
 
     [SerializeField] private AudioSource _source;
 
-    [SerializeField]
-    private QuestionData _question;
+    [SerializeField] private QuestionData _question;
+
     [SerializeField] GameObject GamePanel;
-    [SerializeField]
-    private WordData[] _AnswerWordArray;
-    [SerializeField]
-    private WordData[] _optionWordArray;
-    [SerializeField]
-    private GameObject _correctPanel;
-    [SerializeField]
-    private GameObject _wrongPanel;
+
+    [SerializeField] private WordData[] _AnswerWordArray;
+
+    [SerializeField] private WordData[] _optionWordArray;
+
+    [SerializeField] private GameObject _correctPanel;
+
+    [SerializeField] private GameObject _wrongPanel;
+
     private Interactor _interactorScript;
+
     private char[] _charArray = new char[5];
+
     private int _currentAnswerIndex = 0;
+
     private bool _correctAnswer;
+
     private List<int> _selectWordIndex;
-   
     
     private void Awake()
     {
-        if (Instance == null) Instance = this;
+        if (Instance == null)
+        { 
+            Instance = this;
+        }
         else
+        {
             Destroy(gameObject);
-
+        }
         _selectWordIndex = new List<int>();
     }
 
@@ -153,7 +164,6 @@ public class ShuffleWordQuizManager : MonoBehaviour
             _AnswerWordArray[_currentAnswerIndex].SetChar('_');
         }
     }
-
 }
 
 [System.Serializable]

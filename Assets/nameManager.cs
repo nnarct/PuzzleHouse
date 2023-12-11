@@ -7,9 +7,13 @@ using TMPro;
 public class SaveName : MonoBehaviour
 {
     public TMP_InputField NameInputField;
+
     public TMP_Text NameDisplayText;
+
     public Button ConfirmButton;
+
     private const string playerNameKey = "PlayerName";
+    
     // Start is called before the first frame update
     void Start()
     {

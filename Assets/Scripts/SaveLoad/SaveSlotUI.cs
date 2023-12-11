@@ -9,14 +9,21 @@ public class SaveSlotUI : MonoBehaviour
 {
 
     [SerializeField] GameObject PlayerSlotPrefab;
+
     [SerializeField] GameObject PlayerSlotDelPrefab;
+
     [SerializeField] GameObject NewGameButton;
+
     [SerializeField] Transform ElementWrapper;
+
     [SerializeField] Transform ElementWrapperDel;
+
     string Filename = "PlayerData.json";
 
     List<GameObject> uiElements = new List<GameObject>();
+
     List<GameObject> uiElementsDel = new List<GameObject>();
+    
     public List<PlayerEntry> PlayerList = new List<PlayerEntry>();
 
     // Start is called before the first frame update

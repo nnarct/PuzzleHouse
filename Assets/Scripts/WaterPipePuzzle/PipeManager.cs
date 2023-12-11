@@ -7,18 +7,19 @@ using UnityEngine.UIElements;
 public class PipeManager : MonoBehaviour
 {
     public ScoreManager scoreManager;
+    
     public GameObject GamePanel;
+
     public GameObject PipesHolder;
+
     public Transform[] Pipes;
 
-    [SerializeField]
-    private int _totalPipe = 0;
+    [SerializeField] private int _totalPipe = 0;
 
     public int[] ManyRotsIndex; 
 
-    [SerializeField]
+    [SerializeField] public string PuzzleKey = "Pipe";
 
-    public string PuzzleKey = "Pipe";
     public int _correctPipes = 0;
 
     public bool isRotating = false;
@@ -43,7 +44,6 @@ public class PipeManager : MonoBehaviour
         {
             if (ManyRotsIndex.Contains(i))
             {
-                //Debug.Log(roundedRotation);
                 if (Pipes[i].rotation.z == 1 || Pipes[i].rotation.z == -1)
                 {
                     _correctPipes++;

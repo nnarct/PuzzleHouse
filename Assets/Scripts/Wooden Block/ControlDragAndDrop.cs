@@ -5,15 +5,19 @@ using UnityEngine;
 public class ControlDragAndDrop : MonoBehaviour
 {
     public GameObject CorrectForm;
+
     private bool _isMoving;
+
     private bool _isFinish;
 
     private float _startPosX;
+
     private float _startPosY;
 
     private Vector3 _resetPosition;
 
     [SerializeField] private AudioSource _source;
+    
     [SerializeField] private AudioClip _pickUpClip;
 
     void Start()

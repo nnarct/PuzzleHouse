@@ -7,16 +7,23 @@ using System.Reflection;
 public class ScoreManager : MonoBehaviour
 {
     public TMP_Text ScoreText;
+
     public int Stage;
+
     public List<PuzzleKeysData> PuzzleKeys;
+
     public GameObject CorrectPanel;
 
     private int _maxScore;
+
     private bool _isOpenCorrectPanel = false ;
+
     private string _puzzleKey;
+
     private MovementPlayer _movementPlayer;
 
     [SerializeField] private AudioSource _openCorrectPanelSound;
+    
     [SerializeField] private AudioSource _clickKeySound;
 
     void Awake()

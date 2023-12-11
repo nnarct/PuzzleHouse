@@ -6,14 +6,18 @@ using UnityEngine.InputSystem;
 public class MovementPlayer : MonoBehaviour
 {
     private float MoveX;
+
     private float Speed = 500;
     //[SerializeField] private AudioSource _audio;
 
     private Rigidbody2D _rb;
+
     private SpriteRenderer _sprite;
+
     private Animator _anim;
 
     private bool _isFrozen = false;
+    
     private bool _isMoveable = true;
 
     private void Start()

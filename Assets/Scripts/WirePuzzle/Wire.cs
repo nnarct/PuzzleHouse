@@ -7,13 +7,17 @@ using UnityEngine.UI;
 public class Wire : MonoBehaviour , IDragHandler , IBeginDragHandler , IEndDragHandler
 {
     public bool IsLeftWire;
+
     public Color CustomColor;
 
     private Image _image;
+
     private LineRenderer _lineRenderer;
+
     private Canvas _canvas;
 
     private bool _isDragStarted = false;
+    
     public bool IsCorrect = false;
 
     private WireTask _wireTask;

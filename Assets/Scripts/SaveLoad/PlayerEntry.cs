@@ -5,9 +5,13 @@ using System.Collections.Generic;
 public class PlayerEntry 
 {
     public string PlayerName;
+
     public string CharacterChoose;
+
     public int Level;
+
     public Stage1 Stage1;
+
     public Stage2 Stage2;
 
     public PlayerEntry(string name, int level, string characterChoose)
@@ -20,7 +24,6 @@ public class PlayerEntry
         
     }
 }
-
 
 [Serializable]
 public class Stage1

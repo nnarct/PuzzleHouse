@@ -9,15 +9,21 @@ public class Interactor : MonoBehaviour
 {
 
     [SerializeField] GameObject InteractText;
+
     [SerializeField] GameObject Puzzle;
+
     public bool IsInRange;
+
     public bool IsInPuzzle;
+
     public string PuzzleKey;
 
     [SerializeField] private AudioSource _source;
 
     private MovementPlayer _movementPlayer;
+
     private Rigidbody2D _rigidBodyPlayer;
+    
     private void Start()
     {
         Puzzle.SetActive(false);

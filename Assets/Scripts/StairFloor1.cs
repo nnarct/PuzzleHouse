@@ -4,11 +4,15 @@ using UnityEngine;
 
 public class StairFloor1 : MonoBehaviour
 {
-    [SerializeField] private Transform destination;
+    [SerializeField] private Transform _destination; // Reference to the destination 
+    
+    [SerializeField] private AudioSource _source; // Reference to the AudioSource component
 
+    // Method to get the destination transform and play the AudioSource
     public Transform GetDestination()
     {
-        return destination;
+        _source.Play();
+        return _destination;
     }
 
 }

@@ -8,17 +8,21 @@ TagManager:
   - Foreground
   - Stair
   - Interactable
+  - JigsawPiece
+  - Stair4
+  - Stair3
+  - Stair2
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Puzzle
   - Water
   - UI
   - Background
   - Floor
   - Player
-  - 
+  - Key
   - 
   - 
   - 
@@ -50,4 +54,13 @@ TagManager:
     locked: 0
   - name: Top
     uniqueID: 227641955
+    locked: 0
+  - name: Wire
+    uniqueID: 3653166007
+    locked: 0
+  - name: Key
+    uniqueID: 327474945
+    locked: 0
+  - name: Correct
+    uniqueID: 2882482513
     locked: 0

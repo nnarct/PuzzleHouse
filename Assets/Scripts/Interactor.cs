@@ -71,7 +71,7 @@ public class Interactor : MonoBehaviour
 
     }
 
-    public void playPuzzle()
+    public void PlayPuzzle()
     {
         _source.Play();
         Puzzle.SetActive(true);

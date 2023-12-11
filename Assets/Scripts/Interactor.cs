@@ -54,7 +54,7 @@ public class Interactor : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.E) && InteractText.gameObject.activeSelf)
             {
-                playPuzzle();
+                PlayPuzzle();
                 _rigidBodyPlayer.velocity = Vector2.zero;
                 _movementPlayer.FreezeMovement();
             }

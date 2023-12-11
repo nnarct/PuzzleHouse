@@ -3,12 +3,14 @@ using UnityEngine;
 public class SkinLoader : MonoBehaviour
 {
     public static GameObject selectedPrefab; // Static reference to the selected character's prefab
+    
+    public GameObject AlanPrefab; // A reference to the Alan prefab assigned in the Inspector
 
-    // Assign prefabs in the Inspector for different characters
-    public GameObject AlanPrefab;
-    public GameObject JennyPrefab;
-    public GameObject HumphreyPrefab;
+    public GameObject JennyPrefab; // A reference to the Jenny prefab assigned in the Inspector
 
+    public GameObject HumphreyPrefab; // A reference to the Humphrey prefab assigned in the Inspector
+
+    // Awake is called when the script instance is activated
     private void Awake()
     {
         // Get the character choice from PlayerPrefs or default to "Alan" if not found

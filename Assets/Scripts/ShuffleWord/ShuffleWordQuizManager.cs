@@ -8,43 +8,42 @@ using TMPro;
 
 public class ShuffleWordQuizManager : MonoBehaviour
 {
-    public static ShuffleWordQuizManager Instance; // Singleton instance
-    public string PuzzleKey; // Puzzle key identifier
+    
     [SerializeField] public float DelayTime = 1f; // Delay time for certain actions
+
+    [SerializeField] public GameObject GamePanel; // Game panel for UI interaction
+
+    public static ShuffleWordQuizManager Instance; // Singleton instance
+
+    public string PuzzleKey; // Puzzle key identifier
+    
     public TMP_Text ScoreText; // Text component for displaying the score
+
     public ScoreManager scoreManager; // Score manager reference
+
     [SerializeField] private AudioSource _source; // Audio source for playing sounds
+
     [SerializeField] private QuestionData _question; // Question data
+
     [SerializeField] private WordData[] _AnswerWordArray; // Array for answer word data
+
     [SerializeField] private WordData[] _optionWordArray; // Array for option word data
 
-    // Panels for displaying correct and wrong answers
-    [SerializeField] private GameObject _correctPanel;
-    [SerializeField] private GameObject _wrongPanel;
+    [SerializeField] private GameObject _correctPanel; // Panels for displaying correct answer
 
-    [SerializeField] GameObject GamePanel; // Game panel for UI interaction
+    [SerializeField] private GameObject _wrongPanel; // Panels for displaying wrong answer
+
     private Interactor _interactorScript; // Interactor script reference
+
     private char[] _charArray = new char[5]; // Array to hold characters
+
     private bool _correctAnswer; // Flag to check if the answer is correct
+
     private int _currentAnswerIndex = 0; // Index to track the current answer position
+
     private List<int> _selectWordIndex; // List to store selected word indices
 
-    private void Awake()
-    {
-        // Ensure only one instance of ShuffleWordQuizManager exists
-        if (Instance == null)
-        {
-            Instance = this;
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
-
-        // Initialize the list for selected word indices
-        _selectWordIndex = new List<int>();
-    }
-
+    // Start is called before the first frame update
     private void Start()
     {
         // Set up the initial question
@@ -53,6 +52,28 @@ public class ShuffleWordQuizManager : MonoBehaviour
         // Get the Interactor script component
         _interactorScript = GameObject.FindWithTag("Interactable").GetComponent<Interactor>();
     }
+
+    // Awake is called when the script instance is activated
+    private void Awake()
+    {
+        // Ensure only one instance of ShuffleWordQuizManager exists
+        if (Instance == null)
+        {
+            // Set the instance to the current instance
+            Instance = this;
+        }
+        // Check if the instance is not the current instance
+        else
+        {
+            // Destroy the current instance
+            Destroy(gameObject);
+        }
+
+        // Initialize the list for selected word indices
+        _selectWordIndex = new List<int>();
+    }
+
+    
 
     //Set up the question
     private void SetQuestion()
@@ -121,10 +142,12 @@ public class ShuffleWordQuizManager : MonoBehaviour
             // Invoke appropriate functions based on correctness
             if (_correctAnswer)
             {
+                // If the answer is correct, play the correct sound and display the correct panel
                 Invoke("Correct", .7f);
             }
             else if (!_correctAnswer)
             {
+                // If the answer is wrong, play the wrong sound and display the wrong panel
                 _source.Play();
                 _wrongPanel.SetActive(true);
                 Invoke("DeactiveWrongPanel", DelayTime);
@@ -136,6 +159,7 @@ public class ShuffleWordQuizManager : MonoBehaviour
     // Function called for correct answer
     public void Correct()
     {
+        // Call HandleCorrectAnswer() from the ScoreManager class to handle the correct answer
         scoreManager.HandleCorrectAnswer(PuzzleKey, GamePanel);
     }
 

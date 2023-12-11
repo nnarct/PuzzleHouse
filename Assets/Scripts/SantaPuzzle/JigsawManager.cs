@@ -5,11 +5,16 @@ using UnityEngine;
 public class JigsawManager : MonoBehaviour
 {
     public ScoreManager scoreManager; // Reference to the ScoreManager for handling puzzle completion
+
     public string PuzzleKey = "Santa"; // Unique identifier for this puzzle
+
     public List<JigsawPiece> jigsawPieces; // List of JigsawPiece components representing the puzzle pieces
+
     [SerializeField] GameObject GamePanel; // Reference to the game panel for displaying puzzle completion
+
     private List<Vector2> initialPositions; // List to store initial positions of the puzzle pieces
 
+    // Start is called before the first frame update
     private void Start()
     {
         // Start a coroutine to periodically check if all puzzle pieces are in correct positions
@@ -31,6 +36,7 @@ public class JigsawManager : MonoBehaviour
             {
                 if (!piece.IsPieceCorrect())
                 {
+                    // If any piece is not in correct position, set allCorrect to false
                     allCorrect = false;
                 }
             }

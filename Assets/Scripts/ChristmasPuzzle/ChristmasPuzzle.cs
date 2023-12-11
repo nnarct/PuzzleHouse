@@ -10,17 +10,17 @@ public class ChristmasPuzzle : MonoBehaviour
 
     public GameObject[] CorrectPositions; // Array of correct positions for buttons 
 
-    public ScoreManager scoreManager;  // Reference to the ScoreManager script
+    public ScoreManager scoreManager; // Reference to the ScoreManager script
 
     public string PuzzleKey = "Christmas"; // Key of this Puzzle
 
     private Button _lastClickedButton; //last click button
 
-    private Button[] _buttons;  // Array to store all buttons in the puzzle
+    private Button[] _buttons; // Array to store all buttons in the puzzle
 
-    private int _totalScore; 
+    private int _totalScore; // Total score of the puzzle
 
-    private int _currentScore;
+    private int _currentScore; // Current score of the puzzle
 
     // Start is called before the first frame update
     void Start()
@@ -37,6 +37,7 @@ public class ChristmasPuzzle : MonoBehaviour
         // Attach a button click listener to each button
         foreach (Button button in _buttons)
         {
+            // Add a listener to the button that will call OnButtonClick when clicked
             button.onClick.AddListener(() => OnButtonClick(button));
         }
     }
@@ -47,6 +48,7 @@ public class ChristmasPuzzle : MonoBehaviour
         // Check if this is the first button clicked
         if (_lastClickedButton == null)
         {
+            // Store the clicked button as the last clicked button
             _lastClickedButton = clickedButton;
         }
         else
@@ -85,6 +87,7 @@ public class ChristmasPuzzle : MonoBehaviour
     // Method to check if buttons are in correct positions
     void CheckCorrectPosition(GameObject[] correctPositions, Button[] buttons)
     {
+        // Reset the current score
         _currentScore = 0;
         int positionThreshold = 1; // Distance that close enough
 

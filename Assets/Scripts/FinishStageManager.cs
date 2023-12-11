@@ -4,20 +4,34 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-
 public class FinishStageAnimation : MonoBehaviour
 {
+    [SerializeField] private GameObject PanelBackground; // Panel background object for scaling animation
 
-    [SerializeField]
+    [SerializeField] private GameObject EndGamePanel; // End game panel object for deactivation
 
-    GameObject PanelBackground, EndGamePanel, Star, UiText, NextButton, ReplayButton, LightWheel;
+    [SerializeField] private GameObject Star; // Star object for scaling and moving animation
 
-    private Image _lightWheelImage;
-    // Start is called before the first frame update
+    [SerializeField] private GameObject UiText; // UI text object for scaling and moving animation
+
+    [SerializeField] private GameObject NextButton; // Next button object for scaling animation
+
+    [SerializeField] private GameObject ReplayButton; // Replay button object for scaling animation
+
+    [SerializeField] private GameObject LightWheel; // Light wheel object for rotating and scaling animation
+
+    private Image _lightWheelImage; // Reference to the Image component of LightWheel for color changes
+
+    // Awake is called when the script instance is being loaded
     void Awake()
     {
+        // Get the Image component of LightWheel for color change
         _lightWheelImage = LightWheel.GetComponent<Image>();
+
+        // Start the random color change coroutine
         StartCoroutine(RandomColorChange());
+
+        // Various animations using LeanTween
         LeanTween.rotateAround(LightWheel, Vector3.forward, -360, 10f).setLoopClamp();
         LeanTween.scale(PanelBackground, new Vector3(1f, 1f, 1f), 1f).setDelay(.5f).setEase(LeanTweenType.easeOutElastic);
         LeanTween.scale(Star, new Vector3(2f, 2f, 2f), 2f).setDelay(.5f).setEase(LeanTweenType.easeOutElastic).setOnComplete(ShowText);
@@ -28,8 +42,10 @@ public class FinishStageAnimation : MonoBehaviour
         LeanTween.scale(LightWheel, new Vector3(.7f, .7f, .7f), 2f).setDelay(.5f).setEase(LeanTweenType.easeOutElastic);
     }
 
-    void ShowText()
+    // Method to show additional text and buttons
+    private void ShowText()
     {
+        // Animations for showing text and buttons
         LeanTween.scale(UiText, new Vector3(1.7f, 1.7f, 1.7f), 2f).setDelay(.5f).setEase(LeanTweenType.easeOutElastic);
         LeanTween.moveLocal(UiText, new Vector3(0f, -118f, 0f), .7f).setDelay(1.6f).setEase(LeanTweenType.easeOutQuint);
         LeanTween.scale(ReplayButton, new Vector3(1f, 1f, 1f), 2f).setDelay(1.9f).setEase(LeanTweenType.easeOutElastic);
@@ -37,23 +53,35 @@ public class FinishStageAnimation : MonoBehaviour
         LeanTween.scale(UiText, new Vector3(1f, 1f, 1f), 2f).setDelay(.5f).setEase(LeanTweenType.easeOutElastic);
     }
 
-
     public void GoToNextScene()
     {
-        List<PlayerEntry> playerList = new List<PlayerEntry>();
-        playerList = FileHandler.ReadListFromJSON<PlayerEntry>("PlayerData.json");
+        // Move to the next scene and save the level information
+        // Read the player list from the JSON file
+        List<PlayerEntry> playerList = FileHandler.ReadListFromJSON<PlayerEntry>("PlayerData.json");
+
+        // Get the player's ID from PlayerPrefs, which was set during the login or player selection process
         int playerId = PlayerPrefs.GetInt("PlayerID");
 
-
+        // Disable the EndGamePanel to hide it from the UI
         EndGamePanel.SetActive(false);
+
+        // Determine the index of the next scene in the build order
         int nextSceneIndex = SceneManager.GetActiveScene().buildIndex + 1;
+
+        // Update the player's level information in the player list
         playerList[playerId].Level = nextSceneIndex;
+
+        // Save the modified player list back to the JSON file
         FileHandler.SaveToJSON<PlayerEntry>(playerList, "PlayerData.json");
 
+        // Log the index of the next scene for debugging purposes
         Debug.Log(nextSceneIndex);
+
+        // Load the next scene in the build order
         SceneManager.LoadScene(nextSceneIndex);
     }
 
+    // Coroutine for continuous random color changes
     IEnumerator RandomColorChange()
     {
         while (true) // Infinite loop for continuous color changes

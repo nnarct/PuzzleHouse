@@ -16,6 +16,8 @@ public abstract class ShuffleList
 
         // Create a random number generator
         System.Random r = new System.Random();
+
+        // Initialize a random index to zero
         int randomIndex = 0;
 
         // Shuffle the list by picking random elements from the original list

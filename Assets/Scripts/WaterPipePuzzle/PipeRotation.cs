@@ -4,19 +4,36 @@ using UnityEngine;
 
 public class PipeRotation : MonoBehaviour
 {
-    private float[] RotationValue = { 0, 90, 180, 270 };
-
-    public float[] CorrectRotation;
     
-    [SerializeField] public bool isManyPossibleRots;
+    [SerializeField] public bool isManyPossibleRots; // flag to indicate if the pipe has many possible rotations
 
-    int PossibleRots = 1;
+    public float[] CorrectRotation; // Array of correct rotations for the pipe
+    
+    [SerializeField] private AudioSource _source; // Audio source for the pipe rotation sound
+    
+    private PipeManager pipeManager; // Reference to the PipeManager script
+    
+    private int PossibleRots = 1; // Number of possible rotations for the pipe
 
-    PipeManager pipeManager;
+    private float[] RotationValue = { 0, 90, 180, 270 }; // Array of possible rotation values for the pipe
 
-    [SerializeField] private AudioSource _source;
+    // Start is called before the first frame update
+    void Start()
+    {
+        // Set the number of possible rotations based on the CorrectRotation array length
+        PossibleRots = CorrectRotation.Length;
 
-    private void Awake()
+        // Randomly set the initial rotation of the pipe
+        int rotationIndex = Random.Range(0, RotationValue.Length);
+        transform.eulerAngles = new Vector3(0, 0, RotationValue[rotationIndex]);
+
+        // Check correct rotation based on the initial rotation
+        pipeManager.CheckCorrect();
+    }
+
+    // Awake is called when the script instance is being loaded
+    // Get component PipeManager from GameObject  
+    void Awake()
     {
         pipeManager = GameObject.Find("PipeManager").GetComponent<PipeManager>();
 
@@ -25,33 +42,25 @@ public class PipeRotation : MonoBehaviour
             Debug.LogError("PipeManager not found or PipeManager component missing.");
         }
     }
-    private void Start()
-    {
 
-        PossibleRots = CorrectRotation.Length;
-        int RotationIndex = Random.Range(0, RotationValue.Length);
-        transform.eulerAngles = new Vector3(0, 0, RotationValue[RotationIndex]);
-        pipeManager.CheckCorrect();
-
-    }
-
+    // Method to called when the mouse button is pressed
     private void OnMouseDown()
     {
+        // play the sound
         _source.Play();
 
+        // Check if the pipe is not currently rotating in the PipeManager
         if (!pipeManager.isRotating)
         {
+            // Set the flag to indicate that the pipe is rotating
             pipeManager.isRotating = true;
-            transform.Rotate(new Vector3(0, 0, 90));
-            Debug.Log("Pipe rotation: " + transform.rotation.z);
 
+            // Rotate the pipe by 90 degrees when clicked and check correct position
+            transform.Rotate(new Vector3(0, 0, 90));
             pipeManager.CheckCorrect();
 
+            // Set the flag to indicate that the pipe has finished rotating
             pipeManager.isRotating = false;
-        }
-
-
-        
+        }  
     }
-
 }

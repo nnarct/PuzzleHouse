@@ -8,15 +8,23 @@ using UnityEngine.UI;
 public class Interactor : MonoBehaviour
 {
 
-    [SerializeField] GameObject InteractText;
-    [SerializeField] GameObject Puzzle;
-    public bool IsInRange;
-    public bool IsInPuzzle;
-    public string PuzzleKey;
+    [SerializeField] GameObject InteractText; // Reference to the InteractText GameObject
+
+    [SerializeField] GameObject Puzzle; // Reference to the Puzzle GameObject
+    
+    public bool IsInRange; // Boolean to check if the player is in range
+
+    public bool IsInPuzzle; // Boolean to check if the player is in the puzzle
+
+    public string PuzzleKey; // Key of this Puzzle
 
     [SerializeField] private AudioSource _source; // Serialized AudioSource variable
+
     private MovementPlayer _movementPlayer; // Reference to MovementPlayer script
+
     private Rigidbody2D _rigidBodyPlayer; // Reference to Rigidbody2D component of the player
+
+    // Start is called before the first frame update
     private void Start()
     {
         // Deactivate the Puzzle
@@ -27,6 +35,7 @@ public class Interactor : MonoBehaviour
         _rigidBodyPlayer = GameObject.FindWithTag("Player").GetComponent<Rigidbody2D>();
     }
 
+    // Method to activate the InteractText GameObject when the player is in range
     private void OnTriggerEnter2D(Collider2D collision)
     {
         // Check if the PuzzleKey is not set or if it's set to 0
@@ -42,10 +51,9 @@ public class Interactor : MonoBehaviour
                 IsInRange = true;
             }
         }
-
-
     }
 
+    // Method to deactivate the InteractText GameObject when the player is out of range
     private void OnTriggerExit2D(Collider2D collision)
     {
         // Check if the collision is with the player GameObject
@@ -59,6 +67,7 @@ public class Interactor : MonoBehaviour
         }
     }
 
+    // Update is called once per frame
     private void Update()
     {
         // Check if the player is in range
@@ -94,6 +103,7 @@ public class Interactor : MonoBehaviour
 
     }
 
+    // Method to run all the necessary code to start the puzzle
     public void PlayPuzzle()
     {
         // Play the AudioSource
@@ -109,6 +119,7 @@ public class Interactor : MonoBehaviour
         IsInPuzzle = true;
     }
 
+    // Method to run all the necessary code to end the puzzle
     public void EndInteraction()
     {
         // Play the AudioSource
@@ -128,6 +139,5 @@ public class Interactor : MonoBehaviour
         }
         // Set IsInPuzzle to false
         IsInPuzzle = false;
-
     }
 }

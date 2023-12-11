@@ -6,19 +6,32 @@ public class WireTask : MonoBehaviour
 {
     // Public variables accessible in the Inspector
     public bool IsTaskComplete = false; // Indicates if the task is complete
+
     public ScoreManager scoreManager; // Reference to the score manager
+
     public string PuzzleKey = "Wire"; // Key for identifying the puzzle
+
     public List<Color> WireColors = new List<Color>(); // List of available wire colors
+
     public List<Wire> LeftWires = new List<Wire>(); // List of wires on the left side
+
     public List<Wire> RightWires = new List<Wire>(); // List of wires on the right side
+
     public Wire CurrentDraggedWire; // Reference to the currently dragged wire
+
     public Wire CurrentHoveredWire; // Reference to the wire currently being hovered over
 
     [SerializeField] private GameObject gamePanel; // Reference to the game panel UI
+
     private bool _isCoroutineStarted = false; // Indicates if the coroutine has started
+
     private List<Color> _availableColors; // List of available colors for wires
+
     private List<int> _availableLeftWireIndex; // List of available indices for left wires
+
     private List<int> _availableRightWireIndex; // List of available indices for right wires
+
+    // Start is called before the first frame update
     private void Start()
     {
         //Hide the game panel
@@ -55,6 +68,7 @@ public class WireTask : MonoBehaviour
 
     }
 
+    // Update is called once per frame
     private void Update()
     {
         // Check if the gamePanel is inactive and the coroutine hasn't been started

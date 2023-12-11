@@ -4,7 +4,9 @@ using UnityEngine.UI;
 public class WordData : MonoBehaviour
 {
     public char CharValue; // Character value associated with this word
+
     [SerializeField] private Text _charText; // Text component to display the character
+
     [HideInInspector] private Button _buttonObj; // Button component for user interaction
 
     private void Awake()
@@ -24,6 +26,7 @@ public class WordData : MonoBehaviour
     {
         // Update the text to display the character value
         _charText.text = value + "";
+        
         // Set the character value
         CharValue = value;
     }

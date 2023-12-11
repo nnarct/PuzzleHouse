@@ -7,13 +7,21 @@ using UnityEngine.UI;
 public class Wire : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHandler
 {
     public bool IsLeftWire; // Indicates if this wire is on the left side
+
     public bool IsCorrect = false; // Indicates if the wire is in the correct position
+
     private bool _isDragStarted = false; // Flag to check if dragging has started
+
     public Color CustomColor; // Custom color for the wire
+
     private Image _image; // Reference to the Image component
+
     private LineRenderer _lineRenderer; // Reference to the LineRenderer component
+
     private Canvas _canvas; // Reference to the Canvas
+
     private WireTask _wireTask; // Reference to the WireTask script
+    
     [SerializeField] private AudioSource _source; // AudioSource for sound feedback
 
 

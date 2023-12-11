@@ -11,8 +11,10 @@ public class SantaManager : MonoBehaviour
     private void Start()
     {
         // Initialize puzzlePieces list with puzzle pieces
-        // Add all puzzle pieces to the list manually or use GameObject.FindWithTag, GameObject.FindObjectsOfType, etc.
-        // For this example, it assumes you've set up the puzzle pieces in the Inspector
+        /*
+         * Add all puzzle pieces to the list manually or use GameObject.FindWithTag, GameObject.FindObjectsOfType, etc.
+         * For this example, it assumes you've set up the puzzle pieces in the Inspector
+         */
         correctPlacementsRequired = puzzlePieces.Count;
 
         // Initialize correct placement count
@@ -22,11 +24,13 @@ public class SantaManager : MonoBehaviour
     // Called when a puzzle piece is correctly placed
     public void PiecePlacedCorrectly()
     {
+        // Increment correct placement count
         correctPlacementCount++;
 
         // Check if all pieces are placed correctly
         if (correctPlacementCount == correctPlacementsRequired)
         {
+            // If all pieces are placed correctly, call the PuzzleComplete method
             PuzzleComplete();
         }
     }
@@ -34,6 +38,7 @@ public class SantaManager : MonoBehaviour
     // Called when the puzzle is complete
     private void PuzzleComplete()
     {
+        // Display a message in the console
         Debug.Log("Congratulations! Puzzle complete!");
     }
 }

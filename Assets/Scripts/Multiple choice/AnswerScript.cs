@@ -5,22 +5,23 @@ using UnityEngine.UI;
 
 public class AnswerScript : MonoBehaviour
 {
-    public bool IsCorrect = false;
-    
-    public QuizManager quizManager;
+    public bool IsCorrect = false; // Flag indicating whether this answer is correct or not
 
+    public QuizManager quizManager; // Reference to the QuizManager script to communicate the correctness of the answer
+
+    // Called when the answer is selected
     public void Answer()
     {
+        // Check if the selected answer is correct
         if (IsCorrect)
         {
-            // Debug.Log("Correct Answer");
+            // Inform the QuizManager that the answer is correct
             quizManager.Correct();
         }
         else
         {
-            // Debug.Log("Wrong Answer");
+            // Inform the QuizManager that the answer is wrong
             quizManager.Wrong();
         }
-
     }
 }
